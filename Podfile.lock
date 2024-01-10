@@ -1,0 +1,76 @@
+PODS:
+  - Alamofire (5.8.1)
+  - AlamofireImage (4.3.0):
+    - Alamofire (~> 5.8)
+  - CircleProgressView (1.2.0)
+  - DeviceKit (4.9.0)
+  - DropDown (2.3.13)
+  - HGCircularSlider (2.2.0)
+  - Kingfisher (7.10.1)
+  - R.swift (7.3.2)
+  - SETabView (2.0.0)
+  - SnapKit (5.6.0)
+  - SwiftKeychainWrapper (4.0.1)
+  - SwiftLint (0.54.0)
+  - SwiftVideoBackground (3.4.0)
+  - Toast-Swift (5.0.1)
+  - TrailerPlayer (1.4.8)
+  - WCLShineButton (1.0.8)
+
+DEPENDENCIES:
+  - AlamofireImage (~> 4.1)
+  - CircleProgressView
+  - DeviceKit (~> 4.0)
+  - DropDown
+  - HGCircularSlider
+  - Kingfisher
+  - R.swift
+  - SETabView
+  - SnapKit (~> 5.6.0)
+  - SwiftKeychainWrapper
+  - SwiftLint
+  - SwiftVideoBackground
+  - Toast-Swift
+  - TrailerPlayer
+  - WCLShineButton
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - CircleProgressView
+    - DeviceKit
+    - DropDown
+    - HGCircularSlider
+    - Kingfisher
+    - R.swift
+    - SETabView
+    - SnapKit
+    - SwiftKeychainWrapper
+    - SwiftLint
+    - SwiftVideoBackground
+    - Toast-Swift
+    - TrailerPlayer
+    - WCLShineButton
+
+SPEC CHECKSUMS:
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
+  CircleProgressView: 6b5b091d59dc5e5d2fda84e637a40498cdc39937
+  DeviceKit: 847709bf70b78fd9ab765bd571fb9f5f815c3fc1
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  HGCircularSlider: afb1942743a2df156dcc7a3500216e523e14266b
+  Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
+  R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
+  SETabView: 20a3418b1bc61b36d7f6fb9195f1ebb0907bdf35
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+  SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
+  SwiftVideoBackground: 826e0567c737ded2a211aa309e9951c643695e8f
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  TrailerPlayer: 9117cc50a183a6d060ae874552395b37951a6533
+  WCLShineButton: 315ee9b0024b1cc56dba34fb6a8878937eb8d0b1
+
+PODFILE CHECKSUM: a7fea02a52cc8cfa4e13014da91e1756aae46d67
+
+COCOAPODS: 1.14.3

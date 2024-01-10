@@ -1,0 +1,6 @@
+framework module TrailerPlayer {
+  umbrella header "TrailerPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}
