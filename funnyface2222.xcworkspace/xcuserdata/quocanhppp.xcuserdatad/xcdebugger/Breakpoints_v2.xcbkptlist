@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6902B26D-0D91-4240-8AC6-BF0E132867D5"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C2D9546-9CA9-4DD2-BD72-28E9CB3FB9D0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "funnyface2222/Service/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1202"
+            endingLineNumber = "1202"
+            landmarkName = "swapImageWithVideo(device:ip:userId:imageLink:videoFile:closure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0C2D9546-9CA9-4DD2-BD72-28E9CB3FB9D0 - bec5d6d47f60302"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in funnyface2222.APIService.swapImageWithVideo(device: Swift.String, ip: Swift.String, userId: Swift.String, imageLink: Swift.String, videoFile: Foundation.Data, closure: (Swift.Optional&lt;funnyface2222.DetailVideoModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "funnyface2222"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quocanhppp/Documents/iosProject/funnyface2222/funnyface2222/Service/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1202"
+                  endingLineNumber = "1202"
+                  offsetFromSymbolStart = "1580">
+               </Location>
+               <Location
+                  uuid = "0C2D9546-9CA9-4DD2-BD72-28E9CB3FB9D0 - bec5d6d47f60302"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in funnyface2222.APIService.swapImageWithVideo(device: Swift.String, ip: Swift.String, userId: Swift.String, imageLink: Swift.String, videoFile: Foundation.Data, closure: (Swift.Optional&lt;funnyface2222.DetailVideoModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "funnyface2222"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quocanhppp/Documents/iosProject/funnyface2222/funnyface2222/Service/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1202"
+                  endingLineNumber = "1202"
+                  offsetFromSymbolStart = "443">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

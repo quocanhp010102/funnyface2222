@@ -11,7 +11,7 @@ import HGCircularSlider
 import Kingfisher
 import Vision
 
-class SwapVideoDetailVC: UIViewController {
+class newSwapvideo: UIViewController {
     var itemLink:Temple2VideoModel = Temple2VideoModel()
     @IBOutlet weak var buttonBack: UIButton!
     var IsStopBoyAnimation = true
@@ -50,13 +50,6 @@ class SwapVideoDetailVC: UIViewController {
     @IBAction func BackApp(){
         self.dismiss(animated: true)
     }
-    @IBAction func nextdd(){
-                let vc = newSwapvideo(nibName: "newSwapvideo", bundle: nil)
-              
-                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                self.present(vc, animated: true, completion: nil)
-    }
-    
     var timerNow: Timer = Timer()
     func uploadGenVideoByImages(completion: @escaping ApiCompletion){
         APIService.shared.UploadImagesToGenRieng("https://metatechvn.store/upload-gensk/" + String(AppConstant.userId ?? 0) + "?type=src_vid", ImageUpload: self.image_Data_Nam,method: .POST, loading: true){data,error in
@@ -91,15 +84,44 @@ class SwapVideoDetailVC: UIViewController {
                 if let url = URL(string: linkImagePro){
                     self.boyImage.af.setImage(withURL: url)
                 }
-                APIService.shared.GenVideoSwap(device_them_su_kien: AppConstant.modelName ?? "iphone", id_video: String(self.itemLink.id ?? 0) , ip_them_su_kien: AppConstant.IPAddress.asStringOrEmpty(), id_user: AppConstant.userId.asStringOrEmpty(), link_img: self.linkImageVideoSwap, ten_video: "swapvideo.mp4"){response,error in
-                    if let response = response{
-                        let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
-                        vc.itemDataSend = response
-                        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                        self.present(vc, animated: true, completion: nil)
+//                APIService.shared.GenVideoSwap(device_them_su_kien: AppConstant.modelName ?? "iphone", id_video: String(self.itemLink.id ?? 0) , ip_them_su_kien: AppConstant.IPAddress.asStringOrEmpty(), id_user: AppConstant.userId.asStringOrEmpty(), link_img: self.linkImageVideoSwap, ten_video: "swapvideo.mp4"){response,error in
+//                    if let response = response{
+//                        let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
+//                        vc.itemDataSend = response
+//                        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+//                        self.present(vc, animated: true, completion: nil)
+//                    }
+//                   
+//                }
+                let device = "Simulator (iPhone 14 Plus)"
+                let ip = "14.231.223.63"
+                let userId = "3"
+                // Lấy đường dẫn của video MP4 từ main bundle
+                if let videoFileURL = Bundle.main.url(forResource: "testnhay", withExtension: "mp4") {
+                    do {
+                        // Chuyển video thành dữ liệu
+                        let videoData = try Data(contentsOf: videoFileURL)
+
+                        // Gọi hàm UploadVideoBatKyAndGen với dữ liệu video
+                        APIService.shared.UploadVideoBatKyAndGen("https://lhvn.online/getdata/genvideo/swap/imagevid?device_them_su_kien=Simulator%20%28iPhone%2014%20Plus%29&ip_them_su_kien=14.231.223.63&id_user=203&src_img=/var/www/build_futurelove/image/image_user/3/nam/3_nam_69101.jpg", mediaData: videoData, method: .POST, loading: true) { response, error in
+                            // Xử lý phản hồi hoặc lỗi
+                            if let response = response {
+                                print("Response: \(response)")
+                                let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
+                                vc.itemDataSend = response as! DetailVideoModel
+                                                    vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                                                    self.present(vc, animated: true, completion: nil)
+                            } else if let error = error {
+                                print("Error: \(error)")
+                            }
+                        }
+                    } catch {
+                        print("Error reading video file: \(error)")
                     }
-                   
+                } else {
+                    print("Video file not found in the bundle.")
                 }
+
             }
         }
         //                    }else{
@@ -167,16 +189,40 @@ class SwapVideoDetailVC: UIViewController {
 
             let removeSuot = self.linkImageVideoSwap.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
             let linkImagePro = removeSuot.replacingOccurrences(of: "https://futurelove.online", with: "/var/www/build_futurelove", options: .literal, range: nil)
-            APIService.shared.GenVideoSwap(device_them_su_kien: AppConstant.modelName ?? "iphone", id_video: String(self.itemLink.id ?? 0) , ip_them_su_kien: AppConstant.IPAddress.asStringOrEmpty(), id_user: AppConstant.userId.asStringOrEmpty(), link_img: linkImagePro, ten_video: "swapvideo.mp4"){response,error in
-                if let response = response{
-                    let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
-                    vc.itemDataSend = response
-                    vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                    self.present(vc, animated: true, completion: nil)
+//            APIService.shared.GenVideoSwap(device_them_su_kien: AppConstant.modelName ?? "iphone", id_video: String(self.itemLink.id ?? 0) , ip_them_su_kien: AppConstant.IPAddress.asStringOrEmpty(), id_user: AppConstant.userId.asStringOrEmpty(), link_img: linkImagePro, ten_video: "swapvideo.mp4"){response,error in
+//                if let response = response{
+//                    let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
+//                    vc.itemDataSend = response
+//                    vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+//                    self.present(vc, animated: true, completion: nil)
+//                }
+//                
+//            }
+            // Đặt các giá trị thực tế cho các tham số
+            let device = "Simulator (iPhone 14 Plus)"
+            let ip = "14.231.223.63"
+            let userId = "3"
+            let imageLink = "/var/www/build_futurelove/image/image_user/3/nam/3_nam_69101.jpg"
+
+            // Đọc dữ liệu từ file video (ví dụ: video.mp4 trong dự án của bạn)
+            if let videoURL = Bundle.main.url(forResource: "testnhay", withExtension: "mp4") {
+                do {
+                    let videoData = try Data(contentsOf: videoURL)
+
+                    // Gọi hàm swapImageWithVideo
+                    APIService.shared.swapImageWithVideo(device: device, ip: ip, userId: AppConstant.userId.asStringOrEmpty(), imageLink: linkImagePro, videoFile: videoData) { (response, error) in
+                        // Xử lý phản hồi hoặc lỗi
+                        if let error = error {
+                            print("Error:", error)
+                        } else if let response = response {
+                            print("Response:", response)
+                        }
+                    }
+                } catch {
+                    print("Failed to load video data:", error)
                 }
-                
             }
-            
+
             let url = URL(string: imageLink)
             let processor = DownsamplingImageProcessor(size: self.boyImage.bounds.size)
             |> RoundCornerImageProcessor(cornerRadius: 20)
@@ -254,7 +300,7 @@ class SwapVideoDetailVC: UIViewController {
     }
 
 }
-extension SwapVideoDetailVC: TrailerPlayerPlaybackDelegate {
+extension newSwapvideo: TrailerPlayerPlaybackDelegate {
     
     func trailerPlayer(_ player: TrailerPlayer, didUpdatePlaybackTime time: TimeInterval) {
         controlPanel.setProgress(withValue: time, duration: playerView.duration)
@@ -265,7 +311,7 @@ extension SwapVideoDetailVC: TrailerPlayerPlaybackDelegate {
     }
 }
 
-extension SwapVideoDetailVC: ControlPanelDelegate {
+extension newSwapvideo: ControlPanelDelegate {
     
     func controlPanel(_ panel: ControlPanel, didTapMuteButton button: UIButton) {
         playerView.toggleMute()
@@ -299,14 +345,14 @@ extension SwapVideoDetailVC: ControlPanelDelegate {
     }
 }
 
-extension SwapVideoDetailVC: ReplayPanelDelegate {
+extension newSwapvideo: ReplayPanelDelegate {
     
     func replayPanel(_ panel: ReplayPanel, didTapReplayButton: UIButton) {
         playerView.replay()
     }
 }
 
-extension SwapVideoDetailVC : UIPickerViewDelegate,
+extension newSwapvideo : UIPickerViewDelegate,
                                UINavigationControllerDelegate,
                                UIImagePickerControllerDelegate {
     func showImagePicker(selectedSource: UIImagePickerController.SourceType) {

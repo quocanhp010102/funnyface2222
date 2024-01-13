@@ -992,50 +992,106 @@ class APIService:NSObject {
         }
         // closure("Please Wait To Remove", nil)
     }
-////    func UploadVideoBatKyAndGen(_ url: String,
-////                              videoUpload: UIImage,
-////                              method: ApiMethod,
-////                              loading: Bool,
-////                              completion: @escaping ApiCompletion)
-////    {
-////        let form = MultipartForm(parts: [
-////            MultipartForm.Part(name: "src_vid", data: ImageUpload.jpegData(compressionQuality: 1)!, filename: "src_vid.mp4", contentType: "video/mp4"),
-////        ])
-////
-////        var request = URLRequest(url: URL(string:url)!)
-////        request.httpMethod = "POST"
-////        request.setValue(form.contentType, forHTTPHeaderField: "Content-Type")
-////        var result:(message:String, data:Data?) = (message: "Fail", data: nil)
-////
-////        URLSession.shared.uploadTask(with: request, from: form.bodyData){ (data, response, error) in
-////
-////            if let error = error {
-////                 // Error
-////            }
-////            result.data = data
-////            DispatchQueue.main.async {
-////                // check for fundamental networking error
-////                guard let data = data, error == nil else {
-////                    completion(nil, error)
-////                    return
-////                }
-////                // check for http errors
-////                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200, let res = response {
-////                }
-////                if let resJson = self.convertToJson(data) {
-////                    completion(resJson, nil)
-////                }
-////                if let resString = String(data: data, encoding: .utf8) {
-////                    completion(resString, error)
-////                }
-////                else {
-////                    completion(nil, error)
-////                }
-////            }
-////            // Do something after the upload task is complete
-////
-////       }.resume()
-////    }
+//    func UploadVideoBatKyAndGen(_ url: String,
+//                              videoUpload: UIImage,
+//                              method: ApiMethod,
+//                              loading: Bool,
+//                              completion: @escaping ApiCompletion)
+//    {
+//        let form = MultipartForm(parts: [
+//            MultipartForm.Part(name: "src_vid", data: videoUpload.jpegData(compressionQuality: 1)!, filename: "src_vid.mp4", contentType: "video/mp4"),
+//        ])
+//
+//        var request = URLRequest(url: URL(string:url)!)
+//        request.httpMethod = "POST"
+//        request.setValue(form.contentType, forHTTPHeaderField: "Content-Type")
+//        var result:(message:String, data:Data?) = (message: "Fail", data: nil)
+//
+//        URLSession.shared.uploadTask(with: request, from: form.bodyData){ (data, response, error) in
+//
+//            if let error = error {
+//                 // Error
+//            }
+//            result.data = data
+//            DispatchQueue.main.async {
+//                // check for fundamental networking error
+//                guard let data = data, error == nil else {
+//                    completion(nil, error)
+//                    return
+//                }
+//                // check for http errors
+//                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200, let res = response {
+//                }
+//                if let resJson = self.convertToJson(data) {
+//                    completion(resJson, nil)
+//                }
+//                if let resString = String(data: data, encoding: .utf8) {
+//                    completion(resString, error)
+//                }
+//                else {
+//                    completion(nil, error)
+//                }
+//            }
+//            // Do something after the upload task is complete
+//
+//       }.resume()
+//    }
+    func UploadVideoBatKyAndGen(_ url: String,
+                                 mediaData: Data,
+                                 method: ApiMethod,
+                                 loading: Bool,
+                                // Thêm tham số này để truyền token vào hàm
+                                closure: @escaping (_ response: DetailVideoModel?, _ error: Error?) -> Void) {
+
+        let form = MultipartForm(parts: [
+            MultipartForm.Part(name: "src_vid", data: mediaData, filename: "src_vid.mp4", contentType: "video/mp4"),
+        ])
+
+        let token_login: String = KeychainWrapper.standard.string(forKey: "token_login") ?? "ADSF"
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.setValue(form.contentType, forHTTPHeaderField: "Content-Type")
+
+        // Thêm token vào header
+        request.setValue("Bearer \(token_login)", forHTTPHeaderField: "Authorization")
+
+        var result: (message: String, data: Data?) = (message: "Fail", data: nil)
+
+        URLSession.shared.uploadTask(with: request, from: form.bodyData) { (data, response, error) in
+
+            if let error = error {
+                 // Handle error
+            }
+
+            result.data = data
+            DispatchQueue.main.async {
+                // check for fundamental networking error
+                guard let data = data, error == nil else {
+                    closure(nil, error)
+                    return
+                }
+
+                // check for http errors
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200, let res = response {
+                    // Handle HTTP error if needed
+                }
+
+                if let resJson = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    var itemAdd: DetailVideoModel = DetailVideoModel()
+                    itemAdd = itemAdd.initLoad(resJson)
+                    closure(itemAdd, nil)
+                } else if let resString = String(data: data, encoding: .utf8) {
+                    closure(nil, error) // You might want to replace `YourErrorType` with an appropriate error type
+                } else {
+                    closure(nil, error)
+                }
+
+            }
+            // Do something after the upload task is complete
+
+       }.resume()
+    }
+
 //    ///upload-gensk/{id_user}
     func UploadImagesToGenRieng(_ url: String,
                               ImageUpload: UIImage,
@@ -1106,6 +1162,7 @@ class APIService:NSObject {
 //        }
 //    }
 //    //https://lhvn.online/getdata/genvideo?id_video=10&device_them_su_kien=fds&ip_them_su_kien=g4&id_user=6&image=/var/www/build_futurelove/image/image_user/3/video/3_vid_86963.jpg&ten_video=chao em
+    
     func GenVideoSwap(device_them_su_kien:String,id_video:String,ip_them_su_kien:String,id_user:String,link_img:String, ten_video:String,closure: @escaping (_ response: DetailVideoModel?, _ error: Error?) -> Void) {
         let newString = link_img.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
         if let devicePro = device_them_su_kien.urlEncoded{
@@ -1121,7 +1178,47 @@ class APIService:NSObject {
             }
         }
     }
-    
+    func swapImageWithVideo(device: String, ip: String, userId: String, imageLink: String, videoFile: Data, closure: @escaping (_ response: DetailVideoModel?, _ error: Error?) -> Void) {
+        let urlString = "https://lhvn.online/getdata/genvideo/swap/imagevid"
+        let parameters: [String: String] = [
+            "device_them_su_kien": device,
+            "ip_them_su_kien": ip,
+            "id_user": userId,
+            "src_img": imageLink
+        ]
+        let token_login: String = KeychainWrapper.standard.string(forKey: "token_login") ?? "ADSF"
+        print("token : " + token_login + " 99999999. sdfdgdsfg")
+        AF.upload(multipartFormData: { (multipartFormData) in
+            for (key, value) in parameters {
+                if let data = value.data(using: .utf8) {
+                    multipartFormData.append(data, withName: key)
+                }
+            }
+            multipartFormData.append(videoFile, withName: "src_vid", fileName: "video.mp4", mimeType: "video/mp4")
+        }, to: urlString, method: .post, headers: ["Authorization": "Bearer " + token_login])
+        .responseJSON { (response) in
+            switch response.result {
+            case .success(let data):
+                if let data = data as? [String:Any]{
+                    var itemAdd:DetailVideoModel = DetailVideoModel()
+                    itemAdd = itemAdd.initLoad(data)
+                    closure( itemAdd, nil)
+                    
+                }else{
+                    closure( DetailVideoModel(), nil)
+                }
+            case .failure(let error):
+                closure(DetailVideoModel(), error)
+            }
+        }
+    }
+
+
+
+//    func swapImageVideo(device_them_su_kien:String,src_vid:String,ip_them_su_kien:String,id_user:String,link_img:String, ten_video:String,closure: @escaping (_ response: DetailVideoModel?, _ error: Error?) -> Void) {
+//        
+//        
+//    }
     func RemoveMyAccount(userID:String,password:String,closure: @escaping (_ response: String, _ error: Error?) -> Void) {
         let paramSend:[String: String] = ["password":password]
         let linkUrl = "https://metatechvn.store/deleteuser/" + userID
