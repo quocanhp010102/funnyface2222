@@ -108,9 +108,9 @@ class newSwapvideo: UIViewController {
                             if let response = response {
                                 print("Response: \(response)")
                                 let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
-                                vc.itemDataSend = response as! DetailVideoModel
-                                                    vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                                                    self.present(vc, animated: true, completion: nil)
+                                vc.itemDataSend = response
+                                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                                self.present(vc, animated: true, completion: nil)
                             } else if let error = error {
                                 print("Error: \(error)")
                             }

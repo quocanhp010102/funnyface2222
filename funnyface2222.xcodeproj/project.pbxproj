@@ -128,7 +128,6 @@
 		E66C94172B4E559600B74491 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C93C42B4E559600B74491 /* LoginModel.swift */; };
 		E66C941B2B4E55B000B74491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C94192B4E55B000B74491 /* MainViewController.swift */; };
 		E66C941C2B4E55B000B74491 /* LauchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C941A2B4E55B000B74491 /* LauchViewController.swift */; };
-		E66C941E2B4E5E3B00B74491 /* SwapVideoDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E66C941D2B4E5E3A00B74491 /* SwapVideoDetailVC.xib */; };
 		E69E059C2B52EF8100E9D2DB /* SwapVideoDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69E059B2B52EF8100E9D2DB /* SwapVideoDetailVC.xib */; };
 		E6B88CB02B4FD773005A02E6 /* newSwapvideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B88CAE2B4FD773005A02E6 /* newSwapvideo.swift */; };
 		E6B88CB12B4FD773005A02E6 /* newSwapvideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B88CAF2B4FD773005A02E6 /* newSwapvideo.xib */; };
@@ -260,7 +259,6 @@
 		E66C93C42B4E559600B74491 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		E66C94192B4E55B000B74491 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E66C941A2B4E55B000B74491 /* LauchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchViewController.swift; sourceTree = "<group>"; };
-		E66C941D2B4E5E3A00B74491 /* SwapVideoDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SwapVideoDetailVC.xib; path = "../../../../../../../Downloads/futurelove-ios-15-dec-2023/FutureLove/Screen/MovieScreen/SwapVideoDetailVC.xib"; sourceTree = "<group>"; };
 		E69E059B2B52EF8100E9D2DB /* SwapVideoDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwapVideoDetailVC.xib; sourceTree = "<group>"; };
 		E6B88CAE2B4FD773005A02E6 /* newSwapvideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSwapvideo.swift; sourceTree = "<group>"; };
 		E6B88CAF2B4FD773005A02E6 /* newSwapvideo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newSwapvideo.xib; sourceTree = "<group>"; };
@@ -526,7 +524,6 @@
 				E66C93652B4E559600B74491 /* tieudeclv.swift */,
 				E66C936F2B4E559600B74491 /* tieudeclv.xib */,
 				E6B88CAD2B4FD738005A02E6 /* newvideo */,
-				E66C941D2B4E5E3A00B74491 /* SwapVideoDetailVC.xib */,
 				E69E059B2B52EF8100E9D2DB /* SwapVideoDetailVC.xib */,
 				E66C936B2B4E559600B74491 /* SwapVideoDetailVC.swift */,
 				E66C936A2B4E559600B74491 /* thanhphanconclv.swift */,
@@ -864,7 +861,6 @@
 				E66C93C82B4E559600B74491 /* CollectionViewCell.xib in Resources */,
 				E66C94002B4E559600B74491 /* HowToUseVC.xib in Resources */,
 				E66C93EB2B4E559600B74491 /* CommentTableViewCell.xib in Resources */,
-				E66C941E2B4E5E3B00B74491 /* SwapVideoDetailVC.xib in Resources */,
 				E66C92DE2B4E52EC00B74491 /* Main.storyboard in Resources */,
 				E6B88CB12B4FD773005A02E6 /* newSwapvideo.xib in Resources */,
 				E66C92FB2B4E554000B74491 /* Template4TBVCell.xib in Resources */,
