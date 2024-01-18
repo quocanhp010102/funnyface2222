@@ -128,10 +128,30 @@
 		E66C94172B4E559600B74491 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C93C42B4E559600B74491 /* LoginModel.swift */; };
 		E66C941B2B4E55B000B74491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C94192B4E55B000B74491 /* MainViewController.swift */; };
 		E66C941C2B4E55B000B74491 /* LauchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C941A2B4E55B000B74491 /* LauchViewController.swift */; };
+		E67DF3432B5430300074D573 /* DetaiModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF3422B5430300074D573 /* DetaiModelUser.swift */; };
+		E67DF4632B551FD80074D573 /* StoryboardPageTabMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF4622B551FD80074D573 /* StoryboardPageTabMenuViewController.swift */; };
+		E67DF4652B5520410074D573 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF4642B5520410074D573 /* testViewController.swift */; };
+		E67DF4672B5520B70074D573 /* mhtestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF4662B5520B70074D573 /* mhtestViewController.swift */; };
+		E67DF46B2B553B0E0074D573 /* ImageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF46A2B553B0E0074D573 /* ImageMainViewController.swift */; };
+		E67DF46E2B5541140074D573 /* ListVideoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF46D2B5541140074D573 /* ListVideoModal.swift */; };
 		E69E059C2B52EF8100E9D2DB /* SwapVideoDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69E059B2B52EF8100E9D2DB /* SwapVideoDetailVC.xib */; };
 		E6B88CB02B4FD773005A02E6 /* newSwapvideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B88CAE2B4FD773005A02E6 /* newSwapvideo.swift */; };
 		E6B88CB12B4FD773005A02E6 /* newSwapvideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B88CAF2B4FD773005A02E6 /* newSwapvideo.xib */; };
 		E6B88CB32B4FED0F005A02E6 /* testnhay.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E6B88CB22B4FED0F005A02E6 /* testnhay.mp4 */; };
+		E6C6E99A2B565B7A0055D260 /* cacluachonimageclv.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9982B565B7A0055D260 /* cacluachonimageclv.swift */; };
+		E6C6E99B2B565B7A0055D260 /* cacluachonimageclv.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C6E9992B565B7A0055D260 /* cacluachonimageclv.xib */; };
+		E6C6E99E2B565B920055D260 /* thanhvienimagecon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E99C2B565B920055D260 /* thanhvienimagecon.swift */; };
+		E6C6E99F2B565B920055D260 /* thanhvienimagecon.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C6E99D2B565B920055D260 /* thanhvienimagecon.xib */; };
+		E6C6E9AC2B5683B70055D260 /* ViewMainImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9AB2B5683B70055D260 /* ViewMainImage.swift */; };
+		E6C6E9B32B568E8B0055D260 /* thanhviencell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9B12B568E8B0055D260 /* thanhviencell2.swift */; };
+		E6C6E9B42B568E8B0055D260 /* thanhviencell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C6E9B22B568E8B0055D260 /* thanhviencell2.xib */; };
+		E6C6E9B72B56E8590055D260 /* ImageStaboad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C6E9B62B56E8590055D260 /* ImageStaboad.storyboard */; };
+		E6C6E9BA2B57D2100055D260 /* SwapImageAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9B82B57D2100055D260 /* SwapImageAlbum.swift */; };
+		E6C6E9BB2B57D2100055D260 /* SwapImageAlbum.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C6E9B92B57D2100055D260 /* SwapImageAlbum.xib */; };
+		E6C6E9BE2B590D7A0055D260 /* listSwaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9BD2B590D7A0055D260 /* listSwaped.swift */; };
+		E6C6E9C12B590DA70055D260 /* listImageSwapedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9BF2B590DA70055D260 /* listImageSwapedCollectionViewCell.swift */; };
+		E6C6E9C22B590DA70055D260 /* listImageSwapedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C6E9C02B590DA70055D260 /* listImageSwapedCollectionViewCell.xib */; };
+		E6C6E9C42B59129E0055D260 /* ImagedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9C32B59129E0055D260 /* ImagedModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -259,10 +279,30 @@
 		E66C93C42B4E559600B74491 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		E66C94192B4E55B000B74491 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E66C941A2B4E55B000B74491 /* LauchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchViewController.swift; sourceTree = "<group>"; };
+		E67DF3422B5430300074D573 /* DetaiModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaiModelUser.swift; sourceTree = "<group>"; };
+		E67DF4622B551FD80074D573 /* StoryboardPageTabMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardPageTabMenuViewController.swift; sourceTree = "<group>"; };
+		E67DF4642B5520410074D573 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		E67DF4662B5520B70074D573 /* mhtestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mhtestViewController.swift; sourceTree = "<group>"; };
+		E67DF46A2B553B0E0074D573 /* ImageMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMainViewController.swift; sourceTree = "<group>"; };
+		E67DF46D2B5541140074D573 /* ListVideoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVideoModal.swift; sourceTree = "<group>"; };
 		E69E059B2B52EF8100E9D2DB /* SwapVideoDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwapVideoDetailVC.xib; sourceTree = "<group>"; };
 		E6B88CAE2B4FD773005A02E6 /* newSwapvideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSwapvideo.swift; sourceTree = "<group>"; };
 		E6B88CAF2B4FD773005A02E6 /* newSwapvideo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newSwapvideo.xib; sourceTree = "<group>"; };
 		E6B88CB22B4FED0F005A02E6 /* testnhay.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = testnhay.mp4; sourceTree = "<group>"; };
+		E6C6E9982B565B7A0055D260 /* cacluachonimageclv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cacluachonimageclv.swift; sourceTree = "<group>"; };
+		E6C6E9992B565B7A0055D260 /* cacluachonimageclv.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cacluachonimageclv.xib; sourceTree = "<group>"; };
+		E6C6E99C2B565B920055D260 /* thanhvienimagecon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thanhvienimagecon.swift; sourceTree = "<group>"; };
+		E6C6E99D2B565B920055D260 /* thanhvienimagecon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = thanhvienimagecon.xib; sourceTree = "<group>"; };
+		E6C6E9AB2B5683B70055D260 /* ViewMainImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMainImage.swift; sourceTree = "<group>"; };
+		E6C6E9B12B568E8B0055D260 /* thanhviencell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thanhviencell2.swift; sourceTree = "<group>"; };
+		E6C6E9B22B568E8B0055D260 /* thanhviencell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = thanhviencell2.xib; sourceTree = "<group>"; };
+		E6C6E9B62B56E8590055D260 /* ImageStaboad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageStaboad.storyboard; sourceTree = "<group>"; };
+		E6C6E9B82B57D2100055D260 /* SwapImageAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapImageAlbum.swift; sourceTree = "<group>"; };
+		E6C6E9B92B57D2100055D260 /* SwapImageAlbum.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwapImageAlbum.xib; sourceTree = "<group>"; };
+		E6C6E9BD2B590D7A0055D260 /* listSwaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listSwaped.swift; sourceTree = "<group>"; };
+		E6C6E9BF2B590DA70055D260 /* listImageSwapedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listImageSwapedCollectionViewCell.swift; sourceTree = "<group>"; };
+		E6C6E9C02B590DA70055D260 /* listImageSwapedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = listImageSwapedCollectionViewCell.xib; sourceTree = "<group>"; };
+		E6C6E9C32B59129E0055D260 /* ImagedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagedModel.swift; sourceTree = "<group>"; };
 		EB38B885162FC0397A047C21 /* Pods-funnyface2222.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funnyface2222.debug.xcconfig"; path = "Target Support Files/Pods-funnyface2222/Pods-funnyface2222.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -477,6 +517,7 @@
 				E66C93A72B4E559600B74491 /* modal */,
 				E66C93A92B4E559600B74491 /* Event */,
 				E66C93B12B4E559600B74491 /* MovieScreen */,
+				E66C93B62B4E559600B74491 /* loginView.xib */,
 				E66C93B42B4E559600B74491 /* login */,
 			);
 			path = screen;
@@ -507,9 +548,9 @@
 			isa = PBXGroup;
 			children = (
 				E66C93602B4E559600B74491 /* mhchinh.storyboard */,
-				E66C93732B4E559600B74491 /* mhchinhController.swift */,
-				E66C93612B4E559600B74491 /* cell */,
-				E66C93702B4E559600B74491 /* modal */,
+				E67DF4692B553AD10074D573 /* Imagess */,
+				E67DF4682B553AC40074D573 /* Video */,
+				E67DF4612B551FB10074D573 /* selectcontroller */,
 			);
 			path = mainscreen;
 			sourceTree = "<group>";
@@ -717,7 +758,6 @@
 		E66C93B42B4E559600B74491 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				E66C93B62B4E559600B74491 /* loginView.xib */,
 				E66C93B82B4E559600B74491 /* login.storyboard */,
 				E66C93B92B4E559600B74491 /* Register */,
 				E66C93BF2B4E559600B74491 /* loin */,
@@ -772,13 +812,97 @@
 			path = viewController;
 			sourceTree = "<group>";
 		};
+		E67DF4612B551FB10074D573 /* selectcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				E67DF4622B551FD80074D573 /* StoryboardPageTabMenuViewController.swift */,
+				E67DF4642B5520410074D573 /* testViewController.swift */,
+				E67DF4662B5520B70074D573 /* mhtestViewController.swift */,
+			);
+			path = selectcontroller;
+			sourceTree = "<group>";
+		};
+		E67DF4682B553AC40074D573 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				E66C93612B4E559600B74491 /* cell */,
+				E66C93702B4E559600B74491 /* modal */,
+				E66C93732B4E559600B74491 /* mhchinhController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		E67DF4692B553AD10074D573 /* Imagess */ = {
+			isa = PBXGroup;
+			children = (
+				E6C6E9BC2B590D590055D260 /* swaped */,
+				E6C6E9B52B56E8420055D260 /* mhImage */,
+				E6C6E9A02B566C0D0055D260 /* categoryImage */,
+				E6C6E9972B565B0D0055D260 /* cell */,
+				E67DF46C2B5540DB0074D573 /* modal */,
+				E67DF46A2B553B0E0074D573 /* ImageMainViewController.swift */,
+			);
+			path = Imagess;
+			sourceTree = "<group>";
+		};
+		E67DF46C2B5540DB0074D573 /* modal */ = {
+			isa = PBXGroup;
+			children = (
+				E67DF46D2B5541140074D573 /* ListVideoModal.swift */,
+				E6C6E9C32B59129E0055D260 /* ImagedModel.swift */,
+			);
+			path = modal;
+			sourceTree = "<group>";
+		};
 		E6B88CAD2B4FD738005A02E6 /* newvideo */ = {
 			isa = PBXGroup;
 			children = (
 				E6B88CAE2B4FD773005A02E6 /* newSwapvideo.swift */,
 				E6B88CAF2B4FD773005A02E6 /* newSwapvideo.xib */,
+				E67DF3422B5430300074D573 /* DetaiModelUser.swift */,
 			);
 			path = newvideo;
+			sourceTree = "<group>";
+		};
+		E6C6E9972B565B0D0055D260 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6C6E9982B565B7A0055D260 /* cacluachonimageclv.swift */,
+				E6C6E9992B565B7A0055D260 /* cacluachonimageclv.xib */,
+				E6C6E99C2B565B920055D260 /* thanhvienimagecon.swift */,
+				E6C6E99D2B565B920055D260 /* thanhvienimagecon.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		E6C6E9A02B566C0D0055D260 /* categoryImage */ = {
+			isa = PBXGroup;
+			children = (
+				E6C6E9AB2B5683B70055D260 /* ViewMainImage.swift */,
+				E6C6E9B12B568E8B0055D260 /* thanhviencell2.swift */,
+				E6C6E9B22B568E8B0055D260 /* thanhviencell2.xib */,
+				E6C6E9B82B57D2100055D260 /* SwapImageAlbum.swift */,
+				E6C6E9B92B57D2100055D260 /* SwapImageAlbum.xib */,
+			);
+			path = categoryImage;
+			sourceTree = "<group>";
+		};
+		E6C6E9B52B56E8420055D260 /* mhImage */ = {
+			isa = PBXGroup;
+			children = (
+				E6C6E9B62B56E8590055D260 /* ImageStaboad.storyboard */,
+			);
+			path = mhImage;
+			sourceTree = "<group>";
+		};
+		E6C6E9BC2B590D590055D260 /* swaped */ = {
+			isa = PBXGroup;
+			children = (
+				E6C6E9BD2B590D7A0055D260 /* listSwaped.swift */,
+				E6C6E9BF2B590DA70055D260 /* listImageSwapedCollectionViewCell.swift */,
+				E6C6E9C02B590DA70055D260 /* listImageSwapedCollectionViewCell.xib */,
+			);
+			path = swaped;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -843,6 +967,8 @@
 			files = (
 				E66C94082B4E559600B74491 /* ImagesGocTBVCell.xib in Resources */,
 				E66C93002B4E554000B74491 /* Template3TBVCell.xib in Resources */,
+				E6C6E9BB2B57D2100055D260 /* SwapImageAlbum.xib in Resources */,
+				E6C6E99B2B565B7A0055D260 /* cacluachonimageclv.xib in Resources */,
 				E69E059C2B52EF8100E9D2DB /* SwapVideoDetailVC.xib in Resources */,
 				E66C93D92B4E559600B74491 /* tieudeclv.xib in Resources */,
 				E66C93CA2B4E559600B74491 /* SlideMenuViewController.xib in Resources */,
@@ -859,13 +985,16 @@
 				E66C93F92B4E559600B74491 /* InputPasswordVC.xib in Resources */,
 				E66C940F2B4E559600B74491 /* login.storyboard in Resources */,
 				E66C93C82B4E559600B74491 /* CollectionViewCell.xib in Resources */,
+				E6C6E9B72B56E8590055D260 /* ImageStaboad.storyboard in Resources */,
 				E66C94002B4E559600B74491 /* HowToUseVC.xib in Resources */,
 				E66C93EB2B4E559600B74491 /* CommentTableViewCell.xib in Resources */,
 				E66C92DE2B4E52EC00B74491 /* Main.storyboard in Resources */,
 				E6B88CB12B4FD773005A02E6 /* newSwapvideo.xib in Resources */,
 				E66C92FB2B4E554000B74491 /* Template4TBVCell.xib in Resources */,
 				E66C940D2B4E559600B74491 /* loginView.xib in Resources */,
+				E6C6E9C22B590DA70055D260 /* listImageSwapedCollectionViewCell.xib in Resources */,
 				E66C93D62B4E559600B74491 /* thanhphanconclv.xib in Resources */,
+				E6C6E99F2B565B920055D260 /* thanhvienimagecon.xib in Resources */,
 				E66C92FA2B4E554000B74491 /* Template2TBVCell.xib in Resources */,
 				E66C93C62B4E559600B74491 /* SlideMenuTableViewCell.xib in Resources */,
 				E66C93ED2B4E559600B74491 /* CommentsViewController.xib in Resources */,
@@ -877,6 +1006,7 @@
 				E66C93F52B4E559600B74491 /* RecentCommentTableViewCell.xib in Resources */,
 				E66C93CB2B4E559600B74491 /* mhchinh.storyboard in Resources */,
 				E6B88CB32B4FED0F005A02E6 /* testnhay.mp4 in Resources */,
+				E6C6E9B42B568E8B0055D260 /* thanhviencell2.xib in Resources */,
 				E66C94042B4E559600B74491 /* EventViewController.xib in Resources */,
 				E66C92FC2B4E554000B74491 /* PageHomeCLVCell.xib in Resources */,
 				E66C93F72B4E559600B74491 /* UserEventViewController.xib in Resources */,
@@ -946,6 +1076,7 @@
 				E66C94152B4E559600B74491 /* LoginAPI.swift in Sources */,
 				E66C933A2B4E557A00B74491 /* UIViewController+Extension.swift in Sources */,
 				E66C93F32B4E559600B74491 /* ChangerAvatarViewController.swift in Sources */,
+				E6C6E9C12B590DA70055D260 /* listImageSwapedCollectionViewCell.swift in Sources */,
 				E66C93552B4E558700B74491 /* Configs.swift in Sources */,
 				E66C93092B4E554F00B74491 /* LoveModel.swift in Sources */,
 				E66C92F92B4E554000B74491 /* Template4TBVCell.swift in Sources */,
@@ -959,19 +1090,25 @@
 				E66C93DE2B4E559600B74491 /* DetailModel.swift in Sources */,
 				E66C94072B4E559600B74491 /* EventViewController.swift in Sources */,
 				E66C93372B4E557A00B74491 /* Int+Extension.swift in Sources */,
+				E6C6E9AC2B5683B70055D260 /* ViewMainImage.swift in Sources */,
 				E66C93442B4E558000B74491 /* BaseViewController.swift in Sources */,
 				E66C94142B4E559600B74491 /* loginView.swift in Sources */,
+				E67DF46E2B5541140074D573 /* ListVideoModal.swift in Sources */,
 				E66C93452B4E558000B74491 /* LoadingView.swift in Sources */,
 				E66C93DA2B4E559600B74491 /* DetailVideoModel.swift in Sources */,
+				E6C6E9C42B59129E0055D260 /* ImagedModel.swift in Sources */,
 				E66C94112B4E559600B74491 /* RegisterAPI.swift in Sources */,
 				E66C93262B4E556A00B74491 /* HomeModel.swift in Sources */,
+				E6C6E99A2B565B7A0055D260 /* cacluachonimageclv.swift in Sources */,
 				E66C94162B4E559600B74491 /* LoginServiceConfiguration.swift in Sources */,
 				E66C93CC2B4E559600B74491 /* DetailSwapVideoVC.swift in Sources */,
 				E66C94032B4E559600B74491 /* ProfileModel.swift in Sources */,
+				E67DF4652B5520410074D573 /* testViewController.swift in Sources */,
 				E66C93F12B4E559600B74491 /* InputPasswordVC.swift in Sources */,
 				E66C93F02B4E559600B74491 /* RecentCommentTableViewCell.swift in Sources */,
 				E66C93392B4E557A00B74491 /* UIView+Extension.swift in Sources */,
 				E66C93C92B4E559600B74491 /* SlideMenuTableViewCell.swift in Sources */,
+				E67DF3432B5430300074D573 /* DetaiModelUser.swift in Sources */,
 				E66C93DC2B4E559600B74491 /* mhchinhController.swift in Sources */,
 				E6B88CB02B4FD773005A02E6 /* newSwapvideo.swift in Sources */,
 				E66C92F72B4E554000B74491 /* Template2TBVCell.swift in Sources */,
@@ -984,15 +1121,21 @@
 				E66C93E82B4E559600B74491 /* ReportCommentVC.swift in Sources */,
 				E66C940B2B4E559600B74491 /* ControlPanel.swift in Sources */,
 				E66C934F2B4E558700B74491 /* ServiceConstant.swift in Sources */,
+				E67DF4632B551FD80074D573 /* StoryboardPageTabMenuViewController.swift in Sources */,
+				E67DF4672B5520B70074D573 /* mhtestViewController.swift in Sources */,
 				E66C94012B4E559600B74491 /* DetailHowToVC.swift in Sources */,
 				E66C93FD2B4E559600B74491 /* HowToCLVCell.swift in Sources */,
 				E66C93FC2B4E559600B74491 /* ProfileViewController.swift in Sources */,
 				E66C93FE2B4E559600B74491 /* HowToUseVC.swift in Sources */,
+				E6C6E99E2B565B920055D260 /* thanhvienimagecon.swift in Sources */,
 				E66C93EE2B4E559600B74491 /* CommentsModel.swift in Sources */,
 				E66C93D42B4E559600B74491 /* thanhphanconclv.swift in Sources */,
 				E66C93C52B4E559600B74491 /* SlideMenuViewController.swift in Sources */,
+				E6C6E9B32B568E8B0055D260 /* thanhviencell2.swift in Sources */,
+				E6C6E9BE2B590D7A0055D260 /* listSwaped.swift in Sources */,
 				E66C93512B4E558700B74491 /* ConfigurationBase.swift in Sources */,
 				E66C93252B4E556A00B74491 /* HomeServiceConfiguration.swift in Sources */,
+				E67DF46B2B553B0E0074D573 /* ImageMainViewController.swift in Sources */,
 				E66C93CF2B4E559600B74491 /* tieudeclv.swift in Sources */,
 				E66C93362B4E557A00B74491 /* UIColor+Extension.swift in Sources */,
 				E66C93D52B4E559600B74491 /* SwapVideoDetailVC.swift in Sources */,
@@ -1010,6 +1153,7 @@
 				E66C941C2B4E55B000B74491 /* LauchViewController.swift in Sources */,
 				E66C92EB2B4E551F00B74491 /* R.generated.swift in Sources */,
 				E66C93E32B4E559600B74491 /* LoveViewController.swift in Sources */,
+				E6C6E9BA2B57D2100055D260 /* SwapImageAlbum.swift in Sources */,
 				E66C94132B4E559600B74491 /* RegisterServiceConfiguration.swift in Sources */,
 				E66C933B2B4E557A00B74491 /* String+Extension.swift in Sources */,
 				E66C94172B4E559600B74491 /* LoginModel.swift in Sources */,

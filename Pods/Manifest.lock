@@ -6,14 +6,15 @@ PODS:
   - DeviceKit (4.9.0)
   - DropDown (2.3.13)
   - HGCircularSlider (2.2.0)
-  - Kingfisher (7.10.1)
+  - Kingfisher (7.10.2)
   - R.swift (7.3.2)
   - SETabView (2.0.0)
   - SnapKit (5.6.0)
+  - Swift_PageMenu (1.4.2)
   - SwiftKeychainWrapper (4.0.1)
   - SwiftLint (0.54.0)
   - SwiftVideoBackground (3.4.0)
-  - Toast-Swift (5.0.1)
+  - Toast-Swift (5.1.0)
   - TrailerPlayer (1.4.8)
   - WCLShineButton (1.0.8)
 
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - R.swift
   - SETabView
   - SnapKit (~> 5.6.0)
+  - Swift_PageMenu (~> 1.4)
   - SwiftKeychainWrapper
   - SwiftLint
   - SwiftVideoBackground
@@ -46,6 +48,7 @@ SPEC REPOS:
     - R.swift
     - SETabView
     - SnapKit
+    - Swift_PageMenu
     - SwiftKeychainWrapper
     - SwiftLint
     - SwiftVideoBackground
@@ -60,17 +63,18 @@ SPEC CHECKSUMS:
   DeviceKit: 847709bf70b78fd9ab765bd571fb9f5f815c3fc1
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   HGCircularSlider: afb1942743a2df156dcc7a3500216e523e14266b
-  Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
+  Kingfisher: 99edc495d3b7607e6425f0d6f6847b2abd6d716d
   R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
   SETabView: 20a3418b1bc61b36d7f6fb9195f1ebb0907bdf35
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Swift_PageMenu: 6cc3e92540729606bd66c9b35a0886ed6c8ed899
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
   SwiftVideoBackground: 826e0567c737ded2a211aa309e9951c643695e8f
-  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  Toast-Swift: dd369e68ee529f542c65bd0d0c6c50cd743cf6f2
   TrailerPlayer: 9117cc50a183a6d060ae874552395b37951a6533
   WCLShineButton: 315ee9b0024b1cc56dba34fb6a8878937eb8d0b1
 
-PODFILE CHECKSUM: a7fea02a52cc8cfa4e13014da91e1756aae46d67
+PODFILE CHECKSUM: cfcaebbd5f7b049bc22e3ff148ce7d4efa46dc67
 
 COCOAPODS: 1.14.3

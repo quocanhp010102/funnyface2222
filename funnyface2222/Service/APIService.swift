@@ -529,6 +529,69 @@ class APIService:NSObject {
         task.resume()
     }
     
+    func requestSON(_ url: String,
+                    param: ApiParam?,
+                    method: ApiMethod,
+                    loading: Bool,
+                    completion: @escaping ApiCompletion)
+    {
+        var request:URLRequest!
+        
+        // set method & param
+        if method == .GET {
+            if let paramString = param?.stringFromHttpParameters() {
+                request = URLRequest(url: URL(string:"\(url)?\(paramString)")!)
+            }
+            else {
+                request = URLRequest(url: URL(string:url)!)
+            }
+        }
+        else if method == .POST {
+            request = URLRequest(url: URL(string:url)!)
+            
+            // content-type
+            let headers: Dictionary = ["Content-Type": "application/json"]
+            request.allHTTPHeaderFields = headers
+            
+            do {
+                if let p = param {
+                    request.httpBody = try JSONSerialization.data(withJSONObject: p, options: .prettyPrinted)
+                }
+            } catch { }
+        }
+        
+        request.timeoutInterval = 30
+        request.httpMethod = method.rawValue
+        
+        //
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            DispatchQueue.main.async {
+                
+                // check for fundamental networking error
+                guard let data = data, error == nil else {
+                    completion(nil, error)
+                    return
+                }
+                
+                // check for http errors
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200, let res = response {
+                }
+                
+                if let resJson = self.convertToJson(data) {
+                    completion(resJson, nil)
+                }
+                else if let resString = String(data: data, encoding: .utf8) {
+                    completion(resString, error)
+                }
+                else {
+                    completion(nil, error)
+                }
+            }
+        }
+        task.resume()
+    }
+    
     func requestFreeHostSON(_ url: String,
                             param: [String: String],
                             method: ApiMethod,
@@ -666,7 +729,26 @@ class APIService:NSObject {
         }
         closure(nil, nil)
     }
-    
+    func GetListImages(albuum:String,closure: @escaping (_ response: [ListVideoModal]?, _ error: Error?) -> Void) {
+        requestSON("https://api.mangasocial.online/get/list_image/1?album="+albuum, param: nil, method: .GET, loading: true) { (data, error) in
+            if let d = data as? [String: Any] {
+                var listComicReturn:[ListVideoModal] = [ListVideoModal]()
+                if let slideshows = d["list_sukien_video"] as? [[String : Any]] {
+                    for item1 in slideshows{
+                       
+                                var commicAdd:ListVideoModal = ListVideoModal()
+                                commicAdd = commicAdd.initLoad(item1)
+                                listComicReturn.append(commicAdd)
+                            
+                        
+                    }
+                }
+                closure(listComicReturn, nil)
+            }else {
+                closure(nil, error)
+            }
+        }
+    }
     func getIP(closure: @escaping (_ response: IPAddress?, _ error: Error?) -> Void) {
         requestJSON("https://ipinfo.io/json", param: nil, method: .GET, loading: true) { (data, error) in
             if let data2 = data as? [String:Any]{
@@ -1036,12 +1118,97 @@ class APIService:NSObject {
 //
 //       }.resume()
 //    }
+    func requestTokenFolderGhepDoi1(_ url: String,
+                              link1: String,
+                                
+                             param: ApiParam?,
+                             method: ApiMethod,
+                             loading: Bool,
+                             completion: @escaping ApiCompletion)
+    {
+        var request:URLRequest!
+        
+        // set method & param
+        if method == .GET {
+            if let token_login: String = KeychainWrapper.standard.string(forKey: "token_login"){
+                let namString = link1.replacingOccurrences(of: "\"", with: "")
+                //let nuString = linkNu.replacingOccurrences(of: "\"", with: "")
+
+                let headers: Dictionary = ["link1":namString ,"Authorization":"Bearer " + token_login]
+                if let paramString = param?.stringFromHttpParameters() {
+                    if let linkPro = "\(url)?\(paramString)".urlEncoded{
+                        request = URLRequest(url: (URL(string:linkPro )!))
+                    }
+                }
+                else {
+                    if let linkPro = "\(url)".urlEncoded{
+                        request = URLRequest(url: (URL(string:"\(url)" )!))
+                    }
+                }
+                request.allHTTPHeaderFields = headers
+            }
+        }
+        
+        request.timeoutInterval = 1000
+        request.httpMethod = method.rawValue
+        
+        //
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            DispatchQueue.main.async {
+                
+                // check for fundamental networking error
+                guard let data = data, error == nil else {
+                    completion(nil, error)
+                    return
+                }
+                
+                // check for http errors
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200, let res = response {
+                }
+                
+                if let resJson = self.convertToJson(data) {
+                    completion(resJson, nil)
+                }
+                else if let resString = String(data: data, encoding: .utf8) {
+                    completion(resString, error)
+                }
+                else {
+                    completion(nil, error)
+                }
+            }
+        }
+        task.resume()
+    }
+    func SwapListAlbum (_ url: String,
+                        linkImages : String,
+                        closure: @escaping (_ response: [String]?, _ error: Error?) -> Void
+    ){
+        requestTokenFolderGhepDoi1(url, link1: linkImages, param: nil, method: .GET, loading: true) { (data, error) in
+            if let d = data as? [String: Any] {
+                var listComicReturn:[String] = [String]()
+                if let slideshows = d["link anh da swap"] as? [String] {
+                    for item1 in slideshows{
+                       
+                               
+                                listComicReturn.append(item1)
+                            
+                        
+                    }
+                }
+                closure(listComicReturn, nil)
+            }else {
+                closure(nil, error)
+            }
+        }
+        
+    }
     func UploadVideoBatKyAndGen(_ url: String,
                                  mediaData: Data,
                                  method: ApiMethod,
                                  loading: Bool,
                                 // Thêm tham số này để truyền token vào hàm
-                                closure: @escaping (_ response: DetailVideoModel?, _ error: Error?) -> Void) {
+                                closure: @escaping (_ response: DetaiModelUser?, _ error: Error?) -> Void) {
 
         let form = MultipartForm(parts: [
             MultipartForm.Part(name: "src_vid", data: mediaData, filename: "src_vid.mp4", contentType: "video/mp4"),
@@ -1077,7 +1244,7 @@ class APIService:NSObject {
                 }
 
                 if let resJson = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    var itemAdd: DetailVideoModel = DetailVideoModel()
+                    var itemAdd: DetaiModelUser = DetaiModelUser()
                     itemAdd = itemAdd.initLoad(resJson)
                     closure(itemAdd, nil)
                 } else if let resString = String(data: data, encoding: .utf8) {

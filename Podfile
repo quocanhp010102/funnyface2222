@@ -23,6 +23,7 @@ pod 'CircleProgressView'
   pod 'SwiftKeychainWrapper'
   pod 'SwiftVideoBackground'
   pod 'WCLShineButton'
+  pod 'Swift_PageMenu', '~> 1.4'
 end
 
 post_install do |installer|
