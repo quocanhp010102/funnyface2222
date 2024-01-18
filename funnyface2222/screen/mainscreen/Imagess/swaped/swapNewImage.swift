@@ -1,16 +1,11 @@
 //
-//  SwapImageAlbum.swift
+//  swapNewImage.swift
 //  funnyface2222
 //
-//  Created by quocanhppp on 17/01/2024.
+//  Created by quocanhppp on 18/01/2024.
 //
 
-//
-//  SwapVideoDetailVC.swift
-//  FutureLove
-//
-//  Created by khongtinduoc on 11/4/23.
-//
+
 
 import UIKit
 import TrailerPlayer
@@ -18,13 +13,14 @@ import HGCircularSlider
 import Kingfisher
 import Vision
 
-class SwapImageAlbum: UIViewController {
+class swapNewImage: UIViewController {
     var iDUser:Int = AppConstant.userId ?? 0
     var idAlbum:Int = 0
     //var itemLink:Temple2VideoModel = Temple2VideoModel()
     @IBOutlet weak var buttonBack: UIButton!
     var IsStopBoyAnimation = true
     @IBOutlet weak var boyImage: UIImageView!
+    @IBOutlet weak var boyImage2: UIImageView!
     var image_Data_Nam:UIImage = UIImage()
     var linkImageVideoSwap:String = ""
     @IBOutlet weak var circularSlider: CircularSlider!
@@ -120,7 +116,7 @@ class SwapImageAlbum: UIViewController {
 //                        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
 //                        self.present(vc, animated: true, completion: nil)
 //                    }
-//                   
+//
 //                }
             }
         }
@@ -192,11 +188,7 @@ class SwapImageAlbum: UIViewController {
             APIService.shared.SwapListAlbum("https://api.mangasocial.online/getdata/swap/listimage?device_them_su_kien=gdgdgf&ip_them_su_kien=dfbdfbdf&id_user=143&list_folder=album_3",linkImages: self.linkImageVideoSwap){
                 response,error in
                                     if let response = response{
-                                        let storyboard = UIStoryboard(name: "ImageStaboad", bundle: nil)
-                                        let vc = storyboard.instantiateViewController(withIdentifier: "listSwaped") as! listSwaped
-                                        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                                        vc.listImaged = response
-                                        self.present(vc, animated: true, completion: nil)
+                                       print(response)
                                     }
                 
                                 }
@@ -249,12 +241,12 @@ class SwapImageAlbum: UIViewController {
         
         controlPanel.delegate = self
 //        playerView.addControlPanel(controlPanel)
-//        
+//
 //        if !autoReplay {
 //            replayPanel.delegate = self
 //            playerView.addReplayPanel(replayPanel)
 //        }
-//        
+//
 //        if !autoPlay {
 //            let button = UIButton()
 //            button.tintColor = .white
@@ -278,7 +270,7 @@ class SwapImageAlbum: UIViewController {
     }
 
 }
-extension SwapImageAlbum: TrailerPlayerPlaybackDelegate {
+extension swapNewImage: TrailerPlayerPlaybackDelegate {
     
     func trailerPlayer(_ player: TrailerPlayer, didUpdatePlaybackTime time: TimeInterval) {
         controlPanel.setProgress(withValue: time, duration: playerView.duration)
@@ -289,7 +281,7 @@ extension SwapImageAlbum: TrailerPlayerPlaybackDelegate {
     }
 }
 
-extension SwapImageAlbum: ControlPanelDelegate {
+extension swapNewImage: ControlPanelDelegate {
     
     func controlPanel(_ panel: ControlPanel, didTapMuteButton button: UIButton) {
         playerView.toggleMute()
@@ -323,14 +315,14 @@ extension SwapImageAlbum: ControlPanelDelegate {
     }
 }
 
-extension SwapImageAlbum: ReplayPanelDelegate {
+extension swapNewImage: ReplayPanelDelegate {
     
     func replayPanel(_ panel: ReplayPanel, didTapReplayButton: UIButton) {
         playerView.replay()
     }
 }
 
-extension SwapImageAlbum : UIPickerViewDelegate,
+extension swapNewImage : UIPickerViewDelegate,
                                UINavigationControllerDelegate,
                                UIImagePickerControllerDelegate {
     func showImagePicker(selectedSource: UIImagePickerController.SourceType) {
