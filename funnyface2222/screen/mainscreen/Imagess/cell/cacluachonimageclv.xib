@@ -42,9 +42,6 @@
                                         <buttonConfiguration key="configuration" style="plain" title="show more">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="sactionView" destination="Nis-J0-bba" eventType="touchDown" id="kEP-9N-Vq3"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

@@ -136,11 +136,55 @@ class SwapVideoDetailVC: UIViewController {
                 self.IsStopBoyAnimation = true
                 self.showImagePicker(selectedSource: .photoLibrary)
             }
+                //them
+            let libaryBtn1 = UIAlertAction(title: "Libary11", style: .default) { _ in
+                let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "mhtestViewController") as! mhtestViewController
+                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                self.present(vc, animated: true, completion: nil)
+            }
+            let libaryBtn2 = UIAlertAction(title: "Libary", style: .default) { _ in
+                self.IsStopBoyAnimation = true
+                self.showImagePicker(selectedSource: .photoLibrary)
+            }
+            let libaryBtn3 = UIAlertAction(title: "Libary", style: .default) { _ in
+                self.IsStopBoyAnimation = true
+                self.showImagePicker(selectedSource: .photoLibrary)
+            }
+            let libaryBtn4 = UIAlertAction(title: "Libary", style: .default) { _ in
+                self.IsStopBoyAnimation = true
+                self.showImagePicker(selectedSource: .photoLibrary)
+            }
+            let libaryBtn5 = UIAlertAction(title: "Libary", style: .default) { _ in
+                self.IsStopBoyAnimation = true
+                self.showImagePicker(selectedSource: .photoLibrary)
+            }
+            let libaryBtn6 = UIAlertAction(title: "Libary", style: .default) { _ in
+                self.IsStopBoyAnimation = true
+                self.showImagePicker(selectedSource: .photoLibrary)
+            }
+            let libaryBtn7 = UIAlertAction(title: "Libary", style: .default) { _ in
+                self.IsStopBoyAnimation = true
+                self.showImagePicker(selectedSource: .photoLibrary)
+            }
+            let libaryBtn8 = UIAlertAction(title: "Libary", style: .default) { _ in
+                self.IsStopBoyAnimation = true
+                self.showImagePicker(selectedSource: .photoLibrary)
+            }
+            //them
             let cancel = UIAlertAction(title: "Cancel", style: .cancel){ _ in
                 self.dismiss(animated: true)
             }
             ac.addAction(cameraBtn)
             ac.addAction(libaryBtn)
+            ac.addAction(libaryBtn1)
+            ac.addAction(libaryBtn2)
+            ac.addAction(libaryBtn3)
+            ac.addAction(libaryBtn4)
+            ac.addAction(libaryBtn5)
+            ac.addAction(libaryBtn6)
+            ac.addAction(libaryBtn7)
+            ac.addAction(libaryBtn8)
             ac.addAction(cancel)
             
             self.present(ac, animated: true)

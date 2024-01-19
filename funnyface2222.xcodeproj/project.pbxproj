@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		CE4311AC50DD594411F5C51F /* Pods_funnyface2222.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3A400DC692F4EF37497AE5 /* Pods_funnyface2222.framework */; };
+		E64E47842B5A52DA007DDAD0 /* contentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E47832B5A52DA007DDAD0 /* contentView.swift */; };
+		E64E47872B5A5AD1007DDAD0 /* ActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E47862B5A5AD1007DDAD0 /* ActionSheets.swift */; };
+		E64E478A2B5A6BC5007DDAD0 /* AlbumvideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E47892B5A6BC5007DDAD0 /* AlbumvideoController.swift */; };
+		E64E478E2B5A7112007DDAD0 /* VideoCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E478C2B5A7112007DDAD0 /* VideoCellCollectionViewCell.swift */; };
+		E64E478F2B5A7112007DDAD0 /* VideoCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64E478D2B5A7112007DDAD0 /* VideoCellCollectionViewCell.xib */; };
 		E66C92D72B4E52EC00B74491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C92D62B4E52EC00B74491 /* AppDelegate.swift */; };
 		E66C92D92B4E52EC00B74491 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C92D82B4E52EC00B74491 /* SceneDelegate.swift */; };
 		E66C92DE2B4E52EC00B74491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66C92DC2B4E52EC00B74491 /* Main.storyboard */; };
@@ -159,6 +164,11 @@
 /* Begin PBXFileReference section */
 		6B9A5286F424308C091C593A /* Pods-funnyface2222.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funnyface2222.release.xcconfig"; path = "Target Support Files/Pods-funnyface2222/Pods-funnyface2222.release.xcconfig"; sourceTree = "<group>"; };
 		CB3A400DC692F4EF37497AE5 /* Pods_funnyface2222.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_funnyface2222.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64E47832B5A52DA007DDAD0 /* contentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contentView.swift; sourceTree = "<group>"; };
+		E64E47862B5A5AD1007DDAD0 /* ActionSheets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheets.swift; sourceTree = "<group>"; };
+		E64E47892B5A6BC5007DDAD0 /* AlbumvideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumvideoController.swift; sourceTree = "<group>"; };
+		E64E478C2B5A7112007DDAD0 /* VideoCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		E64E478D2B5A7112007DDAD0 /* VideoCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		E66C92D32B4E52EC00B74491 /* funnyface2222.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funnyface2222.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66C92D62B4E52EC00B74491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66C92D82B4E52EC00B74491 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -337,6 +347,32 @@
 				CB3A400DC692F4EF37497AE5 /* Pods_funnyface2222.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E64E47852B5A5AC4007DDAD0 /* actionsheep */ = {
+			isa = PBXGroup;
+			children = (
+				E64E47862B5A5AD1007DDAD0 /* ActionSheets.swift */,
+			);
+			path = actionsheep;
+			sourceTree = "<group>";
+		};
+		E64E47882B5A6BA8007DDAD0 /* albumvideo */ = {
+			isa = PBXGroup;
+			children = (
+				E64E478B2B5A70F3007DDAD0 /* cacthanhphanvideoCell */,
+				E64E47892B5A6BC5007DDAD0 /* AlbumvideoController.swift */,
+			);
+			path = albumvideo;
+			sourceTree = "<group>";
+		};
+		E64E478B2B5A70F3007DDAD0 /* cacthanhphanvideoCell */ = {
+			isa = PBXGroup;
+			children = (
+				E64E478C2B5A7112007DDAD0 /* VideoCellCollectionViewCell.swift */,
+				E64E478D2B5A7112007DDAD0 /* VideoCellCollectionViewCell.xib */,
+			);
+			path = cacthanhphanvideoCell;
 			sourceTree = "<group>";
 		};
 		E66C92CA2B4E52EC00B74491 = {
@@ -829,6 +865,7 @@
 		E67DF4682B553AC40074D573 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				E64E47882B5A6BA8007DDAD0 /* albumvideo */,
 				E66C93612B4E559600B74491 /* cell */,
 				E66C93702B4E559600B74491 /* modal */,
 				E66C93732B4E559600B74491 /* mhchinhController.swift */,
@@ -839,6 +876,7 @@
 		E67DF4692B553AD10074D573 /* Imagess */ = {
 			isa = PBXGroup;
 			children = (
+				E64E47852B5A5AC4007DDAD0 /* actionsheep */,
 				E6C6E9BC2B590D590055D260 /* swaped */,
 				E6C6E9B52B56E8420055D260 /* mhImage */,
 				E6C6E9A02B566C0D0055D260 /* categoryImage */,
@@ -887,6 +925,7 @@
 				E6C6E9B22B568E8B0055D260 /* thanhviencell2.xib */,
 				E6C6E9B82B57D2100055D260 /* SwapImageAlbum.swift */,
 				E6C6E9B92B57D2100055D260 /* SwapImageAlbum.xib */,
+				E64E47832B5A52DA007DDAD0 /* contentView.swift */,
 			);
 			path = categoryImage;
 			sourceTree = "<group>";
@@ -992,6 +1031,7 @@
 				E66C940F2B4E559600B74491 /* login.storyboard in Resources */,
 				E66C93C82B4E559600B74491 /* CollectionViewCell.xib in Resources */,
 				E6C6E9B72B56E8590055D260 /* ImageStaboad.storyboard in Resources */,
+				E64E478F2B5A7112007DDAD0 /* VideoCellCollectionViewCell.xib in Resources */,
 				E66C94002B4E559600B74491 /* HowToUseVC.xib in Resources */,
 				E66C93EB2B4E559600B74491 /* CommentTableViewCell.xib in Resources */,
 				E66C92DE2B4E52EC00B74491 /* Main.storyboard in Resources */,
@@ -1091,6 +1131,7 @@
 				E66C92F82B4E554000B74491 /* Template3TBVCell.swift in Sources */,
 				E66C93272B4E556A00B74491 /* HomeAPI.swift in Sources */,
 				E66C93F82B4E559600B74491 /* UserEventViewController.swift in Sources */,
+				E64E478E2B5A7112007DDAD0 /* VideoCellCollectionViewCell.swift in Sources */,
 				E66C93E52B4E559600B74491 /* ListImageOldVC.swift in Sources */,
 				E66C93522B4E558700B74491 /* DownloadFileManager.swift in Sources */,
 				E66C92FE2B4E554000B74491 /* Template1TBVCell.swift in Sources */,
@@ -1121,6 +1162,9 @@
 				E66C92F72B4E554000B74491 /* Template2TBVCell.swift in Sources */,
 				E66C93E62B4E559600B74491 /* ListImageCLVCell.swift in Sources */,
 				E66C92FF2B4E554000B74491 /* PageHomeCLVCell.swift in Sources */,
+				E64E47842B5A52DA007DDAD0 /* contentView.swift in Sources */,
+				E64E47872B5A5AD1007DDAD0 /* ActionSheets.swift in Sources */,
+				E64E478A2B5A6BC5007DDAD0 /* AlbumvideoController.swift in Sources */,
 				E66C93532B4E558700B74491 /* BaseService.swift in Sources */,
 				E66C932A2B4E557200B74491 /* APIKeyIMGBB.swift in Sources */,
 				E66C94092B4E559600B74491 /* ImagesGocTBVCell.swift in Sources */,

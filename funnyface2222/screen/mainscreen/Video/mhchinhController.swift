@@ -51,7 +51,21 @@ extension mhchinhController: UICollectionViewDelegate, UICollectionViewDataSourc
      
         
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AlbumvideoController") as! AlbumvideoController
+        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+        print("lisssss dataa")
+        //print(self)
+       
+   
+    APIService.shared.listAllTemplateVideoSwap(page:1,categories: indexPath.row + 1){response,error in
+       
+        vc.listTemplateVideo = response
+        self.present(vc, animated: true, completion: nil)
+       // cell.thanhphanclvcell.reloadData()
+    }
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         

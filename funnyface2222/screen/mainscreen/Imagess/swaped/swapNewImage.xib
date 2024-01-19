@@ -141,12 +141,18 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c9b-jw-YNd">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="197"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Doc-v7-Ywa">
+                            <rect key="frame" x="92" y="75.666666666666657" width="56" height="46"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="love_add"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="tsL-2h-58l" firstAttribute="top" secondItem="Wxg-sJ-OOP" secondAttribute="top" id="8Wb-Qc-cxv"/>
                         <constraint firstAttribute="bottom" secondItem="tsL-2h-58l" secondAttribute="bottom" id="X7C-9b-Vty"/>
                         <constraint firstItem="c9b-jw-YNd" firstAttribute="leading" secondItem="Wxg-sJ-OOP" secondAttribute="leading" id="YcV-XY-HoU"/>
+                        <constraint firstItem="Doc-v7-Ywa" firstAttribute="centerY" secondItem="Wxg-sJ-OOP" secondAttribute="centerY" id="cXy-o2-CCZ"/>
                         <constraint firstAttribute="trailing" secondItem="ReV-EE-nPW" secondAttribute="trailing" id="sRE-Lo-FaL"/>
                         <constraint firstItem="c9b-jw-YNd" firstAttribute="top" secondItem="Wxg-sJ-OOP" secondAttribute="top" id="sdO-AO-Wp4"/>
                         <constraint firstItem="ReV-EE-nPW" firstAttribute="leading" secondItem="Wxg-sJ-OOP" secondAttribute="leading" id="sgD-XD-5fW"/>
@@ -154,6 +160,7 @@
                         <constraint firstAttribute="bottom" secondItem="ReV-EE-nPW" secondAttribute="bottom" id="uE6-xw-WhD"/>
                         <constraint firstItem="tsL-2h-58l" firstAttribute="leading" secondItem="Wxg-sJ-OOP" secondAttribute="leading" id="vgY-gs-dAF"/>
                         <constraint firstAttribute="trailing" secondItem="tsL-2h-58l" secondAttribute="trailing" id="wAl-Cm-B2o"/>
+                        <constraint firstItem="Doc-v7-Ywa" firstAttribute="centerX" secondItem="Wxg-sJ-OOP" secondAttribute="centerX" id="we9-0B-Uhu"/>
                         <constraint firstAttribute="trailing" secondItem="c9b-jw-YNd" secondAttribute="trailing" id="zYN-7B-rZP"/>
                         <constraint firstAttribute="bottom" secondItem="c9b-jw-YNd" secondAttribute="bottom" id="zed-Fi-wwD"/>
                     </constraints>

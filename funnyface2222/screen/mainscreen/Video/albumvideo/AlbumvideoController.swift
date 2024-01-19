@@ -1,8 +1,8 @@
 //
-//  ViewMainImage.swift
+//  AlbumvideoController.swift
 //  funnyface2222
 //
-//  Created by quocanhppp on 16/01/2024.
+//  Created by quocanhppp on 19/01/2024.
 //
 
 //
@@ -11,11 +11,13 @@
 //
 //  Created by quocanhppp on 16/01/2024.
 //
+
+
 
 import UIKit
 import Kingfisher
 
-class ViewMainImage: UIViewController {
+class AlbumvideoController: UIViewController {
 
     @IBOutlet weak var cacluachonimageclv22:UICollectionView!
     @IBOutlet weak var backbtn:UIButton!
@@ -23,7 +25,7 @@ class ViewMainImage: UIViewController {
         self.dismiss(animated: true)
     }
     @IBAction func listCate(){
-        let refreshAlert = UIAlertController(title: "Chọn album", message: "", preferredStyle: .alert)
+        let refreshAlert = UIAlertController(title: "Chọn list video", message: "", preferredStyle: .alert)
 
         // Tùy chỉnh nền và màu sắc chữ
         if let alertView = refreshAlert.view.subviews.first?.subviews.first {
@@ -36,23 +38,13 @@ class ViewMainImage: UIViewController {
                 }
             }
         }
-        for index in 1...23 {
+        for index in 1...10 {
             refreshAlert.addAction(UIAlertAction(title: "album \(index)", style: .default, handler: { (action: UIAlertAction!) in
                 
-                APIService.shared.GetListImages(albuum:"\(index )") { (response, error) in
-                    if let listData2 = response{
-                      
-                      
-                        DispatchQueue.main.async {
-                            print(listData2)
-                            self.listData = listData2
-                            self.cacluachonimageclv22.reloadData()
-                           // print(vc.listData)
-                            
-                           
-                        }
-                    }
-                    
+                APIService.shared.listAllTemplateVideoSwap(page:1,categories: index){response,error in
+                   
+                    self.listTemplateVideo = response
+                   self.cacluachonimageclv22.reloadData()
                 }
             }))
         }
@@ -63,21 +55,21 @@ class ViewMainImage: UIViewController {
     }
     @IBOutlet weak var listCategory:UIButton!
     @IBAction func swapnext(){
-        if let parentVC = findParentViewController(of: UIViewController.self) {
-                let nextViewController = SwapImageAlbum(nibName: "SwapImageAlbum", bundle: nil)
-               // nextViewController.itemLink = self.listTemplateVideo[indexPath.row]
-            nextViewController.idAlbum = self.listData[0].IDCategories
-                parentVC.present(nextViewController, animated: true, completion: nil)
-            }
+//        if let parentVC = findParentViewController(of: UIViewController.self) {
+//                let nextViewController = SwapVideoDetailVC(nibName: "SwapVideoDetailVC", bundle: nil)
+//                nextViewController.itemLink = self.listTemplateVideo[indexPath.row]
+//                
+//                parentVC.present(nextViewController, animated: true, completion: nil)
+//            }
     }
-    var listData:[ListVideoModal] = [ListVideoModal]()
+    var listTemplateVideo : [Temple2VideoModel] = [Temple2VideoModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         backbtn.setTitle("", for: .normal)
         listCategory.setTitle("", for: .normal)
         print("lít dataa ")
-        print(self.listData)
-        cacluachonimageclv22.register(UINib(nibName: "thanhviencell2", bundle: nil), forCellWithReuseIdentifier: "thanhviencell2")
+        //print(self.listData)
+        cacluachonimageclv22.register(UINib(nibName: "VideoCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "VideoCellCollectionViewCell")
         // Do any additional setup after loading the view.
     }
 
@@ -93,7 +85,7 @@ class ViewMainImage: UIViewController {
     */
 
 }
-extension ViewMainImage: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AlbumvideoController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
        
         return 1
@@ -102,11 +94,18 @@ extension ViewMainImage: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       
        
-        return listData.count
+        return listTemplateVideo.count
      
         
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let parentVC = findParentViewController(of: UIViewController.self) {
+                let nextViewController = SwapVideoDetailVC(nibName: "SwapVideoDetailVC", bundle: nil)
+                nextViewController.itemLink = self.listTemplateVideo[indexPath.row]
+                
+                parentVC.present(nextViewController, animated: true, completion: nil)
+            }
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         
@@ -116,15 +115,12 @@ extension ViewMainImage: UICollectionViewDelegate, UICollectionViewDataSource {
 //
 //        cell.thanhvienimagecon.register(UINib(nibName: "thanhvienimagecon", bundle: nil), forCellWithReuseIdentifier: "thanhvienimagecon")
 //            return cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "thanhviencell2", for: indexPath) as! thanhviencell2
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoCellCollectionViewCell", for: indexPath) as! VideoCellCollectionViewCell
+      //  cell.labelName.text = "asdfasdfasdfsdf"
         cell.imageVideo.layer.cornerRadius = 10
         cell.imageVideo.layer.masksToBounds = true
-        cell.labelTuoi.text = self.listData[indexPath.row].dotuoi.toString()
-        cell.labelName.text = self.listData[indexPath.row].thongtin
-        //self.listData[indexPath.row].description ?? ""
-        cell.labelTimeRun.text=self.listData[indexPath.row].mask
-        print(self.listData[indexPath.row].image ?? "")
-        let url = URL(string: self.listData[indexPath.row].image ?? "")
+        cell.labelName.text = self.listTemplateVideo[indexPath.row].noi_dung ?? ""
+        let url = URL(string: self.listTemplateVideo[indexPath.row].thumbnail ?? "")
         let processor = DownsamplingImageProcessor(size: cell.imageVideo.bounds.size)
                      |> RoundCornerImageProcessor(cornerRadius: 10)
         cell.imageVideo.kf.indicatorType = .activity
@@ -160,7 +156,7 @@ extension ViewMainImage: UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
-extension ViewMainImage: UICollectionViewDelegateFlowLayout {
+extension AlbumvideoController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .zero
     }
@@ -178,7 +174,7 @@ extension ViewMainImage: UICollectionViewDelegateFlowLayout {
             if UIDevice.current.userInterfaceIdiom == .pad{
                 return CGSize(width: UIScreen.main.bounds.width, height: 200)
             }
-        return CGSize(width: (UIScreen.main.bounds.width)/2.2-10, height: 200)
+        return CGSize(width: (UIScreen.main.bounds.width)/2.5-10, height: 200)
        
     }
 }

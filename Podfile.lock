@@ -5,6 +5,7 @@ PODS:
   - CircleProgressView (1.2.0)
   - DeviceKit (4.9.0)
   - DropDown (2.3.13)
+  - ExytePopupView (2.5.7)
   - HGCircularSlider (2.2.0)
   - Kingfisher (7.10.2)
   - R.swift (7.3.2)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - CircleProgressView
   - DeviceKit (~> 4.0)
   - DropDown
+  - ExytePopupView
   - HGCircularSlider
   - Kingfisher
   - R.swift
@@ -43,6 +45,7 @@ SPEC REPOS:
     - CircleProgressView
     - DeviceKit
     - DropDown
+    - ExytePopupView
     - HGCircularSlider
     - Kingfisher
     - R.swift
@@ -62,6 +65,7 @@ SPEC CHECKSUMS:
   CircleProgressView: 6b5b091d59dc5e5d2fda84e637a40498cdc39937
   DeviceKit: 847709bf70b78fd9ab765bd571fb9f5f815c3fc1
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  ExytePopupView: b87db2132b156fd8c8c63b74096205d9e1fdd9ba
   HGCircularSlider: afb1942743a2df156dcc7a3500216e523e14266b
   Kingfisher: 99edc495d3b7607e6425f0d6f6847b2abd6d716d
   R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
@@ -75,6 +79,6 @@ SPEC CHECKSUMS:
   TrailerPlayer: 9117cc50a183a6d060ae874552395b37951a6533
   WCLShineButton: 315ee9b0024b1cc56dba34fb6a8878937eb8d0b1
 
-PODFILE CHECKSUM: cfcaebbd5f7b049bc22e3ff148ce7d4efa46dc67
+PODFILE CHECKSUM: f9835e521a31c2b8019ecf4eda00b895ff2a58df
 
 COCOAPODS: 1.14.3

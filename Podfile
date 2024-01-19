@@ -24,6 +24,7 @@ pod 'CircleProgressView'
   pod 'SwiftVideoBackground'
   pod 'WCLShineButton'
   pod 'Swift_PageMenu', '~> 1.4'
+  pod 'ExytePopupView'
 end
 
 post_install do |installer|
