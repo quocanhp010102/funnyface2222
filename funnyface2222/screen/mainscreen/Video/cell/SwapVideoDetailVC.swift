@@ -93,6 +93,7 @@ class SwapVideoDetailVC: UIViewController {
                 }
                 APIService.shared.GenVideoSwap(device_them_su_kien: AppConstant.modelName ?? "iphone", id_video: String(self.itemLink.id ?? 0) , ip_them_su_kien: AppConstant.IPAddress.asStringOrEmpty(), id_user: AppConstant.userId.asStringOrEmpty(), link_img: self.linkImageVideoSwap, ten_video: "swapvideo.mp4"){response,error in
                     if let response = response{
+                        print(response)
                         let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
                         vc.itemDataSend = response
                         vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency

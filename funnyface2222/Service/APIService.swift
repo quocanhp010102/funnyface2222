@@ -1334,14 +1334,38 @@ class APIService:NSObject {
         let newString = link_img.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
         if let devicePro = device_them_su_kien.urlEncoded{
             requestTokenFolderGhepDoi("https://lhvn.online/getdata/genvideo?id_video=\(id_video)&device_them_su_kien=\(devicePro)&ip_them_su_kien=\(ip_them_su_kien)&id_user=\(id_user)&image=\(newString)&ten_video=\(ten_video)", linkNam: "", linkNu: "", param: nil, method: .GET, loading: true) { (data, error) in
-                if let data = data as? [String:Any]{
-                    var itemAdd:DetailVideoModel = DetailVideoModel()
-                    itemAdd = itemAdd.initLoad(data)
-                    closure( itemAdd, nil)
-                    
-                }else{
-                    closure( DetailVideoModel(), nil)
+//                if let data = data as? [String: Any],
+//                   let sukienVideoData = data["sukien_video"] as? [String: Any] {
+//                    
+//                    var itemAdd = DetailVideoModel()
+//
+//                    if let noidung = sukienVideoData["noidung"] as? String {
+//                        itemAdd.noidung = noidung
+//                    }
+//                    if let idSukienVideo = sukienVideoData["id_sukien_video"] as? String {
+//                        itemAdd.id_sukien_video = idSukienVideo
+//                    }
+//                    // Continue adding other properties
+//                    
+//                    // Print the created DetailVideoModel
+//                    print(itemAdd)
+//                    
+//                    closure(itemAdd, nil)
+//                } else {
+//                    closure(DetailVideoModel(), nil)
+//                }
+
+                if let data = data as? [String: Any] {
+                    if let sukienVideoData = data["sukien_video"] as? [String: Any] {
+                        var itemAdd = DetailVideoModel()
+                        itemAdd = itemAdd.initLoad(sukienVideoData) // Use sukienVideoData here
+                        print(itemAdd)
+                        closure(itemAdd, nil)
+                    }
+                } else {
+                    closure(DetailVideoModel(), nil)
                 }
+
             }
         }
     }
