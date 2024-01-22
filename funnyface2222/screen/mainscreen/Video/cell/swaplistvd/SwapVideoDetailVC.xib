@@ -132,7 +132,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.62352943419999995" green="0.43921568989999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
                 <constraint firstItem="JC3-wh-rRa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="6Wl-Ft-Hi0"/>
                 <constraint firstItem="nep-xy-9a6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="8OP-2a-Gfz"/>
@@ -152,6 +152,9 @@
         <image name="back" width="24" height="24.333333969116211"/>
         <image name="love_add" width="31.666666030883789" height="32"/>
         <image name="love_boy" width="184.33332824707031" height="184.33332824707031"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -23,7 +23,7 @@ class detailNewvideoSwap: UIViewController {
     @IBOutlet weak var buttonDownloadSwap: UIButton!
     @IBOutlet weak var buttonShare: UIButton!
     @IBOutlet weak var labelUserName: UILabel!
-    @IBOutlet weak var imageUserAvatar: UIImageView!
+   // @IBOutlet weak var imageUserAvatar: UIImageView!
     var hasVideoEnded: Bool = false
    // private let autoReplay = true
     //private let autoGocReplay = true
@@ -157,29 +157,29 @@ class detailNewvideoSwap: UIViewController {
             if let success = result {
                 self.labelUserName.text = success.user_name
                 let escapedString = success.link_avatar?.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
-                if let url = URL(string: escapedString ?? "") {
-                    let processor = DownsamplingImageProcessor(size: self.imageUserAvatar.bounds.size)
-                    |> RoundCornerImageProcessor(cornerRadius: 5)
-                    self.imageUserAvatar.kf.indicatorType = .activity
-                    self.imageUserAvatar.kf.setImage(
-                        with: url,
-                        placeholder: UIImage(named: "placeholderImage"),
-                        options: [
-                            .processor(processor),
-                            .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(1)),
-                            .cacheOriginalImage
-                        ])
-                    {
-                        result in
-                        switch result {
-                        case .success(let value):
-                            print("Task done for: \(value.source.url?.absoluteString ?? "")")
-                        case .failure(let error):
-                            print("Job failed: \(error.localizedDescription)")
-                        }
-                    }
-                }
+//                if let url = URL(string: escapedString ?? "") {
+//                    let processor = DownsamplingImageProcessor(size: self.imageUserAvatar.bounds.size)
+//                    |> RoundCornerImageProcessor(cornerRadius: 5)
+//                    self.imageUserAvatar.kf.indicatorType = .activity
+//                    self.imageUserAvatar.kf.setImage(
+//                        with: url,
+//                        placeholder: UIImage(named: "placeholderImage"),
+//                        options: [
+//                            .processor(processor),
+//                            .scaleFactor(UIScreen.main.scale),
+//                            .transition(.fade(1)),
+//                            .cacheOriginalImage
+//                        ])
+//                    {
+//                        result in
+//                        switch result {
+//                        case .success(let value):
+//                            print("Task done for: \(value.source.url?.absoluteString ?? "")")
+//                        case .failure(let error):
+//                            print("Job failed: \(error.localizedDescription)")
+//                        }
+//                    }
+//                }
             }
         }
     }
@@ -190,8 +190,8 @@ class detailNewvideoSwap: UIViewController {
         labelUserName.isUserInteractionEnabled = true
         labelUserName.addGestureRecognizer(tapProfile)
         let tapProfile2 = UITapGestureRecognizer(target: self, action: #selector(self.tabForViewProfile))
-        imageUserAvatar.isUserInteractionEnabled = true
-        imageUserAvatar.addGestureRecognizer(tapProfile2)
+       // imageUserAvatar.isUserInteractionEnabled = true
+       // imageUserAvatar.addGestureRecognizer(tapProfile2)
         
         self.callApiProfile(userId: itemDataSend.id_user ?? 0)
         self.buttonShare.setTitle("", for: UIControl.State.normal)

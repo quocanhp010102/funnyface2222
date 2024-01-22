@@ -11,97 +11,110 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="detailNewvideoSwap" customModule="funnyface2222" customModuleProvider="target">
             <connections>
-                <outlet property="buttonBack" destination="ebM-Lu-sIt" id="Y05-2q-2d9"/>
-                <outlet property="buttonDownloadSwap" destination="36Q-ui-fil" id="mBA-sz-sSx"/>
-                <outlet property="buttonShare" destination="r5y-HF-n4F" id="BlB-dt-ir0"/>
-                <outlet property="imageUserAvatar" destination="WdH-nk-cj6" id="IPZ-OL-aJG"/>
-                <outlet property="imageViewCover" destination="k0n-dU-HqK" id="Vba-cc-rrp"/>
-                <outlet property="labelUserName" destination="edG-JM-REE" id="RRi-iB-7hH"/>
-                <outlet property="view" destination="Jml-GT-TUN" id="ip8-3P-Vco"/>
+                <outlet property="buttonBack" destination="vHg-HV-FLP" id="RXm-tZ-JRq"/>
+                <outlet property="buttonDownloadSwap" destination="2en-BB-bkg" id="Q9O-5H-PAQ"/>
+                <outlet property="buttonShare" destination="cq6-kx-C1A" id="YuZ-cd-bEZ"/>
+                <outlet property="imageViewCover" destination="le5-3K-Y7Z" id="7L0-Fm-g28"/>
+                <outlet property="labelUserName" destination="02P-33-6e9" id="s7Q-79-WNL"/>
+                <outlet property="view" destination="LXq-KJ-2hW" id="2z7-3M-AAT"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Jml-GT-TUN">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="LXq-KJ-2hW">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebM-Lu-sIt">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHg-HV-FLP">
                     <rect key="frame" x="30" y="50" width="36" height="36"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="36" id="87O-Df-GFr"/>
-                        <constraint firstAttribute="height" constant="36" id="gHM-wV-xuh"/>
+                        <constraint firstAttribute="width" constant="36" id="SMf-1N-h9s"/>
+                        <constraint firstAttribute="height" constant="36" id="wIT-dv-4Ne"/>
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="back"/>
                     <connections>
-                        <action selector="BackApp" destination="-1" eventType="touchDown" id="0RX-V2-uAX"/>
+                        <action selector="BackApp" destination="-1" eventType="touchDown" id="2Gk-ZC-LGK"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k0n-dU-HqK">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="le5-3K-Y7Z">
                     <rect key="frame" x="121.66666666666669" y="69" width="150" height="150"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="JgN-tq-8HB"/>
-                        <constraint firstAttribute="width" constant="150" id="lIO-Ol-pPu"/>
+                        <constraint firstAttribute="height" constant="150" id="H1V-AE-zdQ"/>
+                        <constraint firstAttribute="width" constant="150" id="qWX-Si-0kr"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36Q-ui-fil">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2en-BB-bkg">
                     <rect key="frame" x="339" y="69" width="54" height="44"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="downloadbutton-2"/>
-                    <connections>
-                        <action selector="DownloadVideoSwap" destination="-1" eventType="touchDown" id="cxM-Tm-hv1"/>
-                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5y-HF-n4F">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq6-kx-C1A">
                     <rect key="frame" x="20" y="96" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="2jN-z8-2OO"/>
-                        <constraint firstAttribute="height" constant="40" id="kzz-rn-lwb"/>
+                        <constraint firstAttribute="width" constant="40" id="fhn-jL-0eR"/>
+                        <constraint firstAttribute="height" constant="40" id="xAl-5J-pFS"/>
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="icons8-share-50"/>
-                    <connections>
-                        <action selector="shareLinkVideoSwap" destination="-1" eventType="touchDown" id="oSq-eo-cy9"/>
-                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edG-JM-REE">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02P-33-6e9">
                     <rect key="frame" x="20" y="765" width="353" height="23"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                     <color key="textColor" systemColor="systemGreenColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WdH-nk-cj6">
-                    <rect key="frame" x="146.66666666666666" y="655" width="100" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="VUG-4D-N8Q"/>
-                        <constraint firstAttribute="width" constant="100" id="vfx-cn-a39"/>
-                    </constraints>
-                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4p-r6-oMi">
+                    <rect key="frame" x="238" y="725" width="135" height="35"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="dowload video">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="DownloadVideoSwap" destination="-1" eventType="touchDown" id="Cfm-2e-KgF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHt-Pt-Bwh">
+                    <rect key="frame" x="20" y="725" width="186" height="35"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Save to my collection">
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="shareLinkVideoSwap" destination="-1" eventType="touchDown" id="6Vf-Tw-687"/>
+                    </connections>
+                </button>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="WT1-oc-jYt"/>
-            <color key="backgroundColor" red="0.62352943419999995" green="0.43921568989999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <viewLayoutGuide key="safeArea" id="Gjd-Mx-Xiq"/>
+            <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
-                <constraint firstItem="edG-JM-REE" firstAttribute="top" secondItem="WdH-nk-cj6" secondAttribute="bottom" constant="10" id="4Pp-YH-gO7"/>
-                <constraint firstItem="WT1-oc-jYt" firstAttribute="trailing" secondItem="edG-JM-REE" secondAttribute="trailing" constant="20" id="5Os-4t-LuH"/>
-                <constraint firstItem="WT1-oc-jYt" firstAttribute="bottom" secondItem="edG-JM-REE" secondAttribute="bottom" constant="30" id="IGM-wE-bh7"/>
-                <constraint firstItem="ebM-Lu-sIt" firstAttribute="leading" secondItem="WT1-oc-jYt" secondAttribute="leading" constant="30" id="Ozm-j1-Obf"/>
-                <constraint firstItem="ebM-Lu-sIt" firstAttribute="top" secondItem="Jml-GT-TUN" secondAttribute="top" constant="50" id="TrM-CZ-1Sc"/>
-                <constraint firstItem="36Q-ui-fil" firstAttribute="top" secondItem="k0n-dU-HqK" secondAttribute="top" id="Xrq-kU-uEE"/>
-                <constraint firstItem="k0n-dU-HqK" firstAttribute="centerX" secondItem="WT1-oc-jYt" secondAttribute="centerX" id="Z2e-Dd-yOg"/>
-                <constraint firstItem="r5y-HF-n4F" firstAttribute="leading" secondItem="WT1-oc-jYt" secondAttribute="leading" constant="20" id="aqy-xd-HhL"/>
-                <constraint firstItem="WdH-nk-cj6" firstAttribute="centerX" secondItem="WT1-oc-jYt" secondAttribute="centerX" id="fUo-Hy-oyQ"/>
-                <constraint firstItem="k0n-dU-HqK" firstAttribute="top" secondItem="WT1-oc-jYt" secondAttribute="top" constant="10" id="l59-hn-Up2"/>
-                <constraint firstItem="edG-JM-REE" firstAttribute="leading" secondItem="WT1-oc-jYt" secondAttribute="leading" constant="20" id="sax-hc-bfy"/>
-                <constraint firstItem="36Q-ui-fil" firstAttribute="trailing" secondItem="WT1-oc-jYt" secondAttribute="trailing" id="wHA-tU-Hob"/>
-                <constraint firstItem="r5y-HF-n4F" firstAttribute="top" secondItem="ebM-Lu-sIt" secondAttribute="bottom" constant="10" id="yNz-2W-Pkr"/>
+                <constraint firstItem="le5-3K-Y7Z" firstAttribute="centerX" secondItem="Gjd-Mx-Xiq" secondAttribute="centerX" id="AoI-uF-cbL"/>
+                <constraint firstItem="02P-33-6e9" firstAttribute="top" secondItem="AHt-Pt-Bwh" secondAttribute="bottom" constant="5" id="Aoq-ie-gdn"/>
+                <constraint firstItem="cq6-kx-C1A" firstAttribute="leading" secondItem="Gjd-Mx-Xiq" secondAttribute="leading" constant="20" id="B6v-R1-Wc7"/>
+                <constraint firstItem="vHg-HV-FLP" firstAttribute="leading" secondItem="Gjd-Mx-Xiq" secondAttribute="leading" constant="30" id="BAS-KS-weP"/>
+                <constraint firstItem="AHt-Pt-Bwh" firstAttribute="leading" secondItem="Gjd-Mx-Xiq" secondAttribute="leading" constant="20" id="DBg-qf-US2"/>
+                <constraint firstItem="le5-3K-Y7Z" firstAttribute="top" secondItem="Gjd-Mx-Xiq" secondAttribute="top" constant="10" id="Gsa-Nm-BCt"/>
+                <constraint firstItem="2en-BB-bkg" firstAttribute="top" secondItem="le5-3K-Y7Z" secondAttribute="top" id="QsP-ij-KPv"/>
+                <constraint firstItem="2en-BB-bkg" firstAttribute="trailing" secondItem="Gjd-Mx-Xiq" secondAttribute="trailing" id="RJ0-8P-ROj"/>
+                <constraint firstItem="cq6-kx-C1A" firstAttribute="top" secondItem="vHg-HV-FLP" secondAttribute="bottom" constant="10" id="Sfa-tO-rT3"/>
+                <constraint firstItem="vHg-HV-FLP" firstAttribute="top" secondItem="LXq-KJ-2hW" secondAttribute="top" constant="50" id="XTq-GB-Y7M"/>
+                <constraint firstItem="Gjd-Mx-Xiq" firstAttribute="trailing" secondItem="02P-33-6e9" secondAttribute="trailing" constant="20" id="Zs6-cI-2J4"/>
+                <constraint firstItem="Gjd-Mx-Xiq" firstAttribute="trailing" secondItem="R4p-r6-oMi" secondAttribute="trailing" constant="20" id="bjB-dc-Hhf"/>
+                <constraint firstItem="Gjd-Mx-Xiq" firstAttribute="bottom" secondItem="02P-33-6e9" secondAttribute="bottom" constant="30" id="dql-fm-0Kz"/>
+                <constraint firstItem="02P-33-6e9" firstAttribute="leading" secondItem="Gjd-Mx-Xiq" secondAttribute="leading" constant="20" id="fo9-Gh-lDa"/>
+                <constraint firstItem="02P-33-6e9" firstAttribute="top" secondItem="R4p-r6-oMi" secondAttribute="bottom" constant="5" id="zdi-Xa-veb"/>
             </constraints>
-            <point key="canvasLocation" x="73" y="-32"/>
+            <point key="canvasLocation" x="72.51908396946564" y="-32.394366197183103"/>
         </view>
     </objects>
     <resources>
         <image name="back" width="24" height="24.333333969116211"/>
         <image name="downloadbutton-2" width="30" height="30"/>
         <image name="icons8-share-50" width="30" height="30"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

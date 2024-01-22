@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailSwapVideoVC" customModule="funnyface2222" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonBack" destination="yqW-8Y-9sw" id="43l-kM-idO"/>
+                <outlet property="buttonDownloadSwap" destination="3Ik-XU-CCF" id="u7S-Y2-85H"/>
+                <outlet property="buttonShare" destination="fKL-2a-UDW" id="86x-li-0F4"/>
+                <outlet property="imageViewCover" destination="shd-8t-8M9" id="7em-2h-h0c"/>
+                <outlet property="labelUserName" destination="C0X-Ux-Kju" id="GzF-iZ-vxZ"/>
+                <outlet property="view" destination="T7h-L3-YFD" id="Qjg-rf-Iz3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="T7h-L3-YFD">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqW-8Y-9sw">
+                    <rect key="frame" x="30" y="50" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="88m-Yi-OWf"/>
+                        <constraint firstAttribute="width" constant="36" id="Y10-y3-E01"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="back"/>
+                    <connections>
+                        <action selector="BackApp" destination="-1" eventType="touchDown" id="j15-d0-O7b"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="shd-8t-8M9">
+                    <rect key="frame" x="121.66666666666669" y="69" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="MJj-Rf-2Ez"/>
+                        <constraint firstAttribute="width" constant="150" id="ehE-Mc-8lP"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ik-XU-CCF">
+                    <rect key="frame" x="339" y="69" width="54" height="44"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="downloadbutton-2"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKL-2a-UDW">
+                    <rect key="frame" x="20" y="96" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="4vB-pN-5Zb"/>
+                        <constraint firstAttribute="height" constant="40" id="f1Y-Py-Y56"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="icons8-share-50"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0X-Ux-Kju">
+                    <rect key="frame" x="20" y="765" width="353" height="23"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <color key="textColor" systemColor="systemGreenColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcc-Jz-Yqr">
+                    <rect key="frame" x="238" y="725" width="135" height="35"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="dowload video">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="DownloadVideoSwap" destination="-1" eventType="touchDown" id="6Qh-L7-zRe"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqx-kJ-L7r">
+                    <rect key="frame" x="20" y="725" width="186" height="35"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Save to my collection">
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="shareLinkVideoSwap" destination="-1" eventType="touchDown" id="DyI-wi-QEz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="pf4-Bt-yjT"/>
+            <color key="backgroundColor" systemColor="labelColor"/>
+            <constraints>
+                <constraint firstItem="3Ik-XU-CCF" firstAttribute="trailing" secondItem="pf4-Bt-yjT" secondAttribute="trailing" id="4ee-fr-m96"/>
+                <constraint firstItem="Pqx-kJ-L7r" firstAttribute="leading" secondItem="pf4-Bt-yjT" secondAttribute="leading" constant="20" id="CWx-aG-Ojs"/>
+                <constraint firstItem="pf4-Bt-yjT" firstAttribute="trailing" secondItem="C0X-Ux-Kju" secondAttribute="trailing" constant="20" id="GN2-Uh-p2h"/>
+                <constraint firstItem="C0X-Ux-Kju" firstAttribute="top" secondItem="Pqx-kJ-L7r" secondAttribute="bottom" constant="5" id="KO2-f3-WDH"/>
+                <constraint firstItem="3Ik-XU-CCF" firstAttribute="top" secondItem="shd-8t-8M9" secondAttribute="top" id="NHo-ZA-Sy4"/>
+                <constraint firstItem="fKL-2a-UDW" firstAttribute="top" secondItem="yqW-8Y-9sw" secondAttribute="bottom" constant="10" id="OeL-I6-fbC"/>
+                <constraint firstItem="C0X-Ux-Kju" firstAttribute="leading" secondItem="pf4-Bt-yjT" secondAttribute="leading" constant="20" id="YmT-Pt-6dW"/>
+                <constraint firstItem="pf4-Bt-yjT" firstAttribute="trailing" secondItem="Gcc-Jz-Yqr" secondAttribute="trailing" constant="20" id="cDK-ft-cOs"/>
+                <constraint firstItem="shd-8t-8M9" firstAttribute="centerX" secondItem="pf4-Bt-yjT" secondAttribute="centerX" id="cxt-0Y-ED2"/>
+                <constraint firstItem="yqW-8Y-9sw" firstAttribute="leading" secondItem="pf4-Bt-yjT" secondAttribute="leading" constant="30" id="ejq-bA-quj"/>
+                <constraint firstItem="shd-8t-8M9" firstAttribute="top" secondItem="pf4-Bt-yjT" secondAttribute="top" constant="10" id="g5J-35-FR9"/>
+                <constraint firstItem="yqW-8Y-9sw" firstAttribute="top" secondItem="T7h-L3-YFD" secondAttribute="top" constant="50" id="j0w-Ce-tOT"/>
+                <constraint firstItem="fKL-2a-UDW" firstAttribute="leading" secondItem="pf4-Bt-yjT" secondAttribute="leading" constant="20" id="mJP-zx-aFR"/>
+                <constraint firstItem="pf4-Bt-yjT" firstAttribute="bottom" secondItem="C0X-Ux-Kju" secondAttribute="bottom" constant="30" id="yjC-Ct-hHX"/>
+                <constraint firstItem="C0X-Ux-Kju" firstAttribute="top" secondItem="Gcc-Jz-Yqr" secondAttribute="bottom" constant="5" id="yxf-hS-2ZQ"/>
+            </constraints>
+            <point key="canvasLocation" x="72.51908396946564" y="-32.394366197183103"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="24" height="24.333333969116211"/>
+        <image name="downloadbutton-2" width="30" height="30"/>
+        <image name="icons8-share-50" width="30" height="30"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
