@@ -13,6 +13,8 @@
 		E64E478A2B5A6BC5007DDAD0 /* AlbumvideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E47892B5A6BC5007DDAD0 /* AlbumvideoController.swift */; };
 		E64E478E2B5A7112007DDAD0 /* VideoCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E478C2B5A7112007DDAD0 /* VideoCellCollectionViewCell.swift */; };
 		E64E478F2B5A7112007DDAD0 /* VideoCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64E478D2B5A7112007DDAD0 /* VideoCellCollectionViewCell.xib */; };
+		E64E47922B5AEA64007DDAD0 /* detailNewvideoSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E47902B5AEA64007DDAD0 /* detailNewvideoSwap.swift */; };
+		E64E47932B5AEA64007DDAD0 /* detailNewvideoSwap.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64E47912B5AEA64007DDAD0 /* detailNewvideoSwap.xib */; };
 		E66C92D72B4E52EC00B74491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C92D62B4E52EC00B74491 /* AppDelegate.swift */; };
 		E66C92D92B4E52EC00B74491 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C92D82B4E52EC00B74491 /* SceneDelegate.swift */; };
 		E66C92DE2B4E52EC00B74491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66C92DC2B4E52EC00B74491 /* Main.storyboard */; };
@@ -169,6 +171,8 @@
 		E64E47892B5A6BC5007DDAD0 /* AlbumvideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumvideoController.swift; sourceTree = "<group>"; };
 		E64E478C2B5A7112007DDAD0 /* VideoCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		E64E478D2B5A7112007DDAD0 /* VideoCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		E64E47902B5AEA64007DDAD0 /* detailNewvideoSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailNewvideoSwap.swift; sourceTree = "<group>"; };
+		E64E47912B5AEA64007DDAD0 /* detailNewvideoSwap.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailNewvideoSwap.xib; sourceTree = "<group>"; };
 		E66C92D32B4E52EC00B74491 /* funnyface2222.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funnyface2222.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66C92D62B4E52EC00B74491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66C92D82B4E52EC00B74491 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -902,6 +906,8 @@
 				E6B88CAE2B4FD773005A02E6 /* newSwapvideo.swift */,
 				E6B88CAF2B4FD773005A02E6 /* newSwapvideo.xib */,
 				E67DF3422B5430300074D573 /* DetaiModelUser.swift */,
+				E64E47902B5AEA64007DDAD0 /* detailNewvideoSwap.swift */,
+				E64E47912B5AEA64007DDAD0 /* detailNewvideoSwap.xib */,
 			);
 			path = newvideo;
 			sourceTree = "<group>";
@@ -1022,6 +1028,7 @@
 				E66C93F22B4E559600B74491 /* ChangerAvatarViewController.xib in Resources */,
 				E66C94022B4E559600B74491 /* DetailHowToVC.xib in Resources */,
 				E66C92E02B4E52EF00B74491 /* Assets.xcassets in Resources */,
+				E64E47932B5AEA64007DDAD0 /* detailNewvideoSwap.xib in Resources */,
 				E66C93EC2B4E559600B74491 /* ReportCommentVC.xib in Resources */,
 				E66C92FD2B4E554000B74491 /* Template1TBVCell.xib in Resources */,
 				E66C93E22B4E559600B74491 /* ListImageCLVCell.xib in Resources */,
@@ -1169,6 +1176,7 @@
 				E66C932A2B4E557200B74491 /* APIKeyIMGBB.swift in Sources */,
 				E66C94092B4E559600B74491 /* ImagesGocTBVCell.swift in Sources */,
 				E66C93E02B4E559600B74491 /* DetailCommentTableViewCell.swift in Sources */,
+				E64E47922B5AEA64007DDAD0 /* detailNewvideoSwap.swift in Sources */,
 				E66C93E82B4E559600B74491 /* ReportCommentVC.swift in Sources */,
 				E66C940B2B4E559600B74491 /* ControlPanel.swift in Sources */,
 				E66C934F2B4E558700B74491 /* ServiceConstant.swift in Sources */,

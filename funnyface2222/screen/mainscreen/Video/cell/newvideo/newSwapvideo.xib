@@ -121,16 +121,26 @@
                     <color key="textColor" systemColor="systemGreenColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjs-cW-KPz">
+                    <rect key="frame" x="284" y="50" width="109" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="them video"/>
+                    <connections>
+                        <action selector="addVideo:" destination="-1" eventType="touchDown" id="ood-4F-jdB"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="ZfA-Lb-f4w"/>
             <color key="backgroundColor" red="0.62352943419999995" green="0.43921568989999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="mjs-cW-KPz" firstAttribute="trailing" secondItem="ZfA-Lb-f4w" secondAttribute="trailing" id="2oF-Ez-lri"/>
                 <constraint firstItem="syh-Bm-XRP" firstAttribute="top" secondItem="Pew-OO-7cz" secondAttribute="bottom" constant="20" id="82x-YZ-i2E"/>
                 <constraint firstItem="X5p-0a-ZR1" firstAttribute="top" secondItem="syh-Bm-XRP" secondAttribute="bottom" constant="60" id="BLT-2d-jB2"/>
                 <constraint firstItem="kBP-Oj-vag" firstAttribute="centerX" secondItem="ZfA-Lb-f4w" secondAttribute="centerX" id="HFX-8c-Kd8"/>
                 <constraint firstItem="Pew-OO-7cz" firstAttribute="centerX" secondItem="ZfA-Lb-f4w" secondAttribute="centerX" id="IHL-IE-nEO"/>
                 <constraint firstItem="RIn-Q6-0P5" firstAttribute="leading" secondItem="ZfA-Lb-f4w" secondAttribute="leading" constant="30" id="REz-MA-ZTY"/>
                 <constraint firstItem="ZfA-Lb-f4w" firstAttribute="bottom" secondItem="X5p-0a-ZR1" secondAttribute="bottom" constant="30" id="TOH-Qm-l9B"/>
+                <constraint firstItem="mjs-cW-KPz" firstAttribute="top" secondItem="3JH-0A-r2N" secondAttribute="top" constant="50" id="hYx-Au-plX"/>
                 <constraint firstItem="syh-Bm-XRP" firstAttribute="centerX" secondItem="ZfA-Lb-f4w" secondAttribute="centerX" id="iAO-GB-Amm"/>
                 <constraint firstItem="RIn-Q6-0P5" firstAttribute="top" secondItem="3JH-0A-r2N" secondAttribute="top" constant="50" id="pnO-ez-W1B"/>
                 <constraint firstItem="X5p-0a-ZR1" firstAttribute="centerX" secondItem="ZfA-Lb-f4w" secondAttribute="centerX" id="vUc-Ec-icD"/>

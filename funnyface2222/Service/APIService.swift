@@ -1244,9 +1244,22 @@ class APIService:NSObject {
                 }
 
                 if let resJson = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    var itemAdd: DetaiModelUser = DetaiModelUser()
-                    itemAdd = itemAdd.initLoad(resJson)
-                    closure(itemAdd, nil)
+//                    if let data = data as? [String: Any] {
+//                        if let sukienVideoData = data["sukien_video"] as? [String: Any] {
+//                            var itemAdd = DetailVideoModel()
+//                            itemAdd = itemAdd.initLoad(sukienVideoData) // Use sukienVideoData here
+//                            print(itemAdd)
+//                            closure(itemAdd, nil)
+//                        }
+//                    } else {
+//                        closure(DetailVideoModel(), nil)
+//                    }
+                    if let sukienVideoData = resJson["sukien_swap_video"] as? [String: Any] {
+                        var itemAdd = DetaiModelUser()
+                        itemAdd = itemAdd.initLoad(sukienVideoData)
+                        closure(itemAdd, nil)
+                    }
+                   
                 } else if let resString = String(data: data, encoding: .utf8) {
                     closure(nil, error) // You might want to replace `YourErrorType` with an appropriate error type
                 } else {

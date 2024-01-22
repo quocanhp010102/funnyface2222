@@ -10,9 +10,24 @@ import TrailerPlayer
 import HGCircularSlider
 import Kingfisher
 import Vision
-
+import PhotosUI
+import AVKit
 class newSwapvideo: UIViewController {
     var itemLink:Temple2VideoModel = Temple2VideoModel()
+    @IBAction func addVideo(_ sender: Any) {
+           addFunc()
+       }
+    func addFunc() {
+            var configuration: PHPickerConfiguration = PHPickerConfiguration()
+            configuration.filter = .any(of: [.images, .videos])
+            configuration.selectionLimit = 1
+
+            let picker: PHPickerViewController = PHPickerViewController(configuration: configuration)
+            picker.delegate = self
+            self.present(picker, animated: true, completion: nil)
+        }
+    var videoData:Data?
+    var videoUrl:URL?
     @IBOutlet weak var buttonBack: UIButton!
     var IsStopBoyAnimation = true
     @IBOutlet weak var boyImage: UIImageView!
@@ -104,18 +119,22 @@ class newSwapvideo: UIViewController {
                         print(self.linkImageVideoSwap)
                       
 
-                        let url = "https://lhvn.online/getdata/genvideo/swap/imagevid?device_them_su_kien=Simulator%20%28iPhone%2014%20Plus%29&ip_them_su_kien=14.231.223.63&id_user=203&src_img=/var/www/build_futurelove/image/image_user/3/nam/3_nam_69101.jpg"
+                        let url = "https://lhvn.online/getdata/genvideo/swap/imagevid?device_them_su_kien=Simulator%20%28iPhone%2014%20Plus%29&ip_them_su_kien=14.231.223.63&id_user=203&src_img=\(self.linkImageVideoSwap)"
                         //print(cleanedLinkImagePro)
-                       
+                        let urll2 = url.replacingOccurrences(of: "\"", with: "")
                         let myString = url
                         let charToRemove: Character = "\""
                         let filteredString = String(myString.filter { $0 != charToRemove })
                         print("hêhheheh")
                         print(filteredString)
-                        APIService.shared.UploadVideoBatKyAndGen("https://lhvn.online/getdata/genvideo/swap/imagevid?device_them_su_kien=Simulator%20%28iPhone%2014%20Plus%29&ip_them_su_kien=14.231.223.63&id_user=203&src_img=/var/www/build_futurelove/image/image_user/3/nam/3_nam_69101.jpg" , mediaData: videoData, method: .POST, loading: true) { response, error in
+                        APIService.shared.UploadVideoBatKyAndGen(urll2 , mediaData: self.videoData ?? videoData, method: .POST, loading: true) { response, error in
                             // Xử lý phản hồi hoặc lỗi
                             if let response = response {
                                 print("Response: \(response)")
+                                let vc = detailNewvideoSwap(nibName: "detailNewvideoSwap", bundle: nil)
+                                vc.itemDataSend = response
+                                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                                self.present(vc, animated: true, completion: nil)
                                
                             } else if let error = error {
                                 print("Error: \(error)")
@@ -218,7 +237,7 @@ class newSwapvideo: UIViewController {
                     let videoData = try Data(contentsOf: videoURL)
 
                     // Gọi hàm swapImageWithVideo
-                    APIService.shared.swapImageWithVideo(device: device, ip: ip, userId: AppConstant.userId.asStringOrEmpty(), imageLink: linkImagePro, videoFile: videoData) { (response, error) in
+                    APIService.shared.swapImageWithVideo(device: device, ip: ip, userId: AppConstant.userId.asStringOrEmpty(), imageLink: linkImagePro, videoFile: self.videoData ?? videoData) { (response, error) in
                         // Xử lý phản hồi hoặc lỗi
                         if let error = error {
                             print("Error:", error)
@@ -292,13 +311,13 @@ class newSwapvideo: UIViewController {
             playerView.manualPlayButton = button
         }
         
-        let item = TrailerPlayerItem(
-            url: URL(string: itemLink.link_video ?? ""),
-            thumbnailUrl: URL(string: itemLink.thumbnail ?? ""),
-            autoPlay: autoPlay,
-            autoReplay: autoReplay)
-        playerView.playbackDelegate = self
-        playerView.set(item: item)
+//        let item = TrailerPlayerItem(
+//            url: self.videoUrl,
+//            thumbnailUrl: URL(string: itemLink.thumbnail ?? ""),
+//            autoPlay: autoPlay,
+//            autoReplay: autoReplay)
+//        playerView.playbackDelegate = self
+//        playerView.set(item: item)
     }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
@@ -387,3 +406,59 @@ extension newSwapvideo : UIPickerViewDelegate,
         picker.dismiss(animated: true, completion: nil)
     }
 }
+extension newSwapvideo: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true, completion: nil)
+
+        guard let itemProvider = results.first?.itemProvider else { return }
+        if itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                if let image = image as? UIImage {
+                    print("Displaying image")
+                    DispatchQueue.main.async {
+                        //self.imageVieww.image = image
+                    }
+                }
+            }
+        } else if itemProvider.hasItemConformingToTypeIdentifier("public.movie") {
+            itemProvider.loadFileRepresentation(forTypeIdentifier: "public.movie") { [weak self] (videoURL, error) in
+                            if let videoURL = videoURL as? URL {
+                                do {
+                                    self?.videoUrl = videoURL
+                                    let item = TrailerPlayerItem(
+                                        url: self?.videoUrl,
+                                        thumbnailUrl: URL(string: ""),
+                                        autoPlay: self?.autoPlay ?? true,
+                                        autoReplay: self?.autoReplay ?? true)
+                                    self?.playerView.playbackDelegate = self
+                                    self?.playerView.set(item: item)
+                                    //self?.playerView.replay()
+                                    self?.videoData = try Data(contentsOf: videoURL)
+                                    print("Video Data: \(self?.videoData)")
+                                    
+                                    // Lưu trữ videoData vào biến hoặc thực hiện các xử lý khác ở đây
+                                } catch {
+                                    print("Error loading video data: \(error.localizedDescription)")
+                                }
+                            }
+                        }
+                    }
+                }
+    }
+    
+    func generateThumbnail(for videoURL: URL) -> UIImage? {
+        do {
+            let asset = AVURLAsset(url: videoURL)
+            let generator = AVAssetImageGenerator(asset: asset)
+            generator.appliesPreferredTrackTransform = true
+
+            let timestamp = CMTime(seconds: 1, preferredTimescale: 60)
+            if let imageRef = try? generator.copyCGImage(at: timestamp, actualTime: nil) {
+                return UIImage(cgImage: imageRef)
+            }
+        } catch {
+            print("Error generating thumbnail: \(error.localizedDescription)")
+        }
+        return nil
+    }
+

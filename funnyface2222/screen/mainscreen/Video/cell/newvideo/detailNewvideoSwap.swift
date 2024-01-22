@@ -1,4 +1,11 @@
 //
+//  detailNewvideoSwap.swift
+//  funnyface2222
+//
+//  Created by quocanhppp on 20/01/2024.
+//
+
+//
 //  DetailSwapVideoVC.swift
 //  FutureLove
 //
@@ -10,7 +17,7 @@ import TrailerPlayer
 import Kingfisher
 import Photos
 
-class DetailSwapVideoVC: UIViewController {
+class detailNewvideoSwap: UIViewController {
     @IBOutlet weak var imageViewCover: UIImageView!
     @IBOutlet weak var buttonBack: UIButton!
     @IBOutlet weak var buttonDownloadSwap: UIButton!
@@ -67,7 +74,7 @@ class DetailSwapVideoVC: UIViewController {
     }
     //https://futurelove.online/detailVideo/526729753548
     @IBAction func shareLinkVideoSwap(){
-        var linkUrlShare = "https://futurelove.online/detailVideo/" + String(itemDataSend.id_sukien_video ?? "")
+        var linkUrlShare = "https://futurelove.online/detailVideo/" + String(itemDataSend.ip_tao_vid ?? "")
 
         if let urlStr = NSURL(string: linkUrlShare) {
             let objectsToShare = [urlStr]
@@ -94,7 +101,7 @@ class DetailSwapVideoVC: UIViewController {
     }
     
     @IBAction func DownloadVideoSwap(){
-        if let urlString = self.itemDataSend.link_vid_swap{
+        if let urlString = self.itemDataSend.link_vid_da_swap{
             let url = URL(string: urlString)
             DispatchQueue.main.async {
                 FileDownloader.loadFileAsync(url: url!) { (path, error) in
@@ -136,12 +143,12 @@ class DetailSwapVideoVC: UIViewController {
             }
         }
     }
-    var itemDataSend:DetailVideoModel = DetailVideoModel()
+    var itemDataSend:DetaiModelUser = DetaiModelUser()
     
     @objc func tabForViewProfile(sender:UITapGestureRecognizer) {
         print("tap working")
         let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
-        vc.userId = itemDataSend.idUser ?? 0
+        vc.userId = itemDataSend.id_user ?? 0
         present(vc, animated: true, completion: nil)
     }
     
@@ -186,7 +193,7 @@ class DetailSwapVideoVC: UIViewController {
         imageUserAvatar.isUserInteractionEnabled = true
         imageUserAvatar.addGestureRecognizer(tapProfile2)
         
-        self.callApiProfile(userId: itemDataSend.idUser ?? 0)
+        self.callApiProfile(userId: itemDataSend.id_user ?? 0)
         self.buttonShare.setTitle("", for: UIControl.State.normal)
         self.buttonDownloadSwap.setTitle("", for: UIControl.State.normal)
         self.buttonBack.setTitle("", for: UIControl.State.normal)
@@ -194,7 +201,7 @@ class DetailSwapVideoVC: UIViewController {
         let processor = DownsamplingImageProcessor(size: imageViewCover.bounds.size)
         |> RoundCornerImageProcessor(cornerRadius: 0)
         imageViewCover.kf.setImage(
-            with: URL(string: itemDataSend.linkimg ?? ""),
+            with: URL(string: itemDataSend.link_image ?? ""),
             placeholder: UIImage(named: "placeholderImage"),
             options: [
                 .processor(processor),
@@ -239,8 +246,8 @@ class DetailSwapVideoVC: UIViewController {
             playerView.manualPlayButton = button
         }
         let item = TrailerPlayerItem(
-            url: URL(string: itemDataSend.link_vid_swap ?? ""),
-            thumbnailUrl: URL(string: itemDataSend.linkimg ?? ""),
+            url: URL(string: itemDataSend.link_vid_da_swap ?? ""),
+            thumbnailUrl: URL(string: itemDataSend.link_image ?? ""),
             autoPlay: autoPlay,
             autoReplay: autoReplay)
         playerView.playbackDelegate = self
@@ -268,7 +275,7 @@ class DetailSwapVideoVC: UIViewController {
             playerGocView.manualPlayButton = button
         }
         let itemGoc = TrailerPlayerItem(
-            url: URL(string: itemDataSend.link_vid_goc ?? ""),
+            url: URL(string: itemDataSend.link_video_goc ?? ""),
             thumbnailUrl: URL(string: "https://github.com/sonnh7289/python3-download/blob/main/oldvideologo.jpeg?raw=true"),
             autoPlay: autoPlay,
             autoReplay: autoReplay)
@@ -277,7 +284,7 @@ class DetailSwapVideoVC: UIViewController {
     }
 }
 
-extension DetailSwapVideoVC: TrailerPlayerPlaybackDelegate {
+extension detailNewvideoSwap: TrailerPlayerPlaybackDelegate {
     
     func trailerPlayer(_ player: TrailerPlayer, didUpdatePlaybackTime time: TimeInterval) {
             if player == playerView.player {
@@ -326,7 +333,7 @@ extension DetailSwapVideoVC: TrailerPlayerPlaybackDelegate {
         }
 }
 
-extension DetailSwapVideoVC: ControlPanelDelegate {
+extension detailNewvideoSwap: ControlPanelDelegate {
     
     func controlPanel(_ panel: ControlPanel, didTapMuteButton button: UIButton) {
         if panel == self.controlPanel{
@@ -396,7 +403,7 @@ extension DetailSwapVideoVC: ControlPanelDelegate {
     }
 }
 
-extension DetailSwapVideoVC: ReplayPanelDelegate {
+extension detailNewvideoSwap: ReplayPanelDelegate {
     
     func replayPanel(_ panel: ReplayPanel, didTapReplayButton button: UIButton) {
             // Kiểm tra xem video đã kết thúc chưa, chỉ xem lại nếu chưa kết thúc

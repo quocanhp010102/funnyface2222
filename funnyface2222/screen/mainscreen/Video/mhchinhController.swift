@@ -13,7 +13,12 @@ class mhchinhController: UIViewController {
    
     @IBOutlet weak var theloaiclv:UICollectionView!
     @IBOutlet weak var cacluachon:UICollectionView!
-   
+    @IBAction func nextdd(){
+                let vc = newSwapvideo(nibName: "newSwapvideo", bundle: nil)
+              
+                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                self.present(vc, animated: true, completion: nil)
+    }
     var listCategories=["Dance video","Troll video","China","Euro","India","Gym","Latin","Northern Europe","Marvel","Japanese"]
     var listTemplateVideo : [Temple2VideoModel] = [Temple2VideoModel]()
     override func viewDidLoad() {

@@ -298,6 +298,9 @@
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Frame 48097838"/>
+                                                <connections>
+                                                    <action selector="nextdd" destination="Y6W-OH-hqX" eventType="touchDown" id="uYJ-PD-jIp"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
