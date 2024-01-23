@@ -30,12 +30,12 @@ class newSwapvideo: UIViewController {
     var videoUrl:URL?
     @IBOutlet weak var buttonBack: UIButton!
     var IsStopBoyAnimation = true
-    @IBOutlet weak var boyImage: UIImageView!
+  //  @IBOutlet weak var boyImage: UIImageView!
     var image_Data_Nam:UIImage = UIImage()
     var linkImageVideoSwap:String = ""
-    @IBOutlet weak var circularSlider: CircularSlider!
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var percentLabel: UILabel!
+  //  @IBOutlet weak var circularSlider: CircularSlider!
+  //  @IBOutlet weak var timerLabel: UILabel!
+  //  @IBOutlet weak var percentLabel: UILabel!
     let dateComponentsFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.zeroFormattingBehavior = .pad
@@ -65,103 +65,25 @@ class newSwapvideo: UIViewController {
     @IBAction func BackApp(){
         self.dismiss(animated: true)
     }
+    @IBAction func nextStep(){
+        let vc = newVideo2(nibName: "newVideo2", bundle: nil)
+        print("video url.  ")
+        print(self.videoUrl)
+        print("video url.  ")
+        print(self.videoData)
+        vc.videoUrl=self.videoUrl
+        vc.videoData =  self.videoData
+        
+        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+        self.present(vc, animated: true, completion: nil)
+    }
     var timerNow: Timer = Timer()
     func uploadGenVideoByImages(completion: @escaping ApiCompletion){
         APIService.shared.UploadImagesToGenRieng("https://metatechvn.store/upload-gensk/" + String(AppConstant.userId ?? 0) + "?type=src_vid", ImageUpload: self.image_Data_Nam,method: .POST, loading: true){data,error in
             completion(data, nil)
         }
     }
-    
-    func detectFaces(in image: UIImage)  {
-        //        if let cgImage = image.cgImage {
-        //            let requestHandler = VNImageRequestHandler(cgImage: cgImage, orientation: .up, options: [:])
-        //            do {
-                  //      let faceDetectionRequest = VNDetectFaceRectanglesRequest()
-        //                try requestHandler.perform([faceDetectionRequest])
-        //                if let results = faceDetectionRequest.results {
-        //                    if results.count == 1 {
-        self.boyImage.image = UIImage(named: "icon-upload")
-        self.image_Data_Nam = image
-        self.circularSlider.maximumValue = 180.0
-        var timeCount = 0.0
-        self.timerNow = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (_) in
-            timeCount = timeCount + 1
-            let tile = Int((timeCount / 180.0) * 100.0)
-            self.percentLabel.text = String(tile) + " %"
-            self.updatePlayerUI(withCurrentTime: CGFloat(timeCount))
-        }
-        self.uploadGenVideoByImages(){data,error in
-            if let data = data as? String{
-                print(data)
-                self.linkImageVideoSwap = data
-                let removeSuot = self.linkImageVideoSwap.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
-                let linkImagePro = removeSuot.replacingOccurrences(of: "/var/www/build_futurelove", with: "https://futurelove.online", options: .literal, range: nil)
-                if let url = URL(string: linkImagePro){
-                    self.boyImage.af.setImage(withURL: url)
-                }
-//                APIService.shared.GenVideoSwap(device_them_su_kien: AppConstant.modelName ?? "iphone", id_video: String(self.itemLink.id ?? 0) , ip_them_su_kien: AppConstant.IPAddress.asStringOrEmpty(), id_user: AppConstant.userId.asStringOrEmpty(), link_img: self.linkImageVideoSwap, ten_video: "swapvideo.mp4"){response,error in
-//                    if let response = response{
-//                        let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
-//                        vc.itemDataSend = response
-//                        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-//                        self.present(vc, animated: true, completion: nil)
-//                    }
-//                   
-//                }
-                let device = "Simulator (iPhone 14 Plus)"
-                let ip = "14.231.223.63"
-                let userId = "3"
-                // Lấy đường dẫn của video MP4 từ main bundle
-                if let videoFileURL = Bundle.main.url(forResource: "testnhay", withExtension: "mp4") {
-                    do {
-                        // Chuyển video thành dữ liệu
-                        let videoData = try Data(contentsOf: videoFileURL)
-                        print(self.linkImageVideoSwap)
-                      
 
-                        let url = "https://lhvn.online/getdata/genvideo/swap/imagevid?device_them_su_kien=Simulator%20%28iPhone%2014%20Plus%29&ip_them_su_kien=14.231.223.63&id_user=203&src_img=\(self.linkImageVideoSwap)"
-                        //print(cleanedLinkImagePro)
-                        let urll2 = url.replacingOccurrences(of: "\"", with: "")
-                        let myString = url
-                        let charToRemove: Character = "\""
-                        let filteredString = String(myString.filter { $0 != charToRemove })
-                        print("hêhheheh")
-                        print(filteredString)
-                        APIService.shared.UploadVideoBatKyAndGen(urll2 , mediaData: self.videoData ?? videoData, method: .POST, loading: true) { response, error in
-                            // Xử lý phản hồi hoặc lỗi
-                            if let response = response {
-                                print("Response: \(response)")
-                                let vc = detailNewvideoSwap(nibName: "detailNewvideoSwap", bundle: nil)
-                                vc.itemDataSend = response
-                                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                                self.present(vc, animated: true, completion: nil)
-                               
-                            } else if let error = error {
-                                print("Error: \(error)")
-                            }
-                        }
-                       
-                        
-                    } catch {
-                        print("Error reading video file: \(error)")
-                    }
-                } else {
-                    print("Video file not found in the bundle.")
-                }
-
-            }
-        }
-        //                    }else{
-        //                        let textAlertFace = "Image Have " + String( results.count ) + " Face - You need to choose a photo with only one face"
-        //                        self.showAlert(message: textAlertFace)
-        //                    }
-        //                }
-        
-        //            }catch {
-        //                print("Error: \(error)")
-        //            }
-        //        }
-    }
     
     @objc func imageBoyTapped(_ sender: UITapGestureRecognizer) {
         let refreshAlert = UIAlertController(title: "Use Old Images Uploaded", message: "Do You Want Select Old Images For AI Generate Images", preferredStyle: UIAlertController.Style.alert)
@@ -197,90 +119,18 @@ class newSwapvideo: UIViewController {
         present(refreshAlert, animated: true, completion: nil)
     }
     func updatePlayerUI(withCurrentTime currentTime: CGFloat) {
-        circularSlider.endPointValue = currentTime
+   
         var components = DateComponents()
         components.second = Int(currentTime)
-        timerLabel.text = dateComponentsFormatter.string(from: components)
+     
     }
-    @objc func Send_OLD_Images_Click(notification: NSNotification) {
-        if let imageLink = notification.userInfo?["image"] as? String {
-            self.linkImageVideoSwap = imageLink
-            self.circularSlider.maximumValue = 180.0
-            var timeCount = 0.0
-            self.timerNow = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (_) in
-                timeCount = timeCount + 1
-                let tile = Int((timeCount / 180.0) * 100.0)
-                self.percentLabel.text = String(tile) + " %"
-                self.updatePlayerUI(withCurrentTime: CGFloat(timeCount))
-            }
 
-            let removeSuot = self.linkImageVideoSwap.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
-            let linkImagePro = removeSuot.replacingOccurrences(of: "https://futurelove.online", with: "/var/www/build_futurelove", options: .literal, range: nil)
-//            APIService.shared.GenVideoSwap(device_them_su_kien: AppConstant.modelName ?? "iphone", id_video: String(self.itemLink.id ?? 0) , ip_them_su_kien: AppConstant.IPAddress.asStringOrEmpty(), id_user: AppConstant.userId.asStringOrEmpty(), link_img: linkImagePro, ten_video: "swapvideo.mp4"){response,error in
-//                if let response = response{
-//                    let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
-//                    vc.itemDataSend = response
-//                    vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-//                    self.present(vc, animated: true, completion: nil)
-//                }
-//                
-//            }
-            // Đặt các giá trị thực tế cho các tham số
-            let device = "Simulator (iPhone 14 Plus)"
-            let ip = "14.231.223.63"
-            let userId = "3"
-            let imageLink = "/var/www/build_futurelove/image/image_user/3/nam/3_nam_69101.jpg"
-
-            // Đọc dữ liệu từ file video (ví dụ: video.mp4 trong dự án của bạn)
-            if let videoURL = Bundle.main.url(forResource: "testnhay", withExtension: "mp4") {
-                do {
-                    let videoData = try Data(contentsOf: videoURL)
-
-                    // Gọi hàm swapImageWithVideo
-                    APIService.shared.swapImageWithVideo(device: device, ip: ip, userId: AppConstant.userId.asStringOrEmpty(), imageLink: linkImagePro, videoFile: self.videoData ?? videoData) { (response, error) in
-                        // Xử lý phản hồi hoặc lỗi
-                        if let error = error {
-                            print("Error:", error)
-                        } else if let response = response {
-                            print("Response:", response)
-                        }
-                    }
-                } catch {
-                    print("Failed to load video data:", error)
-                }
-            }
-
-            let url = URL(string: imageLink)
-            let processor = DownsamplingImageProcessor(size: self.boyImage.bounds.size)
-            |> RoundCornerImageProcessor(cornerRadius: 20)
-            self.boyImage.kf.indicatorType = .activity
-            self.boyImage.kf.setImage(
-                with: url,
-                placeholder: UIImage(named: "placeholderImage"),
-                options: [
-                    .processor(processor),
-                    .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(1)),
-                    .cacheOriginalImage
-                ])
-            {
-                result in
-                switch result {
-                case .success(let value):
-                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
-                case .failure(let error):
-                    print("Job failed: \(error.localizedDescription)")
-                }
-            }
-            
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(Send_OLD_Images_Click), name: NSNotification.Name(rawValue: "Notification_SEND_IMAGES"), object: nil)
+
 
         self.buttonBack.setTitle("", for: UIControl.State.normal)
-        circularSlider.endPointValue = 0
+       
         buttonBack.setTitle("", for: .normal)
         view.addSubview(playerView)
         playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -292,9 +142,8 @@ class newSwapvideo: UIViewController {
             playerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
         }
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageBoyTapped(_:)))
-        boyImage.addGestureRecognizer(tapGesture)
-        boyImage.isUserInteractionEnabled = true
+        //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageBoyTapped(_:)))
+        
         
         controlPanel.delegate = self
         playerView.addControlPanel(controlPanel)
@@ -311,13 +160,7 @@ class newSwapvideo: UIViewController {
             playerView.manualPlayButton = button
         }
         
-//        let item = TrailerPlayerItem(
-//            url: self.videoUrl,
-//            thumbnailUrl: URL(string: itemLink.thumbnail ?? ""),
-//            autoPlay: autoPlay,
-//            autoReplay: autoReplay)
-//        playerView.playbackDelegate = self
-//        playerView.set(item: item)
+
     }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
@@ -396,7 +239,7 @@ extension newSwapvideo : UIPickerViewDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
             picker.dismiss(animated: true)
-            self.detectFaces(in: selectedImage)
+          //  self.detectFaces(in: selectedImage)
         } else {
             print("Image not found")
         }
@@ -424,10 +267,11 @@ extension newSwapvideo: PHPickerViewControllerDelegate {
             itemProvider.loadFileRepresentation(forTypeIdentifier: "public.movie") { [weak self] (videoURL, error) in
                             if let videoURL = videoURL as? URL {
                                 do {
+                                    let defaultImageURL = Bundle.main.url(forResource: "download", withExtension: "png")
                                     self?.videoUrl = videoURL
                                     let item = TrailerPlayerItem(
                                         url: self?.videoUrl,
-                                        thumbnailUrl: URL(string: ""),
+                                        thumbnailUrl: defaultImageURL,
                                         autoPlay: self?.autoPlay ?? true,
                                         autoReplay: self?.autoReplay ?? true)
                                     self?.playerView.playbackDelegate = self

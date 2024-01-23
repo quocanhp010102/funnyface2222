@@ -11,11 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwapVideoDetailVC" customModule="funnyface2222" customModuleProvider="target">
             <connections>
-                <outlet property="boyImage" destination="wBd-xk-Z24" id="jeu-9n-XB3"/>
                 <outlet property="buttonBack" destination="nep-xy-9a6" id="eTh-Xq-DcH"/>
-                <outlet property="circularSlider" destination="iM1-lI-uua" id="GSI-sz-bY2"/>
-                <outlet property="percentLabel" destination="CCG-FU-dqU" id="lFX-Sw-TUU"/>
-                <outlet property="timerLabel" destination="jgQ-AI-lwt" id="SV7-2f-d6A"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,39 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JC3-wh-rRa">
-                    <rect key="frame" x="96.666666666666686" y="588" width="200" height="200"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love_add" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-n3-gcN">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wBd-xk-Z24" userLabel="image_boy">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love_boy" translatesAutoresizingMaskIntoConstraints="NO" id="Cgs-Cc-IHn">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="wBd-xk-Z24" secondAttribute="bottom" id="0hy-50-TV7"/>
-                        <constraint firstAttribute="bottom" secondItem="ycb-n3-gcN" secondAttribute="bottom" id="5Px-x1-zUu"/>
-                        <constraint firstItem="wBd-xk-Z24" firstAttribute="leading" secondItem="JC3-wh-rRa" secondAttribute="leading" id="7EC-rq-O5u"/>
-                        <constraint firstAttribute="height" constant="200" id="GWT-fA-p0G"/>
-                        <constraint firstAttribute="trailing" secondItem="ycb-n3-gcN" secondAttribute="trailing" id="H6z-UW-ucn"/>
-                        <constraint firstAttribute="width" constant="200" id="HYD-H9-Nr6"/>
-                        <constraint firstItem="ycb-n3-gcN" firstAttribute="top" secondItem="JC3-wh-rRa" secondAttribute="top" id="TW4-2j-AuF"/>
-                        <constraint firstItem="Cgs-Cc-IHn" firstAttribute="leading" secondItem="JC3-wh-rRa" secondAttribute="leading" id="XPm-xZ-2tE"/>
-                        <constraint firstItem="Cgs-Cc-IHn" firstAttribute="top" secondItem="JC3-wh-rRa" secondAttribute="top" id="gln-cj-2ru"/>
-                        <constraint firstItem="ycb-n3-gcN" firstAttribute="leading" secondItem="JC3-wh-rRa" secondAttribute="leading" id="iGt-BV-Exv"/>
-                        <constraint firstItem="wBd-xk-Z24" firstAttribute="top" secondItem="JC3-wh-rRa" secondAttribute="top" id="kZp-cK-4No"/>
-                        <constraint firstAttribute="bottom" secondItem="Cgs-Cc-IHn" secondAttribute="bottom" id="mD8-lg-kzh"/>
-                        <constraint firstAttribute="trailing" secondItem="wBd-xk-Z24" secondAttribute="trailing" id="nJP-Q7-pjZ"/>
-                        <constraint firstAttribute="trailing" secondItem="Cgs-Cc-IHn" secondAttribute="trailing" id="x5c-ay-mhP"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nep-xy-9a6">
                     <rect key="frame" x="30" y="50" width="45" height="45"/>
                     <constraints>
@@ -69,97 +32,38 @@
                         <action selector="BackApp" destination="-1" eventType="touchDown" id="ICA-kK-YkT"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" restorationIdentifier="CircularSliderProcess" translatesAutoresizingMaskIntoConstraints="NO" id="iM1-lI-uua" customClass="CircularSlider" customModule="HGCircularSlider">
-                    <rect key="frame" x="104.66666666666669" y="384" width="184" height="184"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="184" id="5s0-6r-2ei"/>
-                        <constraint firstAttribute="width" constant="184" id="R5N-oH-U09"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                            <real key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
-                            <color key="value" red="0.14901960780000001" green="0.83921568629999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="diskColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="diskFillColor">
-                            <color key="value" red="0.14901960780000001" green="0.83921568629999999" blue="0.99215686270000003" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
-                            <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="thumbRadius">
-                            <real key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="endThumbStrokeHighlightedColor">
-                            <color key="value" red="0.80000000000000004" green="0.57254901960000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="endThumbStrokeColor">
-                            <color key="value" red="0.14901960780000001" green="0.83921568629999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCG-FU-dqU">
-                    <rect key="frame" x="166.66666666666666" y="458" width="59.666666666666657" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="d08-qY-JyA"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
-                    <color key="textColor" systemColor="systemPinkColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgQ-AI-lwt">
-                    <rect key="frame" x="167" y="503" width="59" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="MdJ-hX-Bv5"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                    <color key="textColor" systemColor="systemGreenColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0o6-8e-wK2">
-                    <rect key="frame" x="318" y="609" width="75" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ8-QK-hno">
+                    <rect key="frame" x="159" y="750" width="95.666666666666686" height="35"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="continute">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </buttonConfiguration>
                     <connections>
-                        <action selector="nextdd" destination="-1" eventType="touchDown" id="Uip-Ts-GrN"/>
+                        <action selector="nextdd" destination="-1" eventType="touchDown" id="qDl-sj-3Sb"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
-                <constraint firstItem="JC3-wh-rRa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="6Wl-Ft-Hi0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TZ8-QK-hno" secondAttribute="trailing" constant="159" id="3wv-Ei-zFP"/>
                 <constraint firstItem="nep-xy-9a6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="8OP-2a-Gfz"/>
-                <constraint firstItem="CCG-FU-dqU" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="DkD-rV-N3l"/>
-                <constraint firstItem="JC3-wh-rRa" firstAttribute="top" secondItem="iM1-lI-uua" secondAttribute="bottom" constant="20" id="LMr-j6-D5r"/>
-                <constraint firstItem="iM1-lI-uua" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="LoN-Jf-VwF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JC3-wh-rRa" secondAttribute="bottom" constant="30" id="flq-L5-cUf"/>
-                <constraint firstItem="JC3-wh-rRa" firstAttribute="top" secondItem="jgQ-AI-lwt" secondAttribute="bottom" constant="60" id="pCo-p1-S8F"/>
-                <constraint firstItem="jgQ-AI-lwt" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rwS-ua-K3y"/>
-                <constraint firstItem="jgQ-AI-lwt" firstAttribute="top" secondItem="CCG-FU-dqU" secondAttribute="bottom" constant="20" id="seu-5v-kmo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TZ8-QK-hno" secondAttribute="bottom" constant="33" id="mGD-mK-4KB"/>
+                <constraint firstItem="TZ8-QK-hno" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="159" id="nB6-uo-SRN"/>
                 <constraint firstItem="nep-xy-9a6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="vKW-nx-eOW"/>
+                <constraint firstItem="TZ8-QK-hno" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.340967" id="zhg-6i-Zwi"/>
             </constraints>
             <point key="canvasLocation" x="58.778625954198468" y="-33.098591549295776"/>
         </view>
     </objects>
     <resources>
         <image name="back" width="24" height="24.333333969116211"/>
-        <image name="love_add" width="31.666666030883789" height="32"/>
-        <image name="love_boy" width="184.33332824707031" height="184.33332824707031"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

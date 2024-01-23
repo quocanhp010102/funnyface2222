@@ -159,8 +159,8 @@ class loginView: BaseViewController {
                     }
                 }
             }
-            let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "mhtestViewController") as! mhtestViewController
+            let storyboard = UIStoryboard(name: "mainpage", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mhthunhat") as! mhthunhat
             vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
             self.present(vc, animated: true, completion: nil)
         }

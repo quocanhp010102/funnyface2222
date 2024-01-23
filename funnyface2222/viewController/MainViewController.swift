@@ -12,8 +12,11 @@ class MainViewController: UIViewController {
         print("hello")
         let storyboard = UIStoryboard(name: "login", bundle: nil) // type storyboard name instead of Main
          if let myViewController = storyboard.instantiateViewController(withIdentifier: "loginView") as? loginView {
+             myViewController.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
                present(myViewController, animated: true, completion: nil)
          }
+      
+       
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -29,6 +29,8 @@ struct TempleVideoModel: Codable {
 struct Temple2VideoModel: Codable {
     var id : Int?
     var id_categories:Int?
+    var name_categories:String?
+    var detail:String?
     var age_video:Int?
     var chung_toc:String?
     var gioi_tinh : String?
@@ -39,6 +41,8 @@ struct Temple2VideoModel: Codable {
     mutating func initLoad(_ json:[String:Any]) ->Temple2VideoModel{
         if let temp = json["id"] as? Int {id = temp}
         if let temp = json["id_categories"] as? Int {id_categories = temp}
+        if let temp = json["name_categories"] as? String {name_categories = temp}
+        if let temp = json["detail"] as? String {detail = temp}
         if let temp = json["age_video"] as? Int {age_video = temp}
         if let temp = json["chung_toc"] as? String {
             chung_toc = temp
@@ -47,7 +51,7 @@ struct Temple2VideoModel: Codable {
         if let temp = json["link_video"] as? String {link_video = temp}
         if let temp = json["mau_da"] as? String {mau_da = temp}
         if let temp = json["noi_dung"] as? String {noi_dung = temp}
-        if let temp = json["noi_dung"] as? String {noi_dung = temp}
+       
         if let temp = json["thumbnail"] as? String {thumbnail = temp}
         return self
     }

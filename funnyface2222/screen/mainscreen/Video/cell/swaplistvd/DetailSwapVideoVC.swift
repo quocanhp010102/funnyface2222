@@ -215,9 +215,9 @@ class DetailSwapVideoVC: UIViewController {
         playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         playerView.heightAnchor.constraint(equalTo: playerView.widthAnchor, multiplier: 0.65).isActive = true
         if #available(iOS 11.0, *) {
-            playerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 170).isActive = true
+            playerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
         } else {
-            playerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 170).isActive = true
+            playerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120).isActive = true
         }
         //______SONPIPI_____
         //        var buttonDownloadSwap: UIButton!
@@ -251,9 +251,9 @@ class DetailSwapVideoVC: UIViewController {
         playerGocView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         playerGocView.heightAnchor.constraint(equalTo: playerGocView.widthAnchor, multiplier: 0.65).isActive = true
         if #available(iOS 11.0, *) {
-            playerGocView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 400).isActive = true
+            playerGocView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 350).isActive = true
         } else {
-            playerGocView.topAnchor.constraint(equalTo: view.topAnchor, constant: 400).isActive = true
+            playerGocView.topAnchor.constraint(equalTo: view.topAnchor, constant: 350).isActive = true
         }
         controlGocPanel.delegate = self
         playerGocView.addControlPanel(controlGocPanel)

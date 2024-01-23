@@ -1016,31 +1016,31 @@ class APIService:NSObject {
         }
         // closure("Please Wait To Remove", nil)
     }
-//    func listAllVideoSwaped(page:Int,closure: @escaping (_ response: [ResultVideoModel], _ error: Error?) -> Void) {
-//        let linkUrl = "https://metatechvn.store/lovehistory/video/" + String(page)
-//        requestJSON(linkUrl, param: nil, method: .GET, loading: true) { (data, error) in
-//            var listVideoReturn : [ResultVideoModel] = [ResultVideoModel]()
-//            if let data = data as? [String:Any]{
-//                if let data2 = data["list_sukien_video"] as? [[String:Any]]{
-//                    for item in data2{
-//                        if let dataListSuKien = item["sukien_video"] as? [[String:Any]]{
-//                            for item2 in dataListSuKien{
-//                                var itemvideoAdd: ResultVideoModel = ResultVideoModel()
-//                                itemvideoAdd = itemvideoAdd.initLoad(item2)
-//                                listVideoReturn.append(itemvideoAdd)
-//                            }
-//                        }
-//                    }
-//                    closure(listVideoReturn,nil)
-//                }else{
-//                    closure([ResultVideoModel](),nil)
-//                }
-//            }else{
-//                closure([ResultVideoModel](),nil)
-//            }
-//        }
-//        // closure("Please Wait To Remove", nil)
-//    }
+    func listAllVideoSwaped(page:Int,closure: @escaping (_ response: [ResultVideoModel], _ error: Error?) -> Void) {
+        let linkUrl = "https://metatechvn.store/lovehistory/video/" + String(page)
+        requestJSON(linkUrl, param: nil, method: .GET, loading: true) { (data, error) in
+            var listVideoReturn : [ResultVideoModel] = [ResultVideoModel]()
+            if let data = data as? [String:Any]{
+                if let data2 = data["list_sukien_video"] as? [[String:Any]]{
+                    for item in data2{
+                        if let dataListSuKien = item["sukien_video"] as? [[String:Any]]{
+                            for item2 in dataListSuKien{
+                                var itemvideoAdd: ResultVideoModel = ResultVideoModel()
+                                itemvideoAdd = itemvideoAdd.initLoad(item2)
+                                listVideoReturn.append(itemvideoAdd)
+                            }
+                        }
+                    }
+                    closure(listVideoReturn,nil)
+                }else{
+                    closure([ResultVideoModel](),nil)
+                }
+            }else{
+                closure([ResultVideoModel](),nil)
+            }
+        }
+        // closure("Please Wait To Remove", nil)
+    }
     func listImageUploaded(type:String,idUser:String,closure: @escaping (_ response: [String], _ error: Error?) -> Void) {
         let linkUrl = "https://metatechvn.store/images/" + idUser + "?type=" + type
         requestJSON(linkUrl, param: nil, method: .GET, loading: true) { (data, error) in
