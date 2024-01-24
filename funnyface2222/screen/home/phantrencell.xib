@@ -9,15 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="phantrencell" customModule="funnyface2222" customModuleProvider="target">
-            <connections>
-                <outlet property="cacluachon" destination="Edu-F2-T1X" id="Ilb-tK-eiu"/>
-                <outlet property="showmore" destination="syX-QZ-flM" id="msn-pV-sgu"/>
-                <outlet property="view" destination="64w-hT-JoW" id="nzV-q6-kSE"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="phantrencell" customModule="funnyface2222" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="64w-hT-JoW">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="64w-hT-JoW" customClass="phantrencell" customModule="funnyface2222" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="445" height="531"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hOF-XL-Q9X">
@@ -87,6 +81,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="show more">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nextdd" destination="64w-hT-JoW" eventType="touchDown" id="B0y-Uv-Dfh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -104,8 +101,8 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Edu-F2-T1X">
                                 <rect key="frame" x="0.0" y="41" width="413" height="232"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KqK-ab-moS">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KqK-ab-moS">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -117,7 +114,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="lty-XH-D9R" firstAttribute="height" secondItem="MdF-M3-wpo" secondAttribute="height" multiplier="0.131868" id="0wV-oe-ZuA"/>
                             <constraint firstItem="lty-XH-D9R" firstAttribute="leading" secondItem="MdF-M3-wpo" secondAttribute="leading" id="He5-gD-rdO"/>
@@ -142,6 +139,9 @@
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="445" height="531"/>
+            <connections>
+                <outlet property="cacluachon2" destination="Edu-F2-T1X" id="ptl-Kv-XDa"/>
+            </connections>
             <point key="canvasLocation" x="-600.76335877862596" y="-1289.7887323943662"/>
         </collectionViewCell>
     </objects>
@@ -150,6 +150,9 @@
         <image name="Frame 48097839 1" width="144" height="110"/>
         <image name="Rectangle 3555" width="343" height="160"/>
         <image name="salient features" width="109.66666412353516" height="9"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,10 +7,10 @@
 
 import UIKit
 
-class phanduoicell: UIViewController {
+class phanduoicell: UICollectionViewCell {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func awakeFromNib() {
+        super.awakeFromNib()
 
         // Do any additional setup after loading the view.
     }

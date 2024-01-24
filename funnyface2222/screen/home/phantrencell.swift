@@ -15,34 +15,32 @@
 import UIKit
 import Kingfisher
 
-class phantrencell: UIViewController {
+class phantrencell: UICollectionViewCell {
     var listTemplateVideo : [ResultVideoModel] = [ResultVideoModel]()
-    @IBOutlet weak var cacluachon:UICollectionView!
+    @IBOutlet weak var cacluachon2:UICollectionView!
    
-    @IBOutlet weak var showmore:UIButton!
+   // @IBOutlet weak var showmore:UIButton!
     @IBAction func nextdd(){
-        let storyboard = UIStoryboard(name: "HomeStaboad", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "albumswaped") as! albumswaped
-        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-        print("lisssss dataa")
-        //print(self)
-       
-        APIService.shared.listAllVideoSwaped(page:1){response,error in
-            vc.listTemplateVideo = response
-            self.present(vc, animated: true, completion: nil)
-            //self.cacluachon.reloadData()
+        if let parentVC = findParentViewController(of: UIViewController.self) {
+            let storyboard = UIStoryboard(name: "HomeStaboad", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "albumswaped") as! albumswaped
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            print("lisssss dataa")
+            //print(self)
+            
+            APIService.shared.listAllVideoSwaped(page:1){response,error in
+                vc.listTemplateVideo = response
+                parentVC.present(vc, animated: true, completion: nil)
+                //self.cacluachon.reloadData()
+            }
         }
-    
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        showmore.layer.borderWidth = 0
+    override func awakeFromNib() {
+        super.awakeFromNib()
+       // showmore.layer.borderWidth = 0
        
-        APIService.shared.listAllVideoSwaped(page:1){response,error in
-            self.listTemplateVideo = response
-            self.cacluachon.reloadData()
-        }
-        cacluachon.register(UINib(nibName: "hightlightmain", bundle: nil), forCellWithReuseIdentifier: "hightlightmain")
+      
+        cacluachon2.register(UINib(nibName: "hightlightmain", bundle: nil), forCellWithReuseIdentifier: "hightlightmain")
         // Do any additional setup after loading the view.
     }
     
@@ -72,24 +70,32 @@ extension phantrencell: UICollectionViewDelegate, UICollectionViewDataSource {
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
-        var itemLink:DetailVideoModel = DetailVideoModel()
-        itemLink.linkimg = self.listTemplateVideo[indexPath.row].link_image
-        itemLink.link_vid_swap = self.listTemplateVideo[indexPath.row].link_vid_swap
-        itemLink.noidung = self.listTemplateVideo[indexPath.row].noidung_sukien
-        itemLink.id_sukien_video = self.listTemplateVideo[indexPath.row].id_video
-        itemLink.id_video_swap = self.listTemplateVideo[indexPath.row].id_video
-        itemLink.ten_video = self.listTemplateVideo[indexPath.row].ten_su_kien
-        itemLink.idUser = self.listTemplateVideo[indexPath.row].id_user
-//            itemLink.thoigian_swap = Floatself.listTemplateVideo[indexPath.row].thoigian_taovid
-//\            itemLink.device_tao_vid = self.listTemplateVideo[indexPath.row].thoigian_taovid
-        itemLink.thoigian_sukien = self.listTemplateVideo[indexPath.row].thoigian_taosk
-        itemLink.link_video_goc = self.listTemplateVideo[indexPath.row].link_vid_swap
-        itemLink.ip_tao_vid = self.listTemplateVideo[indexPath.row].id_video
-        itemLink.link_vid_swap = self.listTemplateVideo[indexPath.row].link_vid_swap
-        vc.itemDataSend = itemLink
-        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-        self.present(vc, animated: true, completion: nil)
+        if let parentVC = findParentViewController(of: UIViewController.self) {
+            let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
+            var itemLink:DetailVideoModel = DetailVideoModel()
+            itemLink.linkimg = self.listTemplateVideo[indexPath.row].link_image
+            itemLink.link_vid_swap = self.listTemplateVideo[indexPath.row].link_vid_swap
+            itemLink.noidung = self.listTemplateVideo[indexPath.row].noidung_sukien
+            itemLink.id_sukien_video = self.listTemplateVideo[indexPath.row].id_video
+            itemLink.id_video_swap = self.listTemplateVideo[indexPath.row].id_video
+            itemLink.ten_video = self.listTemplateVideo[indexPath.row].ten_su_kien
+            itemLink.idUser = self.listTemplateVideo[indexPath.row].id_user
+    //            itemLink.thoigian_swap = Floatself.listTemplateVideo[indexPath.row].thoigian_taovid
+    //\            itemLink.device_tao_vid = self.listTemplateVideo[indexPath.row].thoigian_taovid
+            itemLink.thoigian_sukien = self.listTemplateVideo[indexPath.row].thoigian_taosk
+            itemLink.link_video_goc = self.listTemplateVideo[indexPath.row].link_vid_swap
+            itemLink.ip_tao_vid = self.listTemplateVideo[indexPath.row].id_video
+            itemLink.link_vid_swap = self.listTemplateVideo[indexPath.row].link_vid_swap
+            vc.itemDataSend = itemLink
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            parentVC.present(vc, animated: true, completion: nil)
+            
+                //let nextViewController = SwapVideoDetailVC(nibName: "SwapVideoDetailVC", bundle: nil)
+               // nextViewController.itemLink = self.listTemplateVideo[indexPath.row]
+                
+               // parentVC.present(nextViewController, animated: true, completion: nil)
+            }
+       
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
