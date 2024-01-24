@@ -157,6 +157,11 @@
 		E68D672D2B5FB80400E410FC /* albumswaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D672C2B5FB80400E410FC /* albumswaped.swift */; };
 		E68D67302B5FBA7200E410FC /* cellVideoSwaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D672E2B5FBA7200E410FC /* cellVideoSwaped.swift */; };
 		E68D67312B5FBA7200E410FC /* cellVideoSwaped.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68D672F2B5FBA7200E410FC /* cellVideoSwaped.xib */; };
+		E68D67342B5FCA7400E410FC /* phantrencell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D67322B5FCA7400E410FC /* phantrencell.swift */; };
+		E68D67352B5FCA7400E410FC /* phantrencell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68D67332B5FCA7400E410FC /* phantrencell.xib */; };
+		E68D67382B5FCC0A00E410FC /* phanduoicell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D67362B5FCC0A00E410FC /* phanduoicell.swift */; };
+		E68D67392B5FCC0A00E410FC /* phanduoicell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68D67372B5FCC0A00E410FC /* phanduoicell.xib */; };
+		E68D673B2B5FCC7700E410FC /* viptestmain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D673A2B5FCC7700E410FC /* viptestmain.swift */; };
 		E69E059C2B52EF8100E9D2DB /* SwapVideoDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69E059B2B52EF8100E9D2DB /* SwapVideoDetailVC.xib */; };
 		E6B88CB02B4FD773005A02E6 /* newSwapvideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B88CAE2B4FD773005A02E6 /* newSwapvideo.swift */; };
 		E6B88CB12B4FD773005A02E6 /* newSwapvideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B88CAF2B4FD773005A02E6 /* newSwapvideo.xib */; };
@@ -333,6 +338,11 @@
 		E68D672C2B5FB80400E410FC /* albumswaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumswaped.swift; sourceTree = "<group>"; };
 		E68D672E2B5FBA7200E410FC /* cellVideoSwaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellVideoSwaped.swift; sourceTree = "<group>"; };
 		E68D672F2B5FBA7200E410FC /* cellVideoSwaped.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cellVideoSwaped.xib; sourceTree = "<group>"; };
+		E68D67322B5FCA7400E410FC /* phantrencell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phantrencell.swift; sourceTree = "<group>"; };
+		E68D67332B5FCA7400E410FC /* phantrencell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = phantrencell.xib; sourceTree = "<group>"; };
+		E68D67362B5FCC0A00E410FC /* phanduoicell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phanduoicell.swift; sourceTree = "<group>"; };
+		E68D67372B5FCC0A00E410FC /* phanduoicell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = phanduoicell.xib; sourceTree = "<group>"; };
+		E68D673A2B5FCC7700E410FC /* viptestmain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viptestmain.swift; sourceTree = "<group>"; };
 		E69E059B2B52EF8100E9D2DB /* SwapVideoDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwapVideoDetailVC.xib; sourceTree = "<group>"; };
 		E6B88CAE2B4FD773005A02E6 /* newSwapvideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSwapvideo.swift; sourceTree = "<group>"; };
 		E6B88CAF2B4FD773005A02E6 /* newSwapvideo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newSwapvideo.xib; sourceTree = "<group>"; };
@@ -417,6 +427,11 @@
 				E68D67232B5F9FA300E410FC /* cell */,
 				E64E47B52B5E1B66007DDAD0 /* HomeStaboad.storyboard */,
 				E64E47B72B5E1B7D007DDAD0 /* HomeMainView.swift */,
+				E68D67322B5FCA7400E410FC /* phantrencell.swift */,
+				E68D67332B5FCA7400E410FC /* phantrencell.xib */,
+				E68D67362B5FCC0A00E410FC /* phanduoicell.swift */,
+				E68D67372B5FCC0A00E410FC /* phanduoicell.xib */,
+				E68D673A2B5FCC7700E410FC /* viptestmain.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -1129,6 +1144,7 @@
 				E66C92E02B4E52EF00B74491 /* Assets.xcassets in Resources */,
 				E64E47932B5AEA64007DDAD0 /* detailNewvideoSwap.xib in Resources */,
 				E66C93EC2B4E559600B74491 /* ReportCommentVC.xib in Resources */,
+				E68D67352B5FCA7400E410FC /* phantrencell.xib in Resources */,
 				E66C92FD2B4E554000B74491 /* Template1TBVCell.xib in Resources */,
 				E66C93E22B4E559600B74491 /* ListImageCLVCell.xib in Resources */,
 				E66C93D22B4E559600B74491 /* DetailSwapVideoVC.xib in Resources */,
@@ -1157,6 +1173,7 @@
 				E68D67312B5FBA7200E410FC /* cellVideoSwaped.xib in Resources */,
 				E64E47BD2B5E3D0F007DDAD0 /* swapvideo2.xib in Resources */,
 				E64E47C42B5E5768007DDAD0 /* download.png in Resources */,
+				E68D67392B5FCC0A00E410FC /* phanduoicell.xib in Resources */,
 				E66C93E72B4E559600B74491 /* LoveViewController.xib in Resources */,
 				E66C93F42B4E559600B74491 /* ProfileViewController.xib in Resources */,
 				E66C93F52B4E559600B74491 /* RecentCommentTableViewCell.xib in Resources */,
@@ -1269,6 +1286,7 @@
 				E66C93F12B4E559600B74491 /* InputPasswordVC.swift in Sources */,
 				E66C93F02B4E559600B74491 /* RecentCommentTableViewCell.swift in Sources */,
 				E66C93392B4E557A00B74491 /* UIView+Extension.swift in Sources */,
+				E68D67342B5FCA7400E410FC /* phantrencell.swift in Sources */,
 				E66C93C92B4E559600B74491 /* SlideMenuTableViewCell.swift in Sources */,
 				E67DF3432B5430300074D573 /* DetaiModelUser.swift in Sources */,
 				E66C93DC2B4E559600B74491 /* mhchinhController.swift in Sources */,
@@ -1318,6 +1336,7 @@
 				E66C930A2B4E554F00B74491 /* LoveAPI.swift in Sources */,
 				E66C93082B4E554F00B74491 /* LoveServiceConfiguration.swift in Sources */,
 				E66C93C72B4E559600B74491 /* CollectionViewCell.swift in Sources */,
+				E68D673B2B5FCC7700E410FC /* viptestmain.swift in Sources */,
 				E66C92D92B4E52EC00B74491 /* SceneDelegate.swift in Sources */,
 				E66C93E92B4E559600B74491 /* CommentsViewController.swift in Sources */,
 				E66C941C2B4E55B000B74491 /* LauchViewController.swift in Sources */,
@@ -1325,6 +1344,7 @@
 				E66C93E32B4E559600B74491 /* LoveViewController.swift in Sources */,
 				E6C6E9BA2B57D2100055D260 /* SwapImageAlbum.swift in Sources */,
 				E66C94132B4E559600B74491 /* RegisterServiceConfiguration.swift in Sources */,
+				E68D67382B5FCC0A00E410FC /* phanduoicell.swift in Sources */,
 				E66C933B2B4E557A00B74491 /* String+Extension.swift in Sources */,
 				E66C94172B4E559600B74491 /* LoginModel.swift in Sources */,
 				E66C93382B4E557A00B74491 /* Optional+Extension.swift in Sources */,
