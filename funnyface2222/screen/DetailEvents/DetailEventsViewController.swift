@@ -35,7 +35,7 @@ class DetailEventsViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var avartarImage: UIImageView!
     @IBOutlet weak var detailEventTableView: UITableView!
-    
+    @IBOutlet weak var buttonEnter: UIButton!
     init(data: Int ) {
         self.idToanBoSuKien = data
         super.init(nibName: nil, bundle: nil)
@@ -46,7 +46,7 @@ class DetailEventsViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        backgroundView.gradient()
+       // backgroundView.gradient()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,7 @@ class DetailEventsViewController: UIViewController {
         callApiDetailEvent()
         callApiComentEvent()
         keyboard()
+        buttonEnter.setTitle("", for: .normal)
         buttonBack.setTitle("", for: .normal)
         commentTextField.delegate = self
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.ActionClickToSubSuKien))
@@ -118,7 +119,7 @@ class DetailEventsViewController: UIViewController {
     
     
     @IBAction func backBtn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
+        self.dismiss(animated: true)
     }
     
     func callApiDetailEvent() {

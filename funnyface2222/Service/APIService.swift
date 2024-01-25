@@ -776,7 +776,7 @@ class APIService:NSObject {
     }
     
     func getCommentEvent(id: Int,id_toan_bo_su_kien: String,idUser:String, closure: @escaping (_ response: CommentEvent?, _ error: Error?) -> Void) {
-        requestJSON("https://metatechvn.store/lovehistory/comment/\(id)?id_toan_bo_su_kien=\(id_toan_bo_su_kien)" + "?id_user=" + idUser, param: nil, method: .GET, loading: true) { (data, error) in
+        requestJSON("https://metatechvn.store/lovehistory/comment/\(id)?id_toan_bo_su_kien=\(id_toan_bo_su_kien)" + "&id_user=" + idUser, param: nil, method: .GET, loading: true) { (data, error) in
             if let data2 = data as? [String:Any]{
                 var returnData: CommentEvent = CommentEvent()
                 print("https://metatechvn.store/lovehistory/comment/\(id)?id_toan_bo_su_kien=\(id_toan_bo_su_kien)")

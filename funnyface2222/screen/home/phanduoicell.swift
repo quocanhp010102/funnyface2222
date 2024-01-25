@@ -55,7 +55,13 @@ extension phanduoicell: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-       
+        if let parentVC = findParentViewController(of: UIViewController.self) {
+            let vc = DetailEventsViewController(data: dataList_All[indexPath.row].id_toan_bo_su_kien ?? 0 )
+            vc.idToanBoSuKien = dataList_All[indexPath.row].id_toan_bo_su_kien ?? 0
+            vc.index = dataList_All[indexPath.row].so_thu_tu_su_kien ?? 0
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            parentVC.present(vc, animated: true, completion: nil)
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         

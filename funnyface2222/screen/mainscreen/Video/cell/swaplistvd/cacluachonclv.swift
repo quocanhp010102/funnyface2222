@@ -44,7 +44,7 @@ extension cacluachonclv: UICollectionViewDelegate, UICollectionViewDataSource {
         if let parentVC = findParentViewController(of: UIViewController.self) {
                 let nextViewController = SwapVideoDetailVC(nibName: "SwapVideoDetailVC", bundle: nil)
                 nextViewController.itemLink = self.listTemplateVideo[indexPath.row]
-                
+            nextViewController.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
                 parentVC.present(nextViewController, animated: true, completion: nil)
             }
 //        let vc = SwapVideoDetailVC(nibName: "SwapVideoDetailVC", bundle: nil)

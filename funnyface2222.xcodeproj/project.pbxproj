@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CE4311AC50DD594411F5C51F /* Pods_funnyface2222.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3A400DC692F4EF37497AE5 /* Pods_funnyface2222.framework */; };
+		E64614552B62574F000681D3 /* EventStoab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64614542B62574F000681D3 /* EventStoab.storyboard */; };
+		E64614592B6257AD000681D3 /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64614582B6257AD000681D3 /* DetailEventViewController.swift */; };
 		E64E47842B5A52DA007DDAD0 /* contentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E47832B5A52DA007DDAD0 /* contentView.swift */; };
 		E64E47872B5A5AD1007DDAD0 /* ActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E47862B5A5AD1007DDAD0 /* ActionSheets.swift */; };
 		E64E478A2B5A6BC5007DDAD0 /* AlbumvideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E47892B5A6BC5007DDAD0 /* AlbumvideoController.swift */; };
@@ -189,6 +191,8 @@
 /* Begin PBXFileReference section */
 		6B9A5286F424308C091C593A /* Pods-funnyface2222.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funnyface2222.release.xcconfig"; path = "Target Support Files/Pods-funnyface2222/Pods-funnyface2222.release.xcconfig"; sourceTree = "<group>"; };
 		CB3A400DC692F4EF37497AE5 /* Pods_funnyface2222.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_funnyface2222.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64614542B62574F000681D3 /* EventStoab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventStoab.storyboard; sourceTree = "<group>"; };
+		E64614582B6257AD000681D3 /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		E64E47832B5A52DA007DDAD0 /* contentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contentView.swift; sourceTree = "<group>"; };
 		E64E47862B5A5AD1007DDAD0 /* ActionSheets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheets.swift; sourceTree = "<group>"; };
 		E64E47892B5A6BC5007DDAD0 /* AlbumvideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumvideoController.swift; sourceTree = "<group>"; };
@@ -397,6 +401,15 @@
 				CB3A400DC692F4EF37497AE5 /* Pods_funnyface2222.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E64614512B625728000681D3 /* EventNew */ = {
+			isa = PBXGroup;
+			children = (
+				E64614542B62574F000681D3 /* EventStoab.storyboard */,
+				E64614582B6257AD000681D3 /* DetailEventViewController.swift */,
+			);
+			path = EventNew;
 			sourceTree = "<group>";
 		};
 		E64E47852B5A5AC4007DDAD0 /* actionsheep */ = {
@@ -848,6 +861,7 @@
 		E66C93A92B4E559600B74491 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				E64614512B625728000681D3 /* EventNew */,
 				E66C93AA2B4E559600B74491 /* EventViewController.xib */,
 				E66C93AB2B4E559600B74491 /* header-time */,
 				E66C93AE2B4E559600B74491 /* EventViewController.swift */,
@@ -1193,6 +1207,7 @@
 				E66C94052B4E559600B74491 /* HeaderView.xib in Resources */,
 				E66C93D82B4E559600B74491 /* cacluachonclv.xib in Resources */,
 				E66C93F62B4E559600B74491 /* UserSearchTBVCell.xib in Resources */,
+				E64614552B62574F000681D3 /* EventStoab.storyboard in Resources */,
 				E68D67312B5FBA7200E410FC /* cellVideoSwaped.xib in Resources */,
 				E64E47BD2B5E3D0F007DDAD0 /* swapvideo2.xib in Resources */,
 				E64E47C42B5E5768007DDAD0 /* download.png in Resources */,
@@ -1327,6 +1342,7 @@
 				E66C94092B4E559600B74491 /* ImagesGocTBVCell.swift in Sources */,
 				E66C93E02B4E559600B74491 /* DetailCommentTableViewCell.swift in Sources */,
 				E64E47922B5AEA64007DDAD0 /* detailNewvideoSwap.swift in Sources */,
+				E64614592B6257AD000681D3 /* DetailEventViewController.swift in Sources */,
 				E68D671F2B5E781400E410FC /* testmain.swift in Sources */,
 				E66C93E82B4E559600B74491 /* ReportCommentVC.swift in Sources */,
 				E66C940B2B4E559600B74491 /* ControlPanel.swift in Sources */,

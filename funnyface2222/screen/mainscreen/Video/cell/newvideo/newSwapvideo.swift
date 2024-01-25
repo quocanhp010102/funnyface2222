@@ -19,7 +19,7 @@ class newSwapvideo: UIViewController {
        }
     func addFunc() {
             var configuration: PHPickerConfiguration = PHPickerConfiguration()
-            configuration.filter = .any(of: [.images, .videos])
+            configuration.filter = .any(of: [ .videos])
             configuration.selectionLimit = 1
 
             let picker: PHPickerViewController = PHPickerViewController(configuration: configuration)

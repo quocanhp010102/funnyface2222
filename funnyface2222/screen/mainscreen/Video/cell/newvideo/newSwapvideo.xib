@@ -27,7 +27,7 @@
                         <constraint firstAttribute="height" constant="45" id="VLZ-gq-Zxc"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="back"/>
+                    <buttonConfiguration key="configuration" style="plain" image="arrow-left"/>
                     <connections>
                         <action selector="BackApp" destination="-1" eventType="touchDown" id="TMj-L0-UA5"/>
                     </connections>
@@ -69,7 +69,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="24" height="24.333333969116211"/>
+        <image name="arrow-left" width="24" height="24.333333969116211"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

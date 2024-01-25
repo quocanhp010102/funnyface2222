@@ -142,6 +142,7 @@ class DetailSwapVideoVC: UIViewController {
         print("tap working")
         let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
         vc.userId = itemDataSend.idUser ?? 0
+        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
         present(vc, animated: true, completion: nil)
     }
     

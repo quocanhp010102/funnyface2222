@@ -18,6 +18,8 @@ class celleventduoi: UICollectionViewCell {
     var profile:ProfileModel = ProfileModel()
     override func awakeFromNib() {
         super.awakeFromNib()
+        imageUserAvatar.layer.cornerRadius = imageUserAvatar.bounds.width / 2
+        imageUserAvatar.clipsToBounds = true
         // Initialization code
     }
 

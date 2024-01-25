@@ -27,7 +27,7 @@
                         <constraint firstAttribute="height" constant="45" id="isX-gZ-1dD"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="back"/>
+                    <buttonConfiguration key="configuration" style="plain" image="arrow-left"/>
                     <connections>
                         <action selector="BackApp" destination="-1" eventType="touchDown" id="ICA-kK-YkT"/>
                     </connections>
@@ -58,7 +58,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="24" height="24.333333969116211"/>
+        <image name="arrow-left" width="24" height="24.333333969116211"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
