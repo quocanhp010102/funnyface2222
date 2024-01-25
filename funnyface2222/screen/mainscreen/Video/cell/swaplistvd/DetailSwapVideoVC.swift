@@ -213,7 +213,7 @@ class DetailSwapVideoVC: UIViewController {
         }
         playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        playerView.heightAnchor.constraint(equalTo: playerView.widthAnchor, multiplier: 0.65).isActive = true
+        playerView.heightAnchor.constraint(equalTo: playerView.widthAnchor, multiplier: 0.4).isActive = true
         if #available(iOS 11.0, *) {
             playerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
         } else {
@@ -249,11 +249,11 @@ class DetailSwapVideoVC: UIViewController {
         view.addSubview(playerGocView)
         playerGocView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         playerGocView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        playerGocView.heightAnchor.constraint(equalTo: playerGocView.widthAnchor, multiplier: 0.65).isActive = true
+        playerGocView.heightAnchor.constraint(equalTo: playerGocView.widthAnchor, multiplier: 0.4).isActive = true
         if #available(iOS 11.0, *) {
             playerGocView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 350).isActive = true
         } else {
-            playerGocView.topAnchor.constraint(equalTo: view.topAnchor, constant: 350).isActive = true
+            playerGocView.topAnchor.constraint(equalTo: view.topAnchor, constant: 450).isActive = true
         }
         controlGocPanel.delegate = self
         playerGocView.addControlPanel(controlGocPanel)

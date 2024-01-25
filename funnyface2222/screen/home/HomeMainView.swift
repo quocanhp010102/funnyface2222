@@ -96,7 +96,18 @@ extension HomeMainView: UICollectionViewDelegate, UICollectionViewDataSource {
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "phanduoicell", for: indexPath) as! phanduoicell
+        APIService.shared.getLoveHistory(pageLoad: 1, idUser: String(AppConstant.userId ?? 0 ) ){result, error in
+            if let result = result{
+                cell.dataList_All = result.list_sukien.compactMap {$0.sukien.first }
+                print("lít dataa")
+                print(cell.dataList_All)
+                cell.listSukien = result.list_sukien
+                cell.cacluachon2.reloadData()
+            }
+        }
         
+    //    print(cell.dataList_All[indexPath.row].id_user)
+       
         return cell
            
         
@@ -118,19 +129,23 @@ extension HomeMainView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 0
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       
-            if UIDevice.current.userInterfaceIdiom == .pad{
-                return CGSize(width: UIScreen.main.bounds.width, height: 200)
-            }
-        return CGSize(width: (UIScreen.main.bounds.width), height: 500)
-       
+        
+        if UIDevice.current.userInterfaceIdiom == .pad{
+            return CGSize(width: UIScreen.main.bounds.width, height: 800)
+        }
+        if indexPath.row == 0 {
+            return CGSize(width: (UIScreen.main.bounds.width), height: 500)
+        }
+        return CGSize(width: (UIScreen.main.bounds.width), height: 800)
+        
     }
 }

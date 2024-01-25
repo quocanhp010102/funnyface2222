@@ -704,19 +704,19 @@ class APIService:NSObject {
 //        closure(nil, nil)
 //    }
 //    
-//    func getLoveHistory(pageLoad:Int,idUser:String, closure: @escaping (_ response: HomeModel?, _ error: Error?) -> Void) {
-//        requestJSON("https://metatechvn.store/lovehistory/page/" + String(pageLoad) + "?id_user=" + idUser, param: nil, method: .GET, loading: true) { (data, error) in
-//            if let data2 = data as? [String:Any]{
-//                var returnData: HomeModel = HomeModel()
-//                returnData = returnData.initLoad(data2)
-//                closure(returnData,nil)
-//            }else{
-//                closure(nil,nil)
-//            }
-//        }
-//        closure(nil, nil)
-//    }
-//    
+    func getLoveHistory(pageLoad:Int,idUser:String, closure: @escaping (_ response: HomeModel?, _ error: Error?) -> Void) {
+        requestJSON("https://metatechvn.store/lovehistory/page/" + String(pageLoad) + "?id_user=" + idUser, param: nil, method: .GET, loading: true) { (data, error) in
+            if let data2 = data as? [String:Any]{
+                var returnData: HomeModel = HomeModel()
+                returnData = returnData.initLoad(data2)
+                closure(returnData,nil)
+            }else{
+                closure(nil,nil)
+            }
+        }
+        closure(nil, nil)
+    }
+    
     func getDetailEvent(id: Int, closure: @escaping (_ response: DetailEvent?, _ error: Error?) -> Void) {
         requestJSON("https://metatechvn.store/lovehistory/\(id)", param: nil, method: .GET, loading: true) { (data, error) in
             if let data2 = data as? [String:Any]{

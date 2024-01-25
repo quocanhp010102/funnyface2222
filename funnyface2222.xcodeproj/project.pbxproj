@@ -142,6 +142,8 @@
 		E66C94172B4E559600B74491 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C93C42B4E559600B74491 /* LoginModel.swift */; };
 		E66C941B2B4E55B000B74491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C94192B4E55B000B74491 /* MainViewController.swift */; };
 		E66C941C2B4E55B000B74491 /* LauchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C941A2B4E55B000B74491 /* LauchViewController.swift */; };
+		E676F5D82B60FDA300C96049 /* celleventduoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676F5D62B60FDA300C96049 /* celleventduoi.swift */; };
+		E676F5D92B60FDA300C96049 /* celleventduoi.xib in Resources */ = {isa = PBXBuildFile; fileRef = E676F5D72B60FDA300C96049 /* celleventduoi.xib */; };
 		E67DF3432B5430300074D573 /* DetaiModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF3422B5430300074D573 /* DetaiModelUser.swift */; };
 		E67DF4632B551FD80074D573 /* StoryboardPageTabMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF4622B551FD80074D573 /* StoryboardPageTabMenuViewController.swift */; };
 		E67DF4652B5520410074D573 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF4642B5520410074D573 /* testViewController.swift */; };
@@ -323,6 +325,8 @@
 		E66C93C42B4E559600B74491 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		E66C94192B4E55B000B74491 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E66C941A2B4E55B000B74491 /* LauchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchViewController.swift; sourceTree = "<group>"; };
+		E676F5D62B60FDA300C96049 /* celleventduoi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celleventduoi.swift; sourceTree = "<group>"; };
+		E676F5D72B60FDA300C96049 /* celleventduoi.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = celleventduoi.xib; sourceTree = "<group>"; };
 		E67DF3422B5430300074D573 /* DetaiModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaiModelUser.swift; sourceTree = "<group>"; };
 		E67DF4622B551FD80074D573 /* StoryboardPageTabMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardPageTabMenuViewController.swift; sourceTree = "<group>"; };
 		E67DF4642B5520410074D573 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
@@ -424,6 +428,7 @@
 		E64E47B42B5E1B48007DDAD0 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				E6F3F6872B610E70001A3AD2 /* model */,
 				E68D67232B5F9FA300E410FC /* cell */,
 				E64E47B52B5E1B66007DDAD0 /* HomeStaboad.storyboard */,
 				E64E47B72B5E1B7D007DDAD0 /* HomeMainView.swift */,
@@ -628,6 +633,7 @@
 		E66C93562B4E559600B74491 /* screen */ = {
 			isa = PBXGroup;
 			children = (
+				E6F3F68A2B625549001A3AD2 /* New Group */,
 				E68D67182B5E776200E410FC /* sieumenu */,
 				E64E47B42B5E1B48007DDAD0 /* home */,
 				E66C93572B4E559600B74491 /* SlideMenu */,
@@ -1005,6 +1011,8 @@
 				E68D672C2B5FB80400E410FC /* albumswaped.swift */,
 				E68D672E2B5FBA7200E410FC /* cellVideoSwaped.swift */,
 				E68D672F2B5FBA7200E410FC /* cellVideoSwaped.xib */,
+				E676F5D62B60FDA300C96049 /* celleventduoi.swift */,
+				E676F5D72B60FDA300C96049 /* celleventduoi.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1065,6 +1073,20 @@
 				E6C6E9C62B592BBC0055D260 /* swapNewImage.xib */,
 			);
 			path = swaped;
+			sourceTree = "<group>";
+		};
+		E6F3F6872B610E70001A3AD2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		E6F3F68A2B625549001A3AD2 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1140,6 +1162,7 @@
 				E64E47C22B5E5147007DDAD0 /* newVideo2.xib in Resources */,
 				E66C93F22B4E559600B74491 /* ChangerAvatarViewController.xib in Resources */,
 				E68D67272B5F9FCE00E410FC /* hightlightmain.xib in Resources */,
+				E676F5D92B60FDA300C96049 /* celleventduoi.xib in Resources */,
 				E66C94022B4E559600B74491 /* DetailHowToVC.xib in Resources */,
 				E66C92E02B4E52EF00B74491 /* Assets.xcassets in Resources */,
 				E64E47932B5AEA64007DDAD0 /* detailNewvideoSwap.xib in Resources */,
@@ -1247,6 +1270,7 @@
 				E66C93352B4E557A00B74491 /* UINavigation+Extension.swift in Sources */,
 				E66C94122B4E559600B74491 /* RegisterModel.swift in Sources */,
 				E68D671D2B5E780800E410FC /* stoaboadpagemain.swift in Sources */,
+				E676F5D82B60FDA300C96049 /* celleventduoi.swift in Sources */,
 				E66C94102B4E559600B74491 /* RegisterController.swift in Sources */,
 				E66C94152B4E559600B74491 /* LoginAPI.swift in Sources */,
 				E66C933A2B4E557A00B74491 /* UIViewController+Extension.swift in Sources */,

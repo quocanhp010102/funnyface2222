@@ -19,19 +19,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-hJ-4Nz">
-                        <rect key="frame" x="16" y="22" width="413" height="160"/>
+                        <rect key="frame" x="30" y="22" width="385" height="160"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3555" translatesAutoresizingMaskIntoConstraints="NO" id="ar7-zO-Hzs">
-                                <rect key="frame" x="0.0" y="0.0" width="413" height="160"/>
+                                <rect key="frame" x="0.0" y="0.0" width="385" height="160"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 48097839 1" translatesAutoresizingMaskIntoConstraints="NO" id="XdJ-8a-ft0">
-                                <rect key="frame" x="239.66666666666663" y="8" width="165.33333333333337" height="144"/>
+                                <rect key="frame" x="223" y="8" width="154" height="144"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="salient features" translatesAutoresizingMaskIntoConstraints="NO" id="Jt0-kY-i5U">
-                                <rect key="frame" x="10" y="9.9999999999999982" width="148.66666666666666" height="27.333333333333329"/>
+                                <rect key="frame" x="10" y="9.9999999999999982" width="138.66666666666666" height="27.333333333333329"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AI technology swap faces from your photos and videos." translatesAutoresizingMaskIntoConstraints="NO" id="4k5-8E-qOH">
-                                <rect key="frame" x="8" y="45.333333333333329" width="192.33333333333334" height="57.333333333333329"/>
+                                <rect key="frame" x="8" y="45.333333333333329" width="179.33333333333334" height="57.333333333333329"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugL-Pn-XAz">
                                 <rect key="frame" x="26" y="112.66666666666666" width="166" height="35"/>
@@ -129,11 +129,11 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="gGj-hJ-4Nz" firstAttribute="leading" secondItem="hOF-XL-Q9X" secondAttribute="leading" constant="16" id="Nnc-v4-q9X"/>
+                    <constraint firstItem="gGj-hJ-4Nz" firstAttribute="leading" secondItem="hOF-XL-Q9X" secondAttribute="leading" constant="30" id="Nnc-v4-q9X"/>
                     <constraint firstAttribute="trailing" secondItem="MdF-M3-wpo" secondAttribute="trailing" constant="16" id="afO-be-BrA"/>
                     <constraint firstItem="MdF-M3-wpo" firstAttribute="height" secondItem="hOF-XL-Q9X" secondAttribute="height" multiplier="0.514124" id="epX-MR-Yse"/>
                     <constraint firstItem="MdF-M3-wpo" firstAttribute="leading" secondItem="hOF-XL-Q9X" secondAttribute="leading" constant="16" id="fDw-i9-euc"/>
-                    <constraint firstAttribute="trailing" secondItem="gGj-hJ-4Nz" secondAttribute="trailing" constant="16" id="sqK-E2-aQW"/>
+                    <constraint firstAttribute="trailing" secondItem="gGj-hJ-4Nz" secondAttribute="trailing" constant="30" id="sqK-E2-aQW"/>
                     <constraint firstItem="gGj-hJ-4Nz" firstAttribute="top" secondItem="hOF-XL-Q9X" secondAttribute="top" constant="22" id="woa-Qt-KmG"/>
                     <constraint firstItem="MdF-M3-wpo" firstAttribute="top" secondItem="gGj-hJ-4Nz" secondAttribute="bottom" constant="42" id="x2D-i0-Nbn"/>
                 </constraints>

@@ -11,15 +11,50 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="phanduoicell" customModule="funnyface2222" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="VRF-fR-KTs" customClass="phanduoicell" customModule="funnyface2222" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="214" height="253"/>
+            <rect key="frame" x="0.0" y="0.0" width="262" height="853"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9qJ-ON-xXW">
-                <rect key="frame" x="0.0" y="0.0" width="214" height="253"/>
+                <rect key="frame" x="0.0" y="0.0" width="262" height="853"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recent event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElR-9k-j3u">
+                        <rect key="frame" x="8" y="0.0" width="254" height="67"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jyk-9A-alS">
+                        <rect key="frame" x="0.0" y="72" width="262" height="740"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tK5-O9-qta">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="VRF-fR-KTs" id="30y-3X-ETh"/>
+                            <outlet property="delegate" destination="VRF-fR-KTs" id="8m4-gu-vUv"/>
+                        </connections>
+                    </collectionView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="jyk-9A-alS" secondAttribute="trailing" id="4cE-Er-CIs"/>
+                    <constraint firstItem="ElR-9k-j3u" firstAttribute="leading" secondItem="9qJ-ON-xXW" secondAttribute="leading" constant="8" id="Bs8-eV-ICK"/>
+                    <constraint firstItem="jyk-9A-alS" firstAttribute="top" secondItem="ElR-9k-j3u" secondAttribute="bottom" constant="5" id="OMt-RM-KJn"/>
+                    <constraint firstAttribute="trailing" secondItem="ElR-9k-j3u" secondAttribute="trailing" id="Ol1-rP-4ZD"/>
+                    <constraint firstItem="ElR-9k-j3u" firstAttribute="height" secondItem="9qJ-ON-xXW" secondAttribute="height" multiplier="0.0783784" id="dSE-li-M9e"/>
+                    <constraint firstItem="jyk-9A-alS" firstAttribute="height" secondItem="9qJ-ON-xXW" secondAttribute="height" multiplier="0.867568" id="jfU-zE-b4S"/>
+                    <constraint firstItem="jyk-9A-alS" firstAttribute="leading" secondItem="9qJ-ON-xXW" secondAttribute="leading" id="wpI-Pl-Dza"/>
+                    <constraint firstItem="ElR-9k-j3u" firstAttribute="top" secondItem="9qJ-ON-xXW" secondAttribute="top" id="xsR-QL-w3F"/>
+                </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="214" height="253"/>
-            <point key="canvasLocation" x="-367.93893129770993" y="-86.971830985915503"/>
+            <size key="customSize" width="262" height="853"/>
+            <connections>
+                <outlet property="cacluachon2" destination="jyk-9A-alS" id="Sbe-Sf-zlp"/>
+            </connections>
+            <point key="canvasLocation" x="-331.29770992366412" y="124.29577464788733"/>
         </collectionViewCell>
     </objects>
 </document>

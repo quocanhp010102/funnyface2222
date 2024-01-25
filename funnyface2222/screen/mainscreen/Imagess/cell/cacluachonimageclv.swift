@@ -138,7 +138,7 @@ extension cacluachonimageclv: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width, height: 150)
+            return CGSize(width: (UIScreen.main.bounds.width)/5.2 - 20, height: 150)
         }
         return CGSize(width: (UIScreen.main.bounds.width)/3-10, height: 150)
     }

@@ -162,7 +162,7 @@ extension phantrencell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        
             if UIDevice.current.userInterfaceIdiom == .pad{
-                return CGSize(width: UIScreen.main.bounds.width, height: 200)
+                return CGSize(width: (UIScreen.main.bounds.width)/5.2 - 20, height: 200)
             }
         return CGSize(width: (UIScreen.main.bounds.width)/3.2 - 10, height: 200)
        

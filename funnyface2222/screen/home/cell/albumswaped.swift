@@ -191,7 +191,7 @@ extension albumswaped: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        
             if UIDevice.current.userInterfaceIdiom == .pad{
-                return CGSize(width: UIScreen.main.bounds.width, height: 200)
+                return CGSize(width: (UIScreen.main.bounds.width)/3.2 - 20, height: 400)
             }
         return CGSize(width: (UIScreen.main.bounds.width)/2.5-10, height: 200)
        
