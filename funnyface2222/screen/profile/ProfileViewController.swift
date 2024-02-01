@@ -115,7 +115,7 @@ class ProfileViewController: UIViewController {
         APIService.shared.getProfile(user: self.userId ) { result, error in
             if let success = result {
                 if let idUser = success.id_user{
-                    self.userNameLabel.text = success.user_name
+                    self.userNameLabel.text = success.user_name ?? ""
                     self.countEventLabel.text = success.count_sukien?.toString()
                     self.countCommentLabel.text = success.count_comment?.toString()
                     self.countViewLabel.text = (success.count_view ?? 0).toString()

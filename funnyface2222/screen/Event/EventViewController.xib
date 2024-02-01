@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventViewController" customModule="FutureLove" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventViewController" customModule="funnyface2222" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="SMo-yZ-w8d" id="nvq-yX-coq"/>
                 <outlet property="buttonBack" destination="egu-jX-zgV" id="Y5a-iW-qbw"/>
@@ -33,7 +33,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMo-yZ-w8d" userLabel="background">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                    <color key="backgroundColor" red="0.94117647059999998" green="0.63921568630000003" blue="0.74901960779999999" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="nV5-zz-RrM">
                     <rect key="frame" x="0.0" y="179" width="393" height="84"/>
@@ -102,7 +102,7 @@
                             <rect key="frame" x="0.0" y="64" width="393" height="20"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNJ-88-IoO">
-                                    <rect key="frame" x="16" y="-3.3333333333333428" width="64.666666666666671" height="26.666666666666668"/>
+                                    <rect key="frame" x="15.999999999999996" y="-1.6666666666666572" width="60.666666666666657" height="23.333333333333332"/>
                                     <fontDescription key="fontDescription" name="RobotoSlab-Medium" family="Roboto Slab" pointSize="20"/>
                                     <color key="textColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -137,12 +137,27 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </tableView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsL-iN-TyT">
+                                    <rect key="frame" x="248.33333333333334" y="0.0" width="107.66666666666666" height="34.333333333333336"/>
+                                    <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="new event">
+                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="clicknewevent:" destination="-1" eventType="touchDown" id="s5Q-Qx-N1C"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="LhI-XV-goF" secondAttribute="bottom" id="4ZD-qO-wWh"/>
+                                <constraint firstItem="gsL-iN-TyT" firstAttribute="top" secondItem="tBf-iW-asC" secondAttribute="top" id="5gb-FA-a0R"/>
+                                <constraint firstAttribute="trailing" secondItem="gsL-iN-TyT" secondAttribute="trailing" constant="37" id="6US-2H-WaJ"/>
+                                <constraint firstItem="gsL-iN-TyT" firstAttribute="width" secondItem="LhI-XV-goF" secondAttribute="width" multiplier="0.3" id="CBV-rb-5A0"/>
                                 <constraint firstItem="LhI-XV-goF" firstAttribute="top" secondItem="tBf-iW-asC" secondAttribute="top" id="Rk2-XL-GSQ"/>
                                 <constraint firstItem="LhI-XV-goF" firstAttribute="leading" secondItem="tBf-iW-asC" secondAttribute="leading" constant="17" id="Rtv-Ya-BGK"/>
+                                <constraint firstItem="gsL-iN-TyT" firstAttribute="height" secondItem="LhI-XV-goF" secondAttribute="height" multiplier="0.0592976" id="a3u-3z-Lud"/>
                                 <constraint firstAttribute="trailing" secondItem="LhI-XV-goF" secondAttribute="trailing" constant="17" id="hjT-zy-2dw"/>
                             </constraints>
                         </view>
@@ -176,12 +191,12 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="back"/>
                     <connections>
-                        <action selector="BackApp" destination="-1" eventType="touchDown" id="dMD-kK-GnZ"/>
+                        <action selector="BackApp:" destination="-1" eventType="touchDown" id="nHi-9w-HJ2"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
                 <constraint firstItem="SMo-yZ-w8d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="35x-MB-1Bh"/>
                 <constraint firstItem="egu-jX-zgV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="4f8-be-Djw"/>
@@ -213,6 +228,9 @@
         <image name="link" width="512" height="512"/>
         <image name="menu" width="32" height="32"/>
         <image name="search" width="20" height="20.333333969116211"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

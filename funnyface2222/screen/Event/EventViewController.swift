@@ -25,7 +25,7 @@ class EventViewController: BaseViewController {
     var userName = ""
     var LinkProfile = ""
     @objc func tapToBack() {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     var backButton: UIButton = {
           let btn = UIButton(frame: CGRect(x:10, y: 30,width : Int(40), height : 40))
@@ -98,15 +98,15 @@ class EventViewController: BaseViewController {
         self.data = data
         super.init(nibName: nil, bundle: nil)
     }
-    @IBAction func BackApp(){
-        navigationController?.popViewController(animated: true)
+    @IBAction func BackApp(_ sender: Any){
+        self.dismiss(animated: true)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        backgroundView.gradient()
+       // backgroundView.gradient()
     }
     
     override func viewDidLoad() {
@@ -151,9 +151,10 @@ class EventViewController: BaseViewController {
         let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
         vc.userId = dataDetail[0].id_user ?? 0
 //        vc.callAPIRecentComment()
-//        vc.callApiProfile()
-//        vc.callAPIUserEvent()
-        self.navigationController?.pushViewController(vc, animated: true)
+//       vc.callApiProfile()
+//       vc.callAPIUserEvent()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc func panTapPro(sender: UIPanGestureRecognizer){
@@ -305,6 +306,16 @@ class EventViewController: BaseViewController {
             self.fullscreenView?.alpha = 1
             zoomedImageView.frame = UIScreen.main.bounds
         }
+    }
+    @IBAction func clicknewevent(_ sender: Any) {
+        let vc = newEevntViewController(nibName: "newEevntViewController", bundle: nil)
+        APIService.shared.listAllVideoSwaped(page:1){response,error in
+            vc.listTemplateVideo = response
+            //cell.cacluachon2.reloadData()
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(vc, animated: true, completion: nil)
+        }
+                         
     }
     @IBAction func btnSlideMenu(_ sender: Any) {
         let vc = SlideMenuViewController(data: dataDetail)
@@ -513,7 +524,8 @@ extension EventViewController: UITableViewDelegate{
             vc.callAPIRecentComment()
             vc.callApiProfile()
             vc.callAPIUserEvent()
-            self.navigationController?.pushViewController(vc, animated: true)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
         }
         if indexPath.section == 1{
             let vc = DetailEventsViewController(data: data)
@@ -521,8 +533,8 @@ extension EventViewController: UITableViewDelegate{
             print( dataDetail[indexPath.row].so_thu_tu_su_kien ?? 1)
             vc.dataDetail = dataDetail[indexPath.row]
             vc.idToanBoSuKien = idToanBoSuKien
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)        }
     }
 }
 

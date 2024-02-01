@@ -76,6 +76,17 @@ extension StoryboardPageTabMenuViewController: PageMenuControllerDataSource {
                 controller.title = "Storyboard #\(i) (\(title))"
                 //ImageMainViewController
                 return controller
+            }else if i == 2 {
+                let vc = EventView(nibName: "EventView", bundle: nil)
+              
+                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                self.present(vc, animated: true, completion: nil)
+//                let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
+//                let controller = storyboard.instantiateViewController(withIdentifier: "ImageMainViewController") as! ImageMainViewController
+//
+//                controller.title = "Storyboard #\(i) (\(title))"
+//                //ImageMainViewController
+                return vc
             }
             print(i)
             let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
