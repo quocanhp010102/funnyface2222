@@ -74,7 +74,7 @@ class newVideo2: UIViewController {
     }
     var timerNow: Timer = Timer()
     func uploadGenVideoByImages(completion: @escaping ApiCompletion){
-        APIService.shared.UploadImagesToGenRieng("https://metatechvn.store/upload-gensk/" + String(AppConstant.userId ?? 0) + "?type=src_vid", ImageUpload: self.image_Data_Nam,method: .POST, loading: true){data,error in
+        APIService.shared.UploadImagesToGenRieng("https://databaseswap.mangasocial.online/upload-gensk/" + String(AppConstant.userId ?? 0) + "?type=src_vid", ImageUpload: self.image_Data_Nam,method: .POST, loading: true){data,error in
             completion(data, nil)
         }
     }
@@ -126,7 +126,7 @@ class newVideo2: UIViewController {
                         print(self.linkImageVideoSwap)
                       
 
-                        let url = "https://lhvn.online/getdata/genvideo/swap/imagevid?device_them_su_kien=Simulator%20%28iPhone%2014%20Plus%29&ip_them_su_kien=14.231.223.63&id_user=203&src_img=\(self.linkImageVideoSwap)"
+                        let url = "https://videoswap.mangasocial.online/getdata/genvideo/swap/imagevid?device_them_su_kien=Simulator%20%28iPhone%2014%20Plus%29&ip_them_su_kien=14.231.223.63&id_user=203&src_img=\(self.linkImageVideoSwap)"
                         //print(cleanedLinkImagePro)
                         let urll2 = url.replacingOccurrences(of: "\"", with: "")
                         let myString = url
@@ -246,7 +246,7 @@ class newVideo2: UIViewController {
                     print(self.linkImageVideoSwap)
                   
 
-                    let url = "https://lhvn.online/getdata/genvideo/swap/imagevid?device_them_su_kien=Simulator%20%28iPhone%2014%20Plus%29&ip_them_su_kien=14.231.223.63&id_user=203&src_img=\(self.linkImageVideoSwap)"
+                    let url = "https://videoswap.mangasocial.online/getdata/genvideo/swap/imagevid?device_them_su_kien=Simulator%20%28iPhone%2014%20Plus%29&ip_them_su_kien=14.231.223.63&id_user=203&src_img=\(self.linkImageVideoSwap)"
                     //print(cleanedLinkImagePro)
                     let urll2 = url.replacingOccurrences(of: "\"", with: "")
                     let myString = url

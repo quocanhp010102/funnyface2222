@@ -517,7 +517,7 @@ class LoveViewController: BaseViewController, SETabItemProvider {
         }else{
             checkNamNu = "?type=src_nu"
         }
-        APIService.shared.UploadImagesToGenRieng("https://metatechvn.store/upload-gensk/" + String(AppConstant.userId ?? 0) + checkNamNu, ImageUpload: image_Data,method: .POST, loading: true){data,error in
+        APIService.shared.UploadImagesToGenRieng("https://databaseswap.mangasocial.online/upload-gensk/" + String(AppConstant.userId ?? 0) + checkNamNu, ImageUpload: image_Data,method: .POST, loading: true){data,error in
             completion(data, nil)
         }
     }

@@ -485,6 +485,13 @@
 			path = swaplistvd;
 			sourceTree = "<group>";
 		};
+		E64EC8C72B84719800E8AD4D /* testttt */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = testttt;
+			sourceTree = "<group>";
+		};
 		E66706A12B678E3A00CDF9EC /* event */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +504,7 @@
 		E66C92CA2B4E52EC00B74491 = {
 			isa = PBXGroup;
 			children = (
+				E64EC8C72B84719800E8AD4D /* testttt */,
 				E66C92EA2B4E551F00B74491 /* R.generated.swift */,
 				E64E47C32B5E5768007DDAD0 /* download.png */,
 				E6B88CB22B4FED0F005A02E6 /* testnhay.mp4 */,
@@ -1585,6 +1593,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8JL567683;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = funnyface2222/Info.plist;
@@ -1615,6 +1624,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8JL567683;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = funnyface2222/Info.plist;

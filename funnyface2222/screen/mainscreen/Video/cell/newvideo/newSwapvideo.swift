@@ -79,7 +79,7 @@ class newSwapvideo: UIViewController {
     }
     var timerNow: Timer = Timer()
     func uploadGenVideoByImages(completion: @escaping ApiCompletion){
-        APIService.shared.UploadImagesToGenRieng("https://metatechvn.store/upload-gensk/" + String(AppConstant.userId ?? 0) + "?type=src_vid", ImageUpload: self.image_Data_Nam,method: .POST, loading: true){data,error in
+        APIService.shared.UploadImagesToGenRieng("https://databaseswap.mangasocial.online/upload-gensk/" + String(AppConstant.userId ?? 0) + "?type=src_vid", ImageUpload: self.image_Data_Nam,method: .POST, loading: true){data,error in
             completion(data, nil)
         }
     }

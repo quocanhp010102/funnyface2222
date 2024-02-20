@@ -12,9 +12,9 @@ extension Enviroment {
     var baseURL: String {
         switch self {
         case .staging:
-            return "https://metatechvn.store/"
+            return "https://databaseswap.mangasocial.online/"
         case .production:
-            return "https://metatechvn.store/"
+            return "https://databaseswap.mangasocial.online/"
         }
     }
     
