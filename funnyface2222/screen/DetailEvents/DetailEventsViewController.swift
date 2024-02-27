@@ -22,6 +22,7 @@ class DetailEventsViewController: UIViewController {
 
     //    var initialTransform: CGAffineTransform = .identity
     var initialImageScale: CGFloat = 1.0
+    
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var nameDetailLabel: UILabel!
     @IBOutlet weak var countView: UIButton!

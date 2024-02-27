@@ -10,14 +10,14 @@ import AlamofireImage
 import Kingfisher
 
 class EventViewController: BaseViewController {
-    //___SONPIPI
+    
     @IBOutlet weak var buttonSearch: UIButton!
     @IBOutlet weak var buttonNextSearch: UIButton!
     @IBOutlet weak var buttonBack: UIButton!
 
     var timeEnd : Date?
     var header : HeaderView?
-    //____END_SONPIPI__
+   
     var data : Int
     var dataDetail: [EventModel] = []
     var idToanBoSuKien = 0

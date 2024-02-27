@@ -356,8 +356,13 @@ class APIService:NSObject {
                     }
                 }
                 else {
-                    if let linkPro = "\(url)".urlEncoded{
-                        request = URLRequest(url: (URL(string:"\(url)" )!))
+                   
+                    if let urlString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                        let url = URL(string: urlString) {
+                        request = URLRequest(url: url)
+                        // Sử dụng URLRequest...
+                    } else {
+                        print("Không thể tạo URL từ chuỗi")
                     }
                 }
                 request.allHTTPHeaderFields = headers
@@ -369,6 +374,10 @@ class APIService:NSObject {
         
         //
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+           
+                print("errorrr:  ")
+               print(error)
+           
             
             DispatchQueue.main.async {
                 
@@ -1377,6 +1386,34 @@ class APIService:NSObject {
                     }
                 } else {
                     closure(DetailVideoModel(), nil)
+                }
+
+            }
+        }
+    }
+    func GenBaby(device_them_su_kien:String,ip_them_su_kien:String,id_user:Int,linknam:String, linknu:String,closure: @escaping (_ response: benbabymodal?, _ error: Error?) -> Void) {
+        let newString1 = linknam.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
+        let newString2 = linknu.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
+        if let devicePro = device_them_su_kien.urlEncoded{
+            requestTokenFolderGhepDoi("https://thinkdiff.us/getdata/sukien/baby?device_them_su_kien=\(device_them_su_kien)&ip_them_su_kien=\(ip_them_su_kien)&id_user=\(id_user)", linkNam: linknam, linkNu: linknu, param: nil, method: .GET, loading: true) { (data, error) in
+                if let data = data as? [String: Any] {
+//                    if let sukienVideoData = data["sukien_baby"] as? [String: Any] {
+//                        var itemAdd = benbabymodal()
+//                        itemAdd = itemAdd.initLoad(sukienVideoData) // Use sukienVideoData here
+//                        print("asdfasdfddd\n\n\n\n\n\n   ")
+//                        print(itemAdd)
+//                        closure(itemAdd, nil)
+//                    }
+                    if let sukienVideoDataArray = data["sukien_baby"] as? [[String: Any]],
+                       let sukienVideoData = sukienVideoDataArray.first {
+                        var itemAdd = benbabymodal()
+                        itemAdd = itemAdd.initLoad(sukienVideoData)
+                        print("asdfasdfddd\n\n\n\n\n\n   ")
+                        print(itemAdd)
+                        closure(itemAdd, nil)
+                    }
+                } else {
+                    closure(benbabymodal(), nil)
                 }
 
             }

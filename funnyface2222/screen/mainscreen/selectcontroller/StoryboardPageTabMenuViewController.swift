@@ -88,6 +88,31 @@ extension StoryboardPageTabMenuViewController: PageMenuControllerDataSource {
 //                //ImageMainViewController
                 return vc
             }
+            
+            else if i == 3 {
+                let vc = LoveViewController(nibName: "LoveViewController", bundle: nil)
+              
+                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                self.present(vc, animated: true, completion: nil)
+//                let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
+//                let controller = storyboard.instantiateViewController(withIdentifier: "ImageMainViewController") as! ImageMainViewController
+//
+//                controller.title = "Storyboard #\(i) (\(title))"
+//                //ImageMainViewController
+                return vc
+            }
+            else if i == 4 {
+                let vc = babycenter(nibName: "babycenter", bundle: nil)
+              
+                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                self.present(vc, animated: true, completion: nil)
+//                let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
+//                let controller = storyboard.instantiateViewController(withIdentifier: "ImageMainViewController") as! ImageMainViewController
+//
+//                controller.title = "Storyboard #\(i) (\(title))"
+//                //ImageMainViewController
+                return vc
+            }
             print(i)
             let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "testViewController") as! testViewController

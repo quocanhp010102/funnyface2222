@@ -150,6 +150,9 @@
 		E66C941C2B4E55B000B74491 /* LauchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C941A2B4E55B000B74491 /* LauchViewController.swift */; };
 		E676F5D82B60FDA300C96049 /* celleventduoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676F5D62B60FDA300C96049 /* celleventduoi.swift */; };
 		E676F5D92B60FDA300C96049 /* celleventduoi.xib in Resources */ = {isa = PBXBuildFile; fileRef = E676F5D72B60FDA300C96049 /* celleventduoi.xib */; };
+		E67BE02F2B8599DC00FF559C /* babycenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67BE02D2B8599DC00FF559C /* babycenter.swift */; };
+		E67BE0302B8599DC00FF559C /* babycenter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E67BE02E2B8599DC00FF559C /* babycenter.xib */; };
+		E67BE0332B85A8F500FF559C /* genbabycalss.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67BE0322B85A8F500FF559C /* genbabycalss.swift */; };
 		E67DF3432B5430300074D573 /* DetaiModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF3422B5430300074D573 /* DetaiModelUser.swift */; };
 		E67DF4632B551FD80074D573 /* StoryboardPageTabMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF4622B551FD80074D573 /* StoryboardPageTabMenuViewController.swift */; };
 		E67DF4652B5520410074D573 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DF4642B5520410074D573 /* testViewController.swift */; };
@@ -341,6 +344,9 @@
 		E66C941A2B4E55B000B74491 /* LauchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchViewController.swift; sourceTree = "<group>"; };
 		E676F5D62B60FDA300C96049 /* celleventduoi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celleventduoi.swift; sourceTree = "<group>"; };
 		E676F5D72B60FDA300C96049 /* celleventduoi.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = celleventduoi.xib; sourceTree = "<group>"; };
+		E67BE02D2B8599DC00FF559C /* babycenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = babycenter.swift; sourceTree = "<group>"; };
+		E67BE02E2B8599DC00FF559C /* babycenter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = babycenter.xib; sourceTree = "<group>"; };
+		E67BE0322B85A8F500FF559C /* genbabycalss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genbabycalss.swift; sourceTree = "<group>"; };
 		E67DF3422B5430300074D573 /* DetaiModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaiModelUser.swift; sourceTree = "<group>"; };
 		E67DF4622B551FD80074D573 /* StoryboardPageTabMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardPageTabMenuViewController.swift; sourceTree = "<group>"; };
 		E67DF4642B5520410074D573 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
@@ -675,13 +681,13 @@
 		E66C93562B4E559600B74491 /* screen */ = {
 			isa = PBXGroup;
 			children = (
-				E6F3F68A2B625549001A3AD2 /* New Group */,
 				E68D67182B5E776200E410FC /* sieumenu */,
 				E64E47B42B5E1B48007DDAD0 /* home */,
 				E66C93572B4E559600B74491 /* SlideMenu */,
 				E66C935F2B4E559600B74491 /* mainscreen */,
 				E66C93742B4E559600B74491 /* DetailEvents */,
 				E66C937C2B4E559600B74491 /* Love */,
+				E67BE02C2B8598F200FF559C /* baby */,
 				E66C93832B4E559600B74491 /* Comment */,
 				E66C938D2B4E559600B74491 /* profile */,
 				E66C93A02B4E559600B74491 /* HowToUseImages */,
@@ -977,6 +983,24 @@
 			path = viewController;
 			sourceTree = "<group>";
 		};
+		E67BE02C2B8598F200FF559C /* baby */ = {
+			isa = PBXGroup;
+			children = (
+				E67BE0312B85A8DF00FF559C /* modal */,
+				E67BE02D2B8599DC00FF559C /* babycenter.swift */,
+				E67BE02E2B8599DC00FF559C /* babycenter.xib */,
+			);
+			path = baby;
+			sourceTree = "<group>";
+		};
+		E67BE0312B85A8DF00FF559C /* modal */ = {
+			isa = PBXGroup;
+			children = (
+				E67BE0322B85A8F500FF559C /* genbabycalss.swift */,
+			);
+			path = modal;
+			sourceTree = "<group>";
+		};
 		E67DF4612B551FB10074D573 /* selectcontroller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1138,13 +1162,6 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		E6F3F68A2B625549001A3AD2 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1258,6 +1275,7 @@
 				E64E47C42B5E5768007DDAD0 /* download.png in Resources */,
 				E68D67392B5FCC0A00E410FC /* phanduoicell.xib in Resources */,
 				E66C93E72B4E559600B74491 /* LoveViewController.xib in Resources */,
+				E67BE0302B8599DC00FF559C /* babycenter.xib in Resources */,
 				E66C93F42B4E559600B74491 /* ProfileViewController.xib in Resources */,
 				E66C93F52B4E559600B74491 /* RecentCommentTableViewCell.xib in Resources */,
 				E66C93CB2B4E559600B74491 /* mhchinh.storyboard in Resources */,
@@ -1423,6 +1441,7 @@
 				E66C94062B4E559600B74491 /* HeaderView.swift in Sources */,
 				E66C930A2B4E554F00B74491 /* LoveAPI.swift in Sources */,
 				E66C93082B4E554F00B74491 /* LoveServiceConfiguration.swift in Sources */,
+				E67BE02F2B8599DC00FF559C /* babycenter.swift in Sources */,
 				E66C93C72B4E559600B74491 /* CollectionViewCell.swift in Sources */,
 				E68D673B2B5FCC7700E410FC /* viptestmain.swift in Sources */,
 				E66C92D92B4E52EC00B74491 /* SceneDelegate.swift in Sources */,
@@ -1441,6 +1460,7 @@
 				E66C93DB2B4E559600B74491 /* VideoModel.swift in Sources */,
 				E68D672D2B5FB80400E410FC /* albumswaped.swift in Sources */,
 				E6C6E9C72B592BBC0055D260 /* swapNewImage.swift in Sources */,
+				E67BE0332B85A8F500FF559C /* genbabycalss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

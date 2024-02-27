@@ -1,8 +1,8 @@
 //
-//  LoveViewController.swift
-//  FutureLove
+//  babycenter.swift
+//  funnyface2222
 //
-//  Created by TTH on 24/07/2023.
+//  Created by quocanhppp on 21/02/2024.
 //
 
 import UIKit
@@ -17,31 +17,25 @@ import WCLShineButton
 import AVFoundation
 import Kingfisher
 import StoreKit
-
-class LoveViewController: BaseViewController, SETabItemProvider {
-   
-    let defaultDuration = 2.0
-    let defaultDamping = 0.20
-    let defaultVelocity = 6.0
+class babycenter: BaseViewController {
+    
+    var fullscreenView: UIView?
+    var initialImageScale: CGFloat = 1.0
+    var linkanhgocw:String = ""
     var bubbleSound: SystemSoundID!
     var isCheckGirl = true
-   
     var image_Data_Nam:UIImage = UIImage()
     var image_Data_Nu:UIImage = UIImage()
-    
+    var downloadButton: UIButton?
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: R.image.tab_love(), tag: 0)
     }
     var IsStopGirlAnimation = true
     var IsStopBoyAnimation = true
-    var currentImageType: ChooseImageType = .boy
+    var currentImageType: ChooseImageType2 = .boy
     var imageboyLink: String = ""
     var imageGirlLink: String = ""
-    @IBOutlet weak var luonSong2Image: UIImageView!
-    @IBOutlet weak var luonSongImage: UIImageView!
-    @IBOutlet weak var textViewMain: UITextView!
-    var timerNow: Timer = Timer()
-    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var addImageBoy: UIImageView!
     @IBOutlet weak var boyImage: UIImageView!
     @IBOutlet weak var girlImage: UIImageView!
@@ -49,55 +43,10 @@ class LoveViewController: BaseViewController, SETabItemProvider {
     @IBOutlet weak var boyNameTextField: UITextField!
     @IBOutlet weak var girlNameTextField: UITextField!
     @IBOutlet weak var buttonLove: UIButton!
-    @IBOutlet weak var buttonPrivacy: UIButton!
-    @IBOutlet weak var buttonHowTo: UIButton!
-    
+    @IBOutlet weak var buttonKQ: UIButton!
     @IBOutlet weak var boyView: UIView!
     @IBOutlet weak var girlView: UIView!
-    
-    @IBOutlet weak var circularSlider: CircularSlider!
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var percentLabel: UILabel!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //backgroundView.gradient()
-    }
-    var timer = Timer()
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        timerNow.invalidate()
-        timerLabel.text = "0h:00"
-        percentLabel.text = "0%"
-        self.buttonLove.isEnabled = true
-    }
-    
-    func animateViewAll(viewAnim:UIView){
-        viewAnim.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        UIView.animate(withDuration: 1,
-                       delay: 0,
-                       usingSpringWithDamping: CGFloat(1),
-                       initialSpringVelocity: CGFloat(1),
-                       options: .allowUserInteraction,
-                       animations: {
-            viewAnim.transform = .identity
-        },
-                       completion: { finished in
-            if viewAnim == self.boyView{
-                if self.IsStopBoyAnimation == true{
-                    return
-                }
-            }
-            if viewAnim == self.girlView{
-                if self.IsStopGirlAnimation == true{
-                    return
-                }
-            }
-            self.animateViewAll(viewAnim:viewAnim)
-        }
-        )
-    }
-    
+    @IBOutlet weak var imageBaby: UIImageView!
     func animateButton() {
         buttonLove.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         UIView.animate(withDuration: 1,
@@ -113,14 +62,116 @@ class LoveViewController: BaseViewController, SETabItemProvider {
         }
         )
     }
-    
-//    func createBubbleSound() -> SystemSoundID {
-//        var soundID: SystemSoundID = 0
-//        let soundURL = CFBundleCopyResourceURL(CFBundleGetMainBundle(), "bubble" as CFString?, "mp3" as CFString?, nil)
-//        AudioServicesCreateSystemSoundID(soundURL!, &soundID)
-//        return soundID
-//    }
-    
+    @objc func panTapPro(sender: UIPanGestureRecognizer){
+        let tranlation = sender.translation(in: view)
+        if sender.state == .changed {
+            if let linkWebImage = sender.view {
+                linkWebImage.center.x += tranlation.x
+                linkWebImage.center.y += tranlation.y
+                sender.setTranslation(CGPoint.zero, in: view)
+            }
+        }
+    }
+    @objc func closeButtonTapped() {
+        // Đóng ảnh phóng to
+        dismissFullscreenImage()
+    }
+    func dismissFullscreenImage() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.fullscreenView?.alpha = 0
+        }) { _ in
+            self.fullscreenView?.removeFromSuperview()
+            self.fullscreenView = nil
+        }
+    }
+    @objc func pinchGestureHandler(sender: UIPinchGestureRecognizer){
+        if sender.state == .began {
+            initialImageScale = fullscreenView!.transform.a
+        }
+        if sender.state == .changed {
+            let scale = sender.scale
+            let scaledValue = max(min(initialImageScale * scale, 2.0), initialImageScale)
+            fullscreenView?.transform = CGAffineTransform(scaleX: scaledValue, y: scaledValue)
+        }
+        
+        if sender.state == .ended {
+            fullscreenView?.transform = CGAffineTransform(scaleX: initialImageScale, y: initialImageScale)
+        }
+    }
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            print("Error Saved Images: \(error.localizedDescription)")
+        } else {
+            print("Download Images Done Okie")
+        }
+    }
+    @objc func downloadButtonTapped() {
+        let alert = UIAlertController(title: "Download", message: "Save For Images Library", preferredStyle: .alert)
+        let oke = UIAlertAction(title: "Oke", style: .default) { result in
+            if let image = self.imageBaby.image {
+                UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+            }
+            self.view.makeToast("Download Done")
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(oke)
+        alert.addAction(cancel)
+        self.present(alert, animated: true)
+    }
+    @objc func tapAnhNam(sender: UITapGestureRecognizer) {
+        fullscreenView = UIView(frame: view.bounds)
+        fullscreenView?.backgroundColor = .black
+        fullscreenView?.alpha = 0
+        
+        var zoomedImageView = UIImageView(frame: self.view.frame)
+        zoomedImageView.contentMode = .scaleAspectFit
+        
+        fullscreenView?.addSubview(zoomedImageView)
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(pinchGestureHandler))
+        fullscreenView?.addGestureRecognizer(pinchGesture)
+        downloadButton = UIButton(type: .custom)
+        downloadButton?.setTitle("Download", for: .normal)
+        downloadButton?.frame = CGRect(x: 20, y: 50, width: 100, height: 40)
+        downloadButton?.addTarget(self, action: #selector(downloadButtonTapped), for: .touchUpInside)
+        fullscreenView?.addSubview(downloadButton!)
+        let url = URL(string: self.linkanhgocw )
+        let processor = DownsamplingImageProcessor(size: zoomedImageView.bounds.size)
+                     |> RoundCornerImageProcessor(cornerRadius: 20)
+        zoomedImageView.kf.indicatorType = .activity
+        zoomedImageView.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "placeholderImage"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            switch result {
+            case .success(let value):
+                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Job failed: \(error.localizedDescription)")
+            }
+        }
+                
+        let closeButton = UIButton(frame: CGRect(x: view.bounds.width - 120, y: 50, width: 100, height: 40))
+        closeButton.setTitle("Close", for: .normal)
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        fullscreenView?.addSubview(closeButton)
+        
+        if let fullscreenView = fullscreenView {
+            view.addSubview(fullscreenView)
+        }
+        
+        
+        UIView.animate(withDuration: 0.3) {
+            self.fullscreenView?.alpha = 1
+            zoomedImageView.frame = UIScreen.main.bounds
+        }
+    }
     @objc func Send_OLD_Images_Click(notification: NSNotification) {
         if let imageLink = notification.userInfo?["image"] as? String {
             if self.isCheckGirl == true{
@@ -190,8 +241,8 @@ class LoveViewController: BaseViewController, SETabItemProvider {
         rateApp()
         NotificationCenter.default.addObserver(self, selector: #selector(Send_OLD_Images_Click), name: NSNotification.Name(rawValue: "Notification_SEND_IMAGES"), object: nil)
 //        bubbleSound = createBubbleSound()
-        buttonPrivacy.setTitle("", for: .normal)
-        buttonHowTo.setTitle("", for: .normal)
+      //  buttonPrivacy.setTitle("", for: .normal)
+       // buttonHowTo.setTitle("", for: .normal)
         buttonLove.setTitle("", for: .normal)
         actionImage()
         animateButton()
@@ -200,35 +251,27 @@ class LoveViewController: BaseViewController, SETabItemProvider {
         let device = Device.current
         let modelName = device.description
         AppConstant.modelName = modelName
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-        UIView.animate(withDuration: 2.0, animations: {
-            self.luonSongImage.transform = CGAffineTransform(translationX: -150 , y: 0)
-        }) { _ in
-            self.luonSongImage.transform = CGAffineTransform(translationX: 0 , y: 0)
-        }
-        UIView.animate(withDuration: 3.0, animations: {
-            self.luonSong2Image.transform = CGAffineTransform(translationX: -160 , y: 0)
-        }) { _ in
-            self.luonSong2Image.transform = CGAffineTransform(translationX: 0 , y: 0)
-        }
-        textViewMain.backgroundColor = UIColor.clear
-        textViewMain.isEditable = false
-        circularSlider.endPointValue = 0
+        let clickImageNu = UIPanGestureRecognizer(target: self, action: #selector(panTapPro))
+        self.buttonKQ.addGestureRecognizer(clickImageNu)
+        let tapNu = UITapGestureRecognizer(target: self, action: #selector(tapAnhNam))
+        self.buttonKQ.addGestureRecognizer(tapNu)
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+//        UIView.animate(withDuration: 2.0, animations: {
+//            self.luonSongImage.transform = CGAffineTransform(translationX: -150 , y: 0)
+//        }) { _ in
+//            self.luonSongImage.transform = CGAffineTransform(translationX: 0 , y: 0)
+//        }
+//        UIView.animate(withDuration: 3.0, animations: {
+//            self.luonSong2Image.transform = CGAffineTransform(translationX: -160 , y: 0)
+//        }) { _ in
+//            self.luonSong2Image.transform = CGAffineTransform(translationX: 0 , y: 0)
+//        }
+//        textViewMain.backgroundColor = UIColor.clear
+//        textViewMain.isEditable = false
+//        circularSlider.endPointValue = 0
+        // Do any additional setup after loading the view.
     }
-    
-    @objc func timerAction() {
-        UIView.animate(withDuration: 2.0, animations: {
-            self.luonSongImage.transform = CGAffineTransform(translationX: -150 , y: 0)
-        }) { _ in
-            self.luonSongImage.transform = CGAffineTransform(translationX: 0 , y: 0)
-        }
-        UIView.animate(withDuration: 3.0, animations: {
-            self.luonSong2Image.transform = CGAffineTransform(translationX: -160 , y: 0)
-        }) { _ in
-            self.luonSong2Image.transform = CGAffineTransform(translationX: 0 , y: 0)
-        }
-    }
-    
+
     override func setupUI() {
         hideKeyboardWhenTappedAround()
         addImageBoy.layer.cornerRadius = UIScreen.main.bounds.size.width * 0.4 / 2
@@ -245,12 +288,12 @@ class LoveViewController: BaseViewController, SETabItemProvider {
         return formatter
     }()
     
-    func updatePlayerUI(withCurrentTime currentTime: CGFloat) {
-        circularSlider.endPointValue = currentTime
-        var components = DateComponents()
-        components.second = Int(currentTime)
-        timerLabel.text = dateComponentsFormatter.string(from: components)
-    }
+//    func updatePlayerUI(withCurrentTime currentTime: CGFloat) {
+//        circularSlider.endPointValue = currentTime
+//        var components = DateComponents()
+//        components.second = Int(currentTime)
+//        timerLabel.text = dateComponentsFormatter.string(from: components)
+//    }
 //    @IBAction func PrivacyActionPro(_ sender: Any) {
 //        let vc = PrivacyMainVC( )
 //        self.navigationController?.pushViewController(vc, animated: false)
@@ -296,88 +339,72 @@ class LoveViewController: BaseViewController, SETabItemProvider {
     
     @IBAction func startEventBtn(_ sender: Any) {
         
-        self.girlImage.image = self.image_Data_Nam
-        self.boyImage.image = self.image_Data_Nu
-        guard self.boyNameTextField.text != "" && self.girlNameTextField.text != ""  else {
-            if self.imageGirlLink == "" {
-                self.animateViewAll(viewAnim: self.girlView)
-                self.view.makeToast("Please select Photo girl", position: .top)
-                self.IsStopGirlAnimation = false
-            }else if self.imageboyLink == "" {
-                self.animateViewAll(viewAnim: self.boyView)
-                self.view.makeToast("Please select Boy girl", position: .top)
-                self.IsStopBoyAnimation = false
-            } else if self.boyNameTextField.text == "" || self.girlNameTextField.text == "" {
-                self.view.makeToast("Please Fill Text Name For Boy And Girl", position: .top)
-            }
-            return
-        }
-        try? VideoBackground.shared.play(view: self.backgroundView, videoName: "background2", videoType: "mp4")
-        //self.showCustomeIndicator()
-        self.circularSlider.maximumValue = 180.0
-        var timeCount = 0.0
-        self.timerNow = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (_) in
-            timeCount = timeCount + 1
-            let tile = Int((timeCount / 180.0) * 100.0)
-            self.percentLabel.text = String(tile) + " %"
-            self.updatePlayerUI(withCurrentTime: CGFloat(timeCount))
-        }
-        self.buttonLove.isEnabled = false
+//        self.girlImage.image = self.image_Data_Nam
+//        self.boyImage.image = self.image_Data_Nu
+//        guard self.boyNameTextField.text != "" && self.girlNameTextField.text != ""  else {
+//            if self.imageGirlLink == "" {
+//              //  self.animateViewAll(viewAnim: self.girlView)
+//                self.view.makeToast("Please select Photo girl", position: .top)
+//                self.IsStopGirlAnimation = false
+//            }else if self.imageboyLink == "" {
+//               // self.animateViewAll(viewAnim: self.boyView)
+//                self.view.makeToast("Please select Boy girl", position: .top)
+//                self.IsStopBoyAnimation = false
+//            } else if self.boyNameTextField.text == "" || self.girlNameTextField.text == "" {
+//                self.view.makeToast("Please Fill Text Name For Boy And Girl", position: .top)
+//            }
+//            return
+//        }
+////        try? VideoBackground.shared.play(view: self.backgroundView, videoName: "background2", videoType: "mp4")
+////        //self.showCustomeIndicator()
+////        self.circularSlider.maximumValue = 180.0
+////        var timeCount = 0.0
+////        self.timerNow = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (_) in
+////            timeCount = timeCount + 1
+////            let tile = Int((timeCount / 180.0) * 100.0)
+////            self.percentLabel.text = String(tile) + " %"
+////            self.updatePlayerUI(withCurrentTime: CGFloat(timeCount))
+////        }
+//        self.buttonLove.isEnabled = false
         let OldGirlLink = self.imageGirlLink.replacingOccurrences(of: "https://futurelove.online", with: "/var/www/build_futurelove", options: .literal, range: nil)
         let OldBoyLink = self.imageboyLink.replacingOccurrences(of: "https://futurelove.online", with: "/var/www/build_futurelove", options: .literal, range: nil)
-        APIService.shared.getEventsAPI(linkNam: OldBoyLink, linkNu: OldGirlLink,device: AppConstant.modelName ?? "iphone", ip: AppConstant.IPAddress.asStringOrEmpty(), Id: AppConstant.userId.asStringOrEmpty(), tennam: self.boyNameTextField.text.asStringOrEmpty(), tennu: self.girlNameTextField.text.asStringOrEmpty()){ result, error in
-            if let success = result{
-                self.hideCustomeIndicator()
-                if let id_toan_bo_su_kien = Int((success.sukien.first?.id_toan_bo_su_kien ?? "0")){
-                    if id_toan_bo_su_kien > 0{
-                        self.buttonLove.isEnabled = true
-                        let data = id_toan_bo_su_kien
-                        let vc = EventViewController(data: data)
-                        var dataDetail: [EventModel] = [EventModel]()
-                        var sothutu_sukien = 1
-                        for indexList in success.sukien{
-                            var itemAdd:EventModel = EventModel()
-                            itemAdd.link_da_swap = indexList.link_img
-                            itemAdd.count_comment = 0
-                            itemAdd.count_view = 0
-                            itemAdd.id = Int(indexList.id ?? "0")
-                            itemAdd.id_user = indexList.id_num
-                            let dateNow = Date()
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "yyyy-MM-dd, hh:mm:ss"
-                            let dateString = dateFormatter.string(from:dateNow)
-                            itemAdd.real_time = dateString
-                            //                            itemAdd.id_template = indexList.id_template
-                            itemAdd.link_nam_chua_swap = indexList.nam
-                            itemAdd.link_nu_chua_swap = indexList.nu
-                            itemAdd.link_nu_goc = indexList.nam
-                            itemAdd.link_nam_goc = indexList.nu
-                            itemAdd.noi_dung_su_kien = indexList.thongtin
-                            itemAdd.so_thu_tu_su_kien = sothutu_sukien
-                            sothutu_sukien = sothutu_sukien + 1
-                            //                            itemAdd.phantram_loading = indexList.phantram_loading
-                            
-                            //                            itemAdd.so_thu_tu_su_kien = indexList.so_thu_tu_su_kien
-                            //                            itemAdd.ten_nam = indexList.ten_nam
-                            //                            itemAdd.ten_nu = indexList.ten_nu
-                            itemAdd.ten_su_kien = indexList.tensukien
-                            dataDetail.append(itemAdd)
-                        }
-                        let idSukienPro = success.sukien[0].id_toan_bo_su_kien ?? "0"
-                        vc.idToanBoSuKien = Int(idSukienPro ) ?? 0
-                        vc.dataDetail = dataDetail
-                        let OldGirlLink = self.imageGirlLink.replacingOccurrences(of: "https://futurelove.online", with: "/var/www/build_futurelove", options: .literal, range: nil)
-                        let OldBoyLink = self.imageboyLink.replacingOccurrences(of: "https://futurelove.online", with: "/var/www/build_futurelove", options: .literal, range: nil)
-                        APIService.shared.getEventsAPISuKienNgam(linkNam: OldBoyLink, linkNu: OldGirlLink,device: AppConstant.modelName ?? "iphone", ip: AppConstant.IPAddress.asStringOrEmpty(), Id: AppConstant.userId.asStringOrEmpty(), tennam: self.boyNameTextField.text.asStringOrEmpty(), tennu: self.girlNameTextField.text.asStringOrEmpty()){ result, error in
-                            if let success = result{
-                            }
-                        }
-                        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                        self.present(vc, animated: true, completion: nil)
+       
+        APIService.shared.GenBaby(device_them_su_kien: AppConstant.modelName ?? "iphone" , ip_them_su_kien: AppConstant.IPAddress.asStringOrEmpty(), id_user: Int(AppConstant.userId.asStringOrEmpty()) ?? 0, linknam:OldBoyLink , linknu: OldGirlLink){response,error in
+            if let response = response{
+                print("respon sss ")
+                print(response)
+                self.linkanhgocw = response.link_da_swap!
+                let url = URL(string: response.link_da_swap!)
+                let processor = DownsamplingImageProcessor(size: self.imageBaby.bounds.size)
+                             |> RoundCornerImageProcessor(cornerRadius: 20)
+                self.imageBaby.kf.indicatorType = .activity
+                self.imageBaby.kf.setImage(
+                    with: url,
+                    placeholder: UIImage(named: "placeholderImage"),
+                    options: [
+                        .processor(processor),
+                        .scaleFactor(UIScreen.main.scale),
+                        .transition(.fade(1)),
+                        .cacheOriginalImage
+                    ])
+                {
+                    result in
+                    switch result {
+                    case .success(let value):
+                        print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                    case .failure(let error):
+                        print("Job failed: \(error.localizedDescription)")
                     }
                 }
+                
+//                let vc = DetailSwapVideoVC(nibName: "DetailSwapVideoVC", bundle: nil)
+//                vc.itemDataSend = response
+//                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+//                self.present(vc, animated: true, completion: nil)
             }
+           
         }
+      
         
         
     }
@@ -565,7 +592,7 @@ class LoveViewController: BaseViewController, SETabItemProvider {
     
 }
 
-extension LoveViewController : UIPickerViewDelegate,
+extension babycenter : UIPickerViewDelegate,
                                UINavigationControllerDelegate,
                                UIImagePickerControllerDelegate {
     func showImagePicker(selectedSource: UIImagePickerController.SourceType) {
@@ -599,7 +626,7 @@ extension LoveViewController : UIPickerViewDelegate,
     }
 }
 
-extension LoveViewController : UITextFieldDelegate {
+extension babycenter : UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -611,7 +638,7 @@ extension LoveViewController : UITextFieldDelegate {
     }
 }
 
-enum ChooseImageType {
+enum ChooseImageType2 {
     case boy
     case girl
 }
