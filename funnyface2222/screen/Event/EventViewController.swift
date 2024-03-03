@@ -17,7 +17,7 @@ class EventViewController: BaseViewController {
 
     var timeEnd : Date?
     var header : HeaderView?
-   
+    var idsukien : Int 
     var data : Int
     var dataDetail: [EventModel] = []
     var idToanBoSuKien = 0
@@ -94,8 +94,9 @@ class EventViewController: BaseViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var keyboardScrollView: UIScrollView!
-    init(data: Int) {
+    init(data: Int , idsukien: Int) {
         self.data = data
+        self.idsukien = idsukien
         super.init(nibName: nil, bundle: nil)
     }
     @IBAction func BackApp(_ sender: Any){
@@ -308,7 +309,8 @@ class EventViewController: BaseViewController {
         }
     }
     @IBAction func clicknewevent(_ sender: Any) {
-        let vc = newEevntViewController(nibName: "newEevntViewController", bundle: nil)
+        let vc = newEevntViewController(idsukien: self.idsukien )
+        vc.idsukien = self.idsukien
         APIService.shared.listAllVideoSwaped(page:1){response,error in
             vc.listTemplateVideo = response
             //cell.cacluachon2.reloadData()

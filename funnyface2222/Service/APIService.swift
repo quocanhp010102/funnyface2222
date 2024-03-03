@@ -1477,7 +1477,51 @@ class APIService:NSObject {
         }
         // closure("Please Wait To Remove", nil)
     }
-    
+    func AddEvent(ten_sukien: String,noidung_su_kien: String,ten_nam:String,ten_nu:String, id_template :Int ,device: String,ip_them_su_kien:String, ip: Int, userId: String, imageLink: String,link_video:String,  closure: @escaping (_ response: String?, _ error: Error?) -> Void) {
+        let urlString = "https://databaseswap.mangasocial.online/lovehistory/add/\(ip)"
+        let newString1 = imageLink.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
+        let parameters: [String: String] = [
+            "ten_sukien": ten_sukien,
+            "noidung_su_kien": noidung_su_kien,
+            "ten_nam": ten_nam,
+            "ten_nu": ten_nu,
+            "device_them_su_kien": device,
+            "ip_them_su_kien": ip_them_su_kien,
+            "link_img": imageLink,
+            "link_video": link_video,
+            "id_user": userId,
+            "id_template": String(id_template)
+           
+        ]
+        let token_login: String = KeychainWrapper.standard.string(forKey: "token_login") ?? "ADSF"
+        //print("token : " + token_login + " 99999999. sdfdgdsfg")
+        AF.upload(multipartFormData: { (multipartFormData) in
+            for (key, value) in parameters {
+                if let data = value.data(using: .utf8) {
+                    multipartFormData.append(data, withName: key)
+                }
+            }
+//            multipartFormData.append(videoFile, withName: "src_vid", fileName: "video.mp4", mimeType: "video/mp4")
+        }, to: urlString, method: .post, headers: ["Authorization": "Bearer " + token_login])
+        .responseJSON { (response) in
+            switch response.result {
+            case .success(let data):
+                if let data = data as? [String:String]{
+//                    var itemAdd:DetailVideoModel = DetailVideoModel()
+//                    itemAdd = itemAdd.initLoad(data)
+                    var dau = data["message"]
+                    closure( dau , nil)
+                    
+                }else{
+                    closure( "DetailVideoModel()", nil)
+                }
+            case .failure(let error):
+                closure("DetailVideoModel()", error)
+            }
+        }
+    }
+
+
 //    func postTokenNotification(token:String,userID:String,deviceName:String,closure: @escaping (_ response: String, _ error: Error?) -> Void) {
 //        let paramSend:[String: String] = ["device_token":token,"id_user":userID,"device_name":deviceName]
 //        requestRemoveAccount("https://metatechvn.store/add/token", param: paramSend, method: .POST, loading: true) { (data, error) in

@@ -332,7 +332,7 @@ class LoveViewController: BaseViewController, SETabItemProvider {
                     if id_toan_bo_su_kien > 0{
                         self.buttonLove.isEnabled = true
                         let data = id_toan_bo_su_kien
-                        let vc = EventViewController(data: data)
+                        let vc = EventViewController(data: data, idsukien: data)
                         var dataDetail: [EventModel] = [EventModel]()
                         var sothutu_sukien = 1
                         for indexList in success.sukien{

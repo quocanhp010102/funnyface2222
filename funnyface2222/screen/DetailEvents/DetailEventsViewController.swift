@@ -67,7 +67,7 @@ class DetailEventsViewController: UIViewController {
         self.viewDetailSuKien.addGestureRecognizer(gesture)
     }
     @objc func ActionClickToSubSuKien(sender : UITapGestureRecognizer) {
-        let vc = EventViewController(data:idToanBoSuKien)
+        let vc = EventViewController(data:idToanBoSuKien, idsukien: idToanBoSuKien)
         vc.dataDetail = ToanBoSuKien_Trong1LanChay
         vc.idToanBoSuKien = idToanBoSuKien
         self.navigationController?.pushViewController(vc, animated: true)

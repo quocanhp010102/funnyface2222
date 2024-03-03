@@ -8,12 +8,54 @@
 import UIKit
 import Kingfisher
 
-class newEevntViewController: UIViewController {
+class newEevntViewController: BaseViewController {
     @IBOutlet weak var coleccionTemplate:UICollectionView!
     @IBOutlet weak var coleccionVideo:UICollectionView!
     @IBOutlet weak var coleccionImaged:UICollectionView!
     @IBOutlet weak var imageviewtemplate:UIImageView!
     @IBOutlet weak var imageAvatar:UIImageView!
+    @IBOutlet weak var buttonsave:UIButton!
+    @IBOutlet weak var tensvtextfield:UITextField!
+    @IBOutlet weak var noidungtextfiled:UITextField!
+    var idTemplate:Int = 0
+    var linkImage:String = ""
+    var idsukien : Int
+    
+    init( idsukien: Int) {
+       
+        self.idsukien = idsukien
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    @IBAction func BackApp(){
+        self.dismiss(animated: true)
+    }
+    @IBAction func saveAction(_ sender: Any) {
+        let linkImagePro = self.linkImage.replacingOccurrences(of: "https://futurelove.online", with: "/var/www/build_futurelove", options: .literal, range: nil)
+      print("anh vip : " + self.linkImage)
+        APIService.shared.AddEvent(ten_sukien: tensvtextfield.text!, noidung_su_kien: noidungtextfiled.text!, ten_nam: "aaaa", ten_nu: "aaaa", id_template: 1, device: AppConstant.modelName ?? "iphone", ip_them_su_kien: "aaaa", ip: idsukien, userId: AppConstant.userId.asStringOrEmpty(), imageLink: self.linkImage, link_video: "fadsdf"){result, error in
+            if let result = result{
+                // create the alert
+                let alert = UIAlertController(title: "thong bao", message: result, preferredStyle: UIAlertController.Style.alert)
+
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "oke", style: UIAlertAction.Style.default, handler: nil))
+
+                let vc = EventView(nibName: "EventView", bundle: nil)
+              
+                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                self.present(vc, animated: true, completion: nil)
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+
+            }
+        }
+    }
+    
+
     var listTemplateVideo : [ResultVideoModel] = [ResultVideoModel]()
     var listImage:[String] = [String]()
     override func viewDidLoad() {
@@ -69,6 +111,7 @@ extension newEevntViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == coleccionTemplate {
             if indexPath.row == 0 {
                 if let image = UIImage(named: "template1") {
+                    self.idTemplate = 1
                             // Đặt ảnh cho UIImageView
                     self.imageviewtemplate.image = image
                         } else {
@@ -78,6 +121,7 @@ extension newEevntViewController: UICollectionViewDelegate, UICollectionViewData
             }else
             if indexPath.row == 1 {
                 if let image = UIImage(named: "template2") {
+                    self.idTemplate = 2
                             // Đặt ảnh cho UIImageView
                     self.imageviewtemplate.image = image
                         } else {
@@ -87,6 +131,7 @@ extension newEevntViewController: UICollectionViewDelegate, UICollectionViewData
             }else
             if indexPath.row == 2 {
                 if let image = UIImage(named: "Template3") {
+                    self.idTemplate = 3
                             // Đặt ảnh cho UIImageView
                     self.imageviewtemplate.image = image
                         } else {
@@ -96,6 +141,7 @@ extension newEevntViewController: UICollectionViewDelegate, UICollectionViewData
             }else
             if indexPath.row == 3 {
                 if let image = UIImage(named: "template4") {
+                    self.idTemplate = 4
                             // Đặt ảnh cho UIImageView
                     self.imageviewtemplate.image = image
                         } else {
@@ -104,30 +150,58 @@ extension newEevntViewController: UICollectionViewDelegate, UICollectionViewData
                         }
             }
         }
-        else if collectionView == coleccionImaged {
+//        else if collectionView == coleccionImaged {
+//            let url = URL(string:self.listImage[indexPath.row])
+//            let processor = DownsamplingImageProcessor(size: self.imageAvatar.bounds.size)
+//                         |> RoundCornerImageProcessor(cornerRadius: 20)
+//            self.imageAvatar.kf.indicatorType = .activity
+//                // cell.timeLabel.text = "Image " + String(indexPath.row)
+//            self.imageAvatar.kf.setImage(
+//                with: url,
+//                placeholder: UIImage(named: "placeholderImage"),
+//                options: [
+//                    .processor(processor),
+//                    .scaleFactor(UIScreen.main.scale),
+//                    .transition(.fade(1)),
+//                    .cacheOriginalImage
+//                ])
+//            {
+//                result in
+//                switch result {
+//                case .success(let value):
+//                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+//                case .failure(let error):
+//                    print("Job failed: \(error.localizedDescription)")
+//                }
+//            }
+//        }
+        else if collectionView == coleccionImaged{
+            self.linkImage = self.listImage[indexPath.row]
+            let linkImagePro = self.linkImage.replacingOccurrences(of: "/var/www/build_futurelove", with: "https://futurelove.online", options: .literal, range: nil)
+            print(linkImagePro)
             let url = URL(string:self.listImage[indexPath.row])
-            let processor = DownsamplingImageProcessor(size: self.imageAvatar.bounds.size)
-                         |> RoundCornerImageProcessor(cornerRadius: 20)
-            self.imageAvatar.kf.indicatorType = .activity
-                // cell.timeLabel.text = "Image " + String(indexPath.row)
-            self.imageAvatar.kf.setImage(
-                with: url,
-                placeholder: UIImage(named: "placeholderImage"),
-                options: [
-                    .processor(processor),
-                    .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(1)),
-                    .cacheOriginalImage
-                ])
-            {
-                result in
-                switch result {
-                case .success(let value):
-                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
-                case .failure(let error):
-                    print("Job failed: \(error.localizedDescription)")
-                }
-            }
+                       let processor = DownsamplingImageProcessor(size: self.imageAvatar.bounds.size)
+                                    |> RoundCornerImageProcessor(cornerRadius: 20)
+                       self.imageAvatar.kf.indicatorType = .activity
+                           // cell.timeLabel.text = "Image " + String(indexPath.row)
+                       self.imageAvatar.kf.setImage(
+                           with: url,
+                           placeholder: UIImage(named: "placeholderImage"),
+                           options: [
+                               .processor(processor),
+                               .scaleFactor(UIScreen.main.scale),
+                               .transition(.fade(1)),
+                               .cacheOriginalImage
+                           ])
+                       {
+                           result in
+                           switch result {
+                           case .success(let value):
+                               print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                           case .failure(let error):
+                               print("Job failed: \(error.localizedDescription)")
+                           }
+                       }
         }
        
     }

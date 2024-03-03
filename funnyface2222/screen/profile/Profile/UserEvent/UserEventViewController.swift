@@ -81,7 +81,7 @@ extension UserEventViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = EventViewController(data: data[indexPath.row].id_toan_bo_su_kien ?? 0)
+        let vc = EventViewController(data: data[indexPath.row].id_toan_bo_su_kien ?? 0 , idsukien: data[indexPath.row].id_toan_bo_su_kien ?? 0)
         vc.idToanBoSuKien = data[indexPath.row].id_toan_bo_su_kien ?? 0
         var dataDetail: [EventModel] = [EventModel]()
         var sothutu_sukien = 1

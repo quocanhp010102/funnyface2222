@@ -22,7 +22,7 @@ class EventView: UIViewController, SETabItemProvider,UITextFieldDelegate {
     @IBOutlet weak var textFieldSearch: UITextField!
     @IBOutlet weak var buttonSearch: UIButton!
     @IBOutlet weak var buttonNextSearch: UIButton!
-
+    
     var indexSelectPage = 0
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: UIImage(named: "tab_home"), tag: 0)
@@ -173,7 +173,8 @@ extension EventView: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = EventViewController(data: dataList_All[indexPath.row].id_toan_bo_su_kien ?? 0)
+        let vc = EventViewController(data: dataList_All[indexPath.row].id_toan_bo_su_kien ?? 0 , idsukien: dataList_All[indexPath.row].id_toan_bo_su_kien ?? 0)
+        //vc.idsukien = dataList_All[indexPath.row].id_toan_bo_su_kien ?? 0
         var dataDetail: [EventModel] = [EventModel]()
         if listSukien.count > indexPath.row{
             for indexList in listSukien[indexPath.row].sukien{

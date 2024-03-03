@@ -16,6 +16,8 @@
                 <outlet property="coleccionVideo" destination="ub3-lG-PTL" id="Vci-UO-8Vy"/>
                 <outlet property="imageAvatar" destination="y7w-vQ-MOa" id="Ykp-U0-rLa"/>
                 <outlet property="imageviewtemplate" destination="rM9-b0-aYW" id="SRn-Kp-4Aw"/>
+                <outlet property="noidungtextfiled" destination="vmt-Ar-bd1" id="OE3-Ps-NmQ"/>
+                <outlet property="tensvtextfield" destination="iNa-TF-ZG3" id="bTq-0Q-EKR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,6 +35,9 @@
                             <buttonConfiguration key="configuration" style="plain" title="cancel">
                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="BackApp" destination="-1" eventType="touchDown" id="OnO-Gw-SWG"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add new event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvW-fw-x4O">
                             <rect key="frame" x="116.66666666666666" y="0.0" width="128" height="35"/>
@@ -46,6 +51,9 @@
                             <buttonConfiguration key="configuration" style="plain" title="Save">
                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="saveAction:" destination="-1" eventType="touchDown" id="3fJ-tL-yf2"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
