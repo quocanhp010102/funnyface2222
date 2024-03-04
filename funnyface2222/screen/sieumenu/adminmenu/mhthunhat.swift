@@ -78,10 +78,17 @@ class mhthunhat: UIViewController {
                     ["Item3A", "Item3B", "Item3C"]
                 ]
                 let titles: [String] = ["hamg1", "hang2", "hang3","hang4","hang5"]
+        let icons: [UIImage] = [
+            UIImage(named: "home")!,
+            UIImage(named: "library")!,
+            UIImage(named: "comment")!,
+            UIImage(named: "notification")!,
+            UIImage(named: "profile")!
+        ]
         let customOptions = RoundRectPagerOption2(isInfinite: false, tabMenuPosition: .bottom)
         
                 // Khởi tạo StoryboardPageTabMenuViewController với các items và titles
-                let pageMenuViewController = stoaboadpagemain(items: items, titles: titles, options: customOptions)
+        let pageMenuViewController = stoaboadpagemain(items: items, titles: titles, icons: icons ,options: customOptions)
 
                 // Thêm StoryboardPageTabMenuViewController làm con của parent view controller
                 addChild(pageMenuViewController)

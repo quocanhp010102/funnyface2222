@@ -35,7 +35,7 @@ class CommentsViewController: UIViewController , SETabItemProvider,UITextFieldDe
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewBackGround.gradient()
+        viewBackGround.backgroundColor = .black
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         APIService.shared.searchComment(searchText:textFieldSearch.text ?? "" ){result, error in
@@ -240,9 +240,10 @@ extension CommentsViewController : UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCommentTableViewCell", for: indexPath) as? DetailCommentTableViewCell else {
             return UITableViewCell()
         }
+        let linkImagePro = dataComment[indexPath.row].avatar_user?.replacingOccurrences(of: "/var/www/build_futurelove", with: "https://futurelove.online", options: .literal, range: nil)
         cell.id_comment = "\(dataComment[indexPath.row].id_comment)"
         cell.id_user_comment = "\(dataComment[indexPath.row].id_user)"
-        cell.linkAvatar = dataComment[indexPath.row].avatar_user ?? ""
+        cell.linkAvatar = linkImagePro ?? ""
         cell.descriptionMain = dataComment[indexPath.row].noi_dung_cmt ?? ""
         cell.thoi_gian_release = dataComment[indexPath.row].thoi_gian_release ?? ""
         cell.noi_dung_cmt = dataComment[indexPath.row].noi_dung_cmt ?? ""

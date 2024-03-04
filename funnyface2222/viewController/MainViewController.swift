@@ -35,8 +35,12 @@ class MainViewController: UIViewController {
             } else {
                 //                        self.navigationController?.setRootViewController(viewController: MainSwapfaceViewController(),
                 //                                                                         controllerType: MainSwapfaceViewController.self)
-                let storyboard = UIStoryboard(name: "mainpage", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "mhthunhat") as! mhthunhat
+//                let storyboard = UIStoryboard(name: "mainpage", bundle: nil)
+//                let vc = storyboard.instantiateViewController(withIdentifier: "mhthunhat") as! mhthunhat
+//                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+//                self.present(vc, animated: true, completion: nil)
+                
+                let vc = TabbarViewController()
                 vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
                 self.present(vc, animated: true, completion: nil)
             }

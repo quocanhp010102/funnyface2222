@@ -10,15 +10,16 @@ import UIKit
 class UserEventViewController: UIViewController {
     @IBOutlet weak var userEventTableView: UITableView!
     @IBOutlet weak var backGroundView: UIView!
-    
+    @IBOutlet weak var buttonBack: UIButton!
     var data : [Sukien] = []
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        backGroundView.gradient()
+        backGroundView.backgroundColor = .black
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonBack.setTitle("", for: .normal)
         userEventTableView.delegate = self
         userEventTableView.dataSource = self
         userEventTableView.register(cellType: Template1TBVCell.self)
@@ -30,7 +31,7 @@ class UserEventViewController: UIViewController {
 
 
     @IBAction func backBtn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
+        self.dismiss(animated: true)
     }
     
 }

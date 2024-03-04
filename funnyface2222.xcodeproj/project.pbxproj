@@ -195,6 +195,7 @@
 		E6C6E9C42B59129E0055D260 /* ImagedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9C32B59129E0055D260 /* ImagedModel.swift */; };
 		E6C6E9C72B592BBC0055D260 /* swapNewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9C52B592BBC0055D260 /* swapNewImage.swift */; };
 		E6C6E9C82B592BBC0055D260 /* swapNewImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C6E9C62B592BBC0055D260 /* swapNewImage.xib */; };
+		E6D181B22B95DAEE008A5082 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D181B12B95DAEE008A5082 /* TabbarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -389,6 +390,7 @@
 		E6C6E9C32B59129E0055D260 /* ImagedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagedModel.swift; sourceTree = "<group>"; };
 		E6C6E9C52B592BBC0055D260 /* swapNewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swapNewImage.swift; sourceTree = "<group>"; };
 		E6C6E9C62B592BBC0055D260 /* swapNewImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = swapNewImage.xib; sourceTree = "<group>"; };
+		E6D181B12B95DAEE008A5082 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		EB38B885162FC0397A047C21 /* Pods-funnyface2222.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funnyface2222.debug.xcconfig"; path = "Target Support Files/Pods-funnyface2222/Pods-funnyface2222.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1049,6 +1051,7 @@
 			isa = PBXGroup;
 			children = (
 				E68D67192B5E776D00E410FC /* adminmenu */,
+				E6D181B12B95DAEE008A5082 /* TabbarViewController.swift */,
 			);
 			path = sieumenu;
 			sourceTree = "<group>";
@@ -1431,6 +1434,7 @@
 				E67DF46B2B553B0E0074D573 /* ImageMainViewController.swift in Sources */,
 				E66C93CF2B4E559600B74491 /* tieudeclv.swift in Sources */,
 				E66C93362B4E557A00B74491 /* UIColor+Extension.swift in Sources */,
+				E6D181B22B95DAEE008A5082 /* TabbarViewController.swift in Sources */,
 				E66C93D52B4E559600B74491 /* SwapVideoDetailVC.swift in Sources */,
 				E66C941B2B4E55B000B74491 /* MainViewController.swift in Sources */,
 				E66C92D72B4E52EC00B74491 /* AppDelegate.swift in Sources */,

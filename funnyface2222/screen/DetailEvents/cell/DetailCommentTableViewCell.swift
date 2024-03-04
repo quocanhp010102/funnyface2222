@@ -8,6 +8,7 @@
 import UIKit
 import AlamofireImage
 import SwiftKeychainWrapper
+import Kingfisher
 
 extension UIView {
     var parentViewController: UIViewController? {
@@ -137,9 +138,33 @@ class DetailCommentTableViewCell: UITableViewCell {
     }
     
     func configCellComment(model: DataComment) {
-        if let url = URL(string: model.avatar_user.asStringOrEmpty()) {
-            imageAvatar.af.setImage(withURL: url)
+//        if let url = URL(string: model.avatar_user.asStringOrEmpty()) {
+//            imageAvatar.af.setImage(withURL: url)
+//        }
+        if let url = URL(string: model.avatar_user.asStringOrEmpty() ?? "") {
+            let processor = DownsamplingImageProcessor(size: imageAvatar.bounds.size)
+            |> RoundCornerImageProcessor(cornerRadius: 5)
+            imageAvatar.kf.indicatorType = .activity
+            imageAvatar.kf.setImage(
+                with: url,
+                placeholder: UIImage(named: "hoapro"),
+                options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
+                ])
+            {
+                result in
+                switch result {
+                case .success(let value):
+                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                case .failure(let error):
+                    print("Job failed: \(error.localizedDescription)")
+                }
+            }
         }
+        
         userNameLabel.text = model.user_name
         descriptionLabel.text = model.noi_dung_cmt
         locationLabel.text = "IP: \(model.dia_chi_ip ?? "") - \(model.location ?? "")"

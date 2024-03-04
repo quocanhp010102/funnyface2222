@@ -7,8 +7,11 @@
 
 import UIKit
 import Kingfisher
-
-class HomeMainView: UIViewController {
+import SETabView
+class HomeMainView: UIViewController,SETabItemProvider {
+    var seTabBarItem: UITabBarItem? {
+        return UITabBarItem(title: "", image: R.image.tab_video(), tag: 0)
+    }
     var listTemplateVideo : [ResultVideoModel] = [ResultVideoModel]()
     @IBOutlet weak var cacluachon:UICollectionView!
     @IBOutlet weak var btntim:UIButton!

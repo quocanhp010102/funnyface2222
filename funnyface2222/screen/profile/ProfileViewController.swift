@@ -7,8 +7,12 @@
 import UIKit
 import AlamofireImage
 import Kingfisher
-
-class ProfileViewController: UIViewController {
+import SETabView
+class ProfileViewController: UIViewController ,SETabItemProvider{
+    var seTabBarItem: UITabBarItem? {
+        return UITabBarItem(title: "", image: UIImage(named: "tab_home"), tag: 0)
+    }
+    
     var isVideoSeleced = false
     @IBOutlet weak var buttonSearch: UIButton!
     @IBOutlet weak var buttonCancel: UIButton!
@@ -35,7 +39,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    var userId: Int = 0
+    var userId: Int = Int(AppConstant.userId.asStringOrEmpty()) ?? 0
     var dataRecentCommemt: [CommentUser] = []
     var dataUserEvent: [Sukien] = []
     var listUserSearch:[UserSearchModel] = [UserSearchModel]()
@@ -56,11 +60,12 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var removeAccountButton: UIButton!
     @IBOutlet weak var ButtonAlert: UIButton!
+    @IBOutlet weak var ButtonchangeAvatar: UIButton!
     @IBOutlet weak var emailLabel: UILabel!
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        backgroundView.gradient()
+        backgroundView.backgroundColor = .black
         isSearchUser = false
         callApiProfile()
         callAPIUserEvent()
@@ -73,13 +78,15 @@ class ProfileViewController: UIViewController {
         removeAccountButton.clipsToBounds = true
         
         buttonSearch.setTitle("", for: .normal)
-        buttonCancel.setTitle("Cancel", for: .normal)
+        ButtonchangeAvatar.setTitle("", for: .normal)
+       // buttonCancel.setTitle("Cancel", for: .normal)
         buttonLogout.setTitle("Logout", for: .normal)
         buttonRemoveAccount.setTitle("Remove My Account?", for: .normal)
         buttonEvent.setTitle("", for: .normal)
         buttonView.setTitle("", for: .normal)
         buttonComment.setTitle("", for: .normal)
         ButtonAlert.setTitle("", for: .normal)
+        callAPIRecentComment()
     }
     
     func setupUI() {
@@ -199,7 +206,8 @@ class ProfileViewController: UIViewController {
     @IBAction func userEventBtn(_ sender: Any) {
         let vc = UserEventViewController(nibName: "UserEventViewController", bundle: nil)
         vc.data = self.dataUserEvent
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func clickSearch(_ sender: Any) {
@@ -236,6 +244,8 @@ extension ProfileViewController: UITableViewDataSource {
             let processor = DownsamplingImageProcessor(size: cell.avatarImage.bounds.size)
                          |> RoundCornerImageProcessor(cornerRadius: 20)
             cell.avatarImage.kf.indicatorType = .activity
+            cell.dateLabel.textColor = .white
+                    cell.descriptionLabel.textColor = .white
             cell.avatarImage.kf.setImage(
                 with: url,
                 placeholder: UIImage(named: "placeholderImage"),

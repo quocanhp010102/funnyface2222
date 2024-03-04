@@ -7,6 +7,7 @@
 
 import UIKit
 import Swift_PageMenu
+import SETabView
 struct RoundRectPagerOption: PageMenuOptions {
 
     var isInfinite: Bool = false
@@ -60,8 +61,10 @@ struct RoundRectPagerOption: PageMenuOptions {
     }
 }
 
-class mhtestViewController: UIViewController {
-
+class mhtestViewController: UIViewController,SETabItemProvider {
+    var seTabBarItem: UITabBarItem? {
+        return UITabBarItem(title: "haha", image: UIImage(named: "tab_home"), tag: 0)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

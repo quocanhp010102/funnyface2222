@@ -7,8 +7,11 @@
 
 import UIKit
 import Kingfisher
-
-class mhchinhController: UIViewController {
+import SETabView
+class mhchinhController: UIViewController,SETabItemProvider {
+    var seTabBarItem: UITabBarItem? {
+        return UITabBarItem(title: "", image: UIImage(named: "tab_home"), tag: 0)
+    }
     @IBOutlet weak var buttonnewproject:UIButton!
    
     @IBOutlet weak var theloaiclv:UICollectionView!

@@ -24,9 +24,11 @@ class stoaboadpagemain: PageMenuController {
 
     let titles: [String]
 
-    init(items: [[String]], titles: [String], options: PageMenuOptions? = nil) {
+    let icons: [UIImage]
+    init(items: [[String]], titles: [String], icons: [UIImage] , options: PageMenuOptions? = nil) {
         self.items = items
         self.titles = titles
+        self.icons = icons
         super.init(options: options)
     }
 
@@ -118,7 +120,7 @@ extension stoaboadpagemain: PageMenuControllerDataSource {
     }
 
     func defaultPageIndex(forPageMenuController pageMenuController: PageMenuController) -> Int {
-        return 0
+        return 1
     }
 }
 
