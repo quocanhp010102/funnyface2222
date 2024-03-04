@@ -52,6 +52,7 @@ class SwapVideoDetailVC: UIViewController {
     }
     @IBAction func nextdd(){
                 let vc = swapvideo2(nibName: "swapvideo2", bundle: nil)
+        print(self.itemLink.id)
         vc.itemLink=self.itemLink
                 vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
                 self.present(vc, animated: true, completion: nil)

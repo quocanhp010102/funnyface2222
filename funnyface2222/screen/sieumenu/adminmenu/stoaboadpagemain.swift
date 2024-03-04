@@ -67,6 +67,8 @@ class stoaboadpagemain: PageMenuController {
 }
 
 extension stoaboadpagemain: PageMenuControllerDataSource {
+    
+    
     func viewControllers(forPageMenuController pageMenuController: PageMenuController) -> [UIViewController] {
         return self.titles.enumerated().map({ (i, title) -> UIViewController in
             if i == 0 {
@@ -80,6 +82,22 @@ extension stoaboadpagemain: PageMenuControllerDataSource {
                 let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "mhtestViewController") as! mhtestViewController
 
+                controller.title = "Storyboard #\(i) (\(title))"
+                //ImageMainViewController
+                return controller
+            }
+            else if i == 2 {
+              
+                let controller = CommentsViewController()
+
+                controller.title = "Storyboard #\(i) (\(title))"
+                //ImageMainViewController
+                return controller
+            }
+            else if i == 4 {
+              
+                let controller = ProfileViewController()
+                controller.userId = Int(AppConstant.userId.asStringOrEmpty()) ?? 0
                 controller.title = "Storyboard #\(i) (\(title))"
                 //ImageMainViewController
                 return controller

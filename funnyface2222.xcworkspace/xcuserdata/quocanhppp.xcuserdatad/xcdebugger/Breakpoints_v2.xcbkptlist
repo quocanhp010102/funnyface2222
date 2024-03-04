@@ -118,49 +118,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "86594618-E10D-40E1-8B15-81BFFDA70CF3"
+            uuid = "BE082571-B3EE-4709-A175-33C7349295E8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "funnyface2222/Service/APIService.swift"
+            filePath = "funnyface2222/screen/mainscreen/Video/cell/swaplistvd/SwapVideoDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1380"
-            endingLineNumber = "1380"
-            landmarkName = "GenVideoSwap(device_them_su_kien:id_video:ip_them_su_kien:id_user:link_img:ten_video:closure:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "nextdd()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "752D0C2F-5326-405A-A1CD-405A9707E592"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funnyface2222/Service/APIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1381"
-            endingLineNumber = "1381"
-            landmarkName = "GenVideoSwap(device_them_su_kien:id_video:ip_them_su_kien:id_user:link_img:ten_video:closure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "19CC18F3-112C-42F5-A4AD-A1C6F2D4EFAC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "funnyface2222/Service/APIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1384"
-            endingLineNumber = "1384"
-            landmarkName = "GenVideoSwap(device_them_su_kien:id_video:ip_them_su_kien:id_user:link_img:ten_video:closure:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BE082571-B3EE-4709-A175-33C7349295E8 - d7c5776810dc93fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "funnyface2222.SwapVideoDetailVC.nextdd() -&gt; ()"
+                  moduleName = "funnyface2222"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quocanhppp/Documents/iosProject/funnyface2222/funnyface2222/screen/mainscreen/Video/cell/swaplistvd/SwapVideoDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "229">
+               </Location>
+               <Location
+                  uuid = "BE082571-B3EE-4709-A175-33C7349295E8 - d7c5776810dc93fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "funnyface2222.SwapVideoDetailVC.nextdd() -&gt; ()"
+                  moduleName = "funnyface2222"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quocanhppp/Documents/iosProject/funnyface2222/funnyface2222/screen/mainscreen/Video/cell/swaplistvd/SwapVideoDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "433">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
