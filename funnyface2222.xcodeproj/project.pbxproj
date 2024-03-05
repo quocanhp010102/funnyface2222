@@ -196,6 +196,8 @@
 		E6C6E9C72B592BBC0055D260 /* swapNewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C6E9C52B592BBC0055D260 /* swapNewImage.swift */; };
 		E6C6E9C82B592BBC0055D260 /* swapNewImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C6E9C62B592BBC0055D260 /* swapNewImage.xib */; };
 		E6D181B22B95DAEE008A5082 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D181B12B95DAEE008A5082 /* TabbarViewController.swift */; };
+		E6EB4E202B970527002E87A7 /* ChangePassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB4E1E2B970527002E87A7 /* ChangePassController.swift */; };
+		E6EB4E212B970527002E87A7 /* ChangePassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6EB4E1F2B970527002E87A7 /* ChangePassController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -391,6 +393,8 @@
 		E6C6E9C52B592BBC0055D260 /* swapNewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swapNewImage.swift; sourceTree = "<group>"; };
 		E6C6E9C62B592BBC0055D260 /* swapNewImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = swapNewImage.xib; sourceTree = "<group>"; };
 		E6D181B12B95DAEE008A5082 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		E6EB4E1E2B970527002E87A7 /* ChangePassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassController.swift; sourceTree = "<group>"; };
+		E6EB4E1F2B970527002E87A7 /* ChangePassController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePassController.xib; sourceTree = "<group>"; };
 		EB38B885162FC0397A047C21 /* Pods-funnyface2222.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funnyface2222.debug.xcconfig"; path = "Target Support Files/Pods-funnyface2222/Pods-funnyface2222.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -831,6 +835,8 @@
 				E66C93952B4E559600B74491 /* ProfileViewController.xib */,
 				E66C939F2B4E559600B74491 /* ProfileViewController.swift */,
 				E66C938F2B4E559600B74491 /* Profile */,
+				E6EB4E1E2B970527002E87A7 /* ChangePassController.swift */,
+				E6EB4E1F2B970527002E87A7 /* ChangePassController.xib */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -1235,6 +1241,7 @@
 				E66C93CA2B4E559600B74491 /* SlideMenuViewController.xib in Resources */,
 				E66C93DF2B4E559600B74491 /* DetailCommentTableViewCell.xib in Resources */,
 				E66C92E32B4E52EF00B74491 /* LaunchScreen.storyboard in Resources */,
+				E6EB4E212B970527002E87A7 /* ChangePassController.xib in Resources */,
 				E64E47C22B5E5147007DDAD0 /* newVideo2.xib in Resources */,
 				E66C93F22B4E559600B74491 /* ChangerAvatarViewController.xib in Resources */,
 				E68D67272B5F9FCE00E410FC /* hightlightmain.xib in Resources */,
@@ -1440,6 +1447,7 @@
 				E66C92D72B4E52EC00B74491 /* AppDelegate.swift in Sources */,
 				E66C93DD2B4E559600B74491 /* DetailEventsViewController.swift in Sources */,
 				E66C93CE2B4E559600B74491 /* cacluachonclv.swift in Sources */,
+				E6EB4E202B970527002E87A7 /* ChangePassController.swift in Sources */,
 				E66C933D2B4E557A00B74491 /* UITableView+Extension.swift in Sources */,
 				E6BDA2182B68D44300B1B6FD /* newEevntViewController.swift in Sources */,
 				E66C94062B4E559600B74491 /* HeaderView.swift in Sources */,

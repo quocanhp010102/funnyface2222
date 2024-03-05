@@ -98,13 +98,28 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgT-LE-h8M">
+                            <rect key="frame" x="303" y="0.0" width="127" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="đổi mật khẩu">
+                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="changePass:" destination="-1" eventType="touchDown" id="Vg1-Bn-H5R"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="IgT-LE-h8M" firstAttribute="top" secondItem="nCk-p5-rSz" secondAttribute="top" id="9EY-fh-Fje"/>
                         <constraint firstItem="xM3-R8-EaA" firstAttribute="top" secondItem="nCk-p5-rSz" secondAttribute="top" id="Szn-Zw-99k"/>
                         <constraint firstItem="xM3-R8-EaA" firstAttribute="leading" secondItem="nCk-p5-rSz" secondAttribute="leading" constant="16" id="TEw-NH-PpJ"/>
+                        <constraint firstItem="IgT-LE-h8M" firstAttribute="height" secondItem="nCk-p5-rSz" secondAttribute="height" id="UPf-Cr-fii"/>
+                        <constraint firstAttribute="trailing" secondItem="IgT-LE-h8M" secondAttribute="trailing" id="XDO-Mf-mTa"/>
                         <constraint firstAttribute="bottom" secondItem="xM3-R8-EaA" secondAttribute="bottom" id="cVT-HR-9Em"/>
                         <constraint firstAttribute="height" constant="40" id="dxX-32-6rl"/>
+                        <constraint firstAttribute="bottom" secondItem="IgT-LE-h8M" secondAttribute="bottom" id="w5i-lh-6qm"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ica-tn-1Or" userLabel="dash">

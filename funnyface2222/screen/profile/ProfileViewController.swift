@@ -209,7 +209,12 @@ class ProfileViewController: UIViewController ,SETabItemProvider{
         vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
         self.present(vc, animated: true, completion: nil)
     }
-    
+    @IBAction func changePass(_ sender: Any) {
+        let vc = ChangePassController(nibName: "ChangePassController", bundle: nil)
+        //vc.data = self.dataUserEvent
+        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+        self.present(vc, animated: true, completion: nil)
+    }
     @IBAction func clickSearch(_ sender: Any) {
         APIService.shared.APISearchUser(nameSearch: userNameTextField.text ?? "" ) { result, error in
             self.isSearchUser = true
