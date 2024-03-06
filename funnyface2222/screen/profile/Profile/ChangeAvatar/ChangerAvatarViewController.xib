@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangerAvatarViewController" customModule="FutureLove" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangerAvatarViewController" customModule="funnyface2222" customModuleProvider="target">
             <connections>
+                <outlet property="boyImage" destination="U9v-3b-WJP" id="VrQ-sf-807"/>
                 <outlet property="view" destination="9A1-hQ-TAO" id="MaC-TD-bl6"/>
             </connections>
         </placeholder>
@@ -18,21 +20,64 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQL-wX-Bcc">
-                    <rect key="frame" x="123" y="387" width="211" height="75"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 48097714" translatesAutoresizingMaskIntoConstraints="NO" id="U9v-3b-WJP">
+                    <rect key="frame" x="76.666666666666686" y="143" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="9Fk-mc-wiJ"/>
+                        <constraint firstAttribute="height" constant="128" id="Sb9-1S-BKt"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ah-kh-DeS">
+                    <rect key="frame" x="39" y="612" width="315" height="128"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLx-Ml-jgG">
+                            <rect key="frame" x="233" y="46.666666666666629" width="74" height="35"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="cancel">
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFT-Yo-aZs">
+                            <rect key="frame" x="8" y="46.666666666666629" width="92.666666666666671" height="35"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="xac nhan">
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="changeAVATR:" destination="-1" eventType="touchDown" id="9l0-RT-16X"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="XFT-Yo-aZs" firstAttribute="centerY" secondItem="2ah-kh-DeS" secondAttribute="centerY" id="Bd1-Wr-63H"/>
+                        <constraint firstAttribute="trailing" secondItem="TLx-Ml-jgG" secondAttribute="trailing" constant="8" id="Rfd-qt-SKh"/>
+                        <constraint firstItem="TLx-Ml-jgG" firstAttribute="centerY" secondItem="2ah-kh-DeS" secondAttribute="centerY" id="Wn0-Ko-rkn"/>
+                        <constraint firstItem="XFT-Yo-aZs" firstAttribute="leading" secondItem="2ah-kh-DeS" secondAttribute="leading" constant="8" id="ncm-Xw-RwG"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="C01-OP-87P"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="labelColor"/>
+            <constraints>
+                <constraint firstItem="C01-OP-87P" firstAttribute="trailing" secondItem="2ah-kh-DeS" secondAttribute="trailing" constant="39" id="1m8-Em-Myr"/>
+                <constraint firstItem="C01-OP-87P" firstAttribute="bottom" secondItem="2ah-kh-DeS" secondAttribute="bottom" constant="78" id="L2b-qC-Fyf"/>
+                <constraint firstItem="2ah-kh-DeS" firstAttribute="height" secondItem="9A1-hQ-TAO" secondAttribute="height" multiplier="0.150235" id="MOy-dm-t8j"/>
+                <constraint firstItem="U9v-3b-WJP" firstAttribute="top" secondItem="C01-OP-87P" secondAttribute="top" constant="84" id="Ty6-hL-XwJ"/>
+                <constraint firstItem="U9v-3b-WJP" firstAttribute="centerX" secondItem="9A1-hQ-TAO" secondAttribute="centerX" id="h6x-xh-eMt"/>
+                <constraint firstItem="2ah-kh-DeS" firstAttribute="leading" secondItem="C01-OP-87P" secondAttribute="leading" constant="39" id="mBE-0R-toW"/>
+            </constraints>
             <point key="canvasLocation" x="-319.84732824427482" y="-57.04225352112676"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="Frame 48097714" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

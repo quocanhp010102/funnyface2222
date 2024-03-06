@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangePassController" customModule="funnyface2222" customModuleProvider="target">
             <connections>
+                <outlet property="errorMessageLabel" destination="d6O-F8-tww" id="RFX-2P-bng"/>
                 <outlet property="hienpass" destination="i1y-rY-uKA" id="Zwx-9Y-Cq2"/>
                 <outlet property="hienpassnew" destination="CpD-Fe-P7G" id="ygT-eK-P0D"/>
                 <outlet property="hienpassnewagain" destination="cEv-hQ-wX0" id="Bhn-4y-Qeg"/>
@@ -156,6 +157,9 @@
                     <buttonConfiguration key="configuration" style="plain" title="xác nhận">
                         <color key="baseForegroundColor" systemColor="systemGray6Color"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="btnChange:" destination="-1" eventType="touchDown" id="zKn-SF-BAA"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uam-NB-VtK">
                     <rect key="frame" x="300" y="750" width="61" height="35"/>
@@ -167,16 +171,24 @@
                         <action selector="backBtn:" destination="-1" eventType="touchDown" id="zme-Gh-x33"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6O-F8-tww">
+                    <rect key="frame" x="82" y="757" width="185" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
                 <constraint firstItem="ErH-e7-3nP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0NX-ab-yjP"/>
+                <constraint firstItem="d6O-F8-tww" firstAttribute="leading" secondItem="D8j-Bd-bcf" secondAttribute="leading" id="3Ie-tg-0fR"/>
                 <constraint firstItem="SNw-qa-jMQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5h2-7a-AoJ"/>
                 <constraint firstItem="M1f-Tt-rl9" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0422535" id="5jy-dL-4Nh"/>
                 <constraint firstItem="SNw-qa-jMQ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.137324" id="5te-NX-lrj"/>
                 <constraint firstItem="goc-He-MyT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="7c6-XQ-UeC"/>
                 <constraint firstItem="goc-He-MyT" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0434272" id="7ku-hj-JnN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="d6O-F8-tww" secondAttribute="bottom" constant="40" id="94K-da-wBR"/>
                 <constraint firstItem="6Tx-eA-ii8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="BbU-ia-Vbx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Tx-eA-ii8" secondAttribute="trailing" id="FWf-4a-gCI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M1f-Tt-rl9" secondAttribute="trailing" constant="16" id="GxR-E2-Yab"/>
@@ -186,6 +198,7 @@
                 <constraint firstItem="goc-He-MyT" firstAttribute="top" secondItem="inN-cD-InN" secondAttribute="bottom" constant="48" id="PEv-A0-iYy"/>
                 <constraint firstItem="D8j-Bd-bcf" firstAttribute="top" secondItem="ErH-e7-3nP" secondAttribute="bottom" constant="80" id="Rph-fm-91K"/>
                 <constraint firstItem="6Tx-eA-ii8" firstAttribute="top" secondItem="SNw-qa-jMQ" secondAttribute="bottom" constant="36" id="SRf-Qc-yee"/>
+                <constraint firstItem="d6O-F8-tww" firstAttribute="top" secondItem="D8j-Bd-bcf" secondAttribute="bottom" constant="30" id="Soi-KO-Tsj"/>
                 <constraint firstItem="b8f-zu-jeU" firstAttribute="top" secondItem="6Tx-eA-ii8" secondAttribute="bottom" constant="5" id="Tjd-fg-Sy7"/>
                 <constraint firstItem="ErH-e7-3nP" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0633803" id="VX8-2j-LvL"/>
                 <constraint firstItem="uam-NB-VtK" firstAttribute="top" secondItem="D8j-Bd-bcf" secondAttribute="bottom" constant="23" id="VqA-7A-yqq"/>
@@ -196,6 +209,7 @@
                 <constraint firstItem="D8j-Bd-bcf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="g0K-QN-lUA"/>
                 <constraint firstItem="b8f-zu-jeU" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0622066" id="gA4-35-Uop"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="inN-cD-InN" secondAttribute="trailing" constant="16" id="gYL-Xf-rZE"/>
+                <constraint firstItem="d6O-F8-tww" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.470738" id="l1Y-gt-bLs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uam-NB-VtK" secondAttribute="trailing" constant="32" id="lJI-i6-bR6"/>
                 <constraint firstItem="M1f-Tt-rl9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="lM2-yt-sCd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b8f-zu-jeU" secondAttribute="trailing" constant="16" id="o9M-te-4Z3"/>
@@ -221,6 +235,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

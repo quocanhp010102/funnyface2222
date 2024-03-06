@@ -198,6 +198,7 @@
 		E6D181B22B95DAEE008A5082 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D181B12B95DAEE008A5082 /* TabbarViewController.swift */; };
 		E6EB4E202B970527002E87A7 /* ChangePassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB4E1E2B970527002E87A7 /* ChangePassController.swift */; };
 		E6EB4E212B970527002E87A7 /* ChangePassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6EB4E1F2B970527002E87A7 /* ChangePassController.xib */; };
+		E6EB4E242B988933002E87A7 /* avatarModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB4E232B988933002E87A7 /* avatarModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -395,6 +396,7 @@
 		E6D181B12B95DAEE008A5082 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		E6EB4E1E2B970527002E87A7 /* ChangePassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassController.swift; sourceTree = "<group>"; };
 		E6EB4E1F2B970527002E87A7 /* ChangePassController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePassController.xib; sourceTree = "<group>"; };
+		E6EB4E232B988933002E87A7 /* avatarModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = avatarModal.swift; sourceTree = "<group>"; };
 		EB38B885162FC0397A047C21 /* Pods-funnyface2222.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funnyface2222.debug.xcconfig"; path = "Target Support Files/Pods-funnyface2222/Pods-funnyface2222.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -860,6 +862,7 @@
 		E66C93922B4E559600B74491 /* ChangeAvatar */ = {
 			isa = PBXGroup;
 			children = (
+				E6EB4E222B988911002E87A7 /* model */,
 				E66C93932B4E559600B74491 /* ChangerAvatarViewController.xib */,
 				E66C93942B4E559600B74491 /* ChangerAvatarViewController.swift */,
 			);
@@ -1164,6 +1167,14 @@
 			path = swaped;
 			sourceTree = "<group>";
 		};
+		E6EB4E222B988911002E87A7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E6EB4E232B988933002E87A7 /* avatarModal.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		E6F3F6872B610E70001A3AD2 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1428,6 +1439,7 @@
 				E66C93FC2B4E559600B74491 /* ProfileViewController.swift in Sources */,
 				E66C93FE2B4E559600B74491 /* HowToUseVC.swift in Sources */,
 				E6C6E99E2B565B920055D260 /* thanhvienimagecon.swift in Sources */,
+				E6EB4E242B988933002E87A7 /* avatarModal.swift in Sources */,
 				E66C93EE2B4E559600B74491 /* CommentsModel.swift in Sources */,
 				E66C93D42B4E559600B74491 /* thanhphanconclv.swift in Sources */,
 				E64E47BC2B5E3D0F007DDAD0 /* swapvideo2.swift in Sources */,

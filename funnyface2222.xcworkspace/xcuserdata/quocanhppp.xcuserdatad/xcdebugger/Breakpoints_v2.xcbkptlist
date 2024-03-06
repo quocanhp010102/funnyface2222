@@ -14,28 +14,13 @@
             filePath = "funnyface2222/Service/APIService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1443"
-            endingLineNumber = "1443"
+            startingLineNumber = "1592"
+            endingLineNumber = "1592"
             landmarkName = "swapImageWithVideo(device:ip:userId:imageLink:videoFile:closure:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0C2D9546-9CA9-4DD2-BD72-28E9CB3FB9D0 - 199b32313e92fdb6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "funnyface2222.APIService.GenBaby(device_them_su_kien: Swift.String, ip_them_su_kien: Swift.String, id_user: Swift.Int, linknam: Swift.String, linknu: Swift.String, closure: (Swift.Optional&lt;funnyface2222.benbabymodal&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "funnyface2222"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/quocanhppp/Documents/iosProject/funnyface2222/funnyface2222/Service/APIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1435"
-                  endingLineNumber = "1435"
-                  offsetFromSymbolStart = "1791">
-               </Location>
-               <Location
-                  uuid = "0C2D9546-9CA9-4DD2-BD72-28E9CB3FB9D0 - bec5d6d47f61d7b"
+                  uuid = "0C2D9546-9CA9-4DD2-BD72-28E9CB3FB9D0 - bec5d6d47f6f6bc"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,12 +30,12 @@
                   urlString = "file:///Users/quocanhppp/Documents/iosProject/funnyface2222/funnyface2222/Service/APIService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1435"
-                  endingLineNumber = "1435"
-                  offsetFromSymbolStart = "443">
+                  startingLineNumber = "1592"
+                  endingLineNumber = "1592"
+                  offsetFromSymbolStart = "1580">
                </Location>
                <Location
-                  uuid = "0C2D9546-9CA9-4DD2-BD72-28E9CB3FB9D0 - bec5d6d47f6e273"
+                  uuid = "0C2D9546-9CA9-4DD2-BD72-28E9CB3FB9D0 - bec5d6d47f6f6bc"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -60,8 +45,8 @@
                   urlString = "file:///Users/quocanhppp/Documents/iosProject/funnyface2222/funnyface2222/Service/APIService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1443"
-                  endingLineNumber = "1443"
+                  startingLineNumber = "1592"
+                  endingLineNumber = "1592"
                   offsetFromSymbolStart = "443">
                </Location>
             </Locations>
@@ -161,6 +146,38 @@
                   offsetFromSymbolStart = "433">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED63367F-6E30-4CEC-A862-2E72D866C12B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "funnyface2222/Service/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "831"
+            endingLineNumber = "831"
+            landmarkName = "ChangeAvater(param:userId:closure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "728F5370-7971-4D3B-802A-D1483B043732"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "funnyface2222/Service/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "566"
+            endingLineNumber = "566"
+            landmarkName = "requestFreeHostSON3(_:param:method:loading:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

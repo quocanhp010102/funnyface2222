@@ -268,6 +268,9 @@
                             <rect key="frame" x="76" y="70" width="48" height="38"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="Frame 48097714"/>
+                            <connections>
+                                <action selector="changeAVATR:" destination="-1" eventType="touchDown" id="wbL-C6-oAf"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

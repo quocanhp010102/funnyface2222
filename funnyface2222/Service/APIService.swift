@@ -108,7 +108,7 @@ extension NSMutableData {
 typealias ApiCompletion = (_ data: Any?, _ error: Error?) -> ()
 
 typealias ApiParam = [String: Any]
-
+let boundary = "Boundary-\(UUID().uuidString)"
 enum ApiMethod: String {
     case GET = "GET"
     case POST = "POST"
@@ -468,6 +468,132 @@ class APIService:NSObject {
         }
         task.resume()
     }
+    func requestFreeHostSON2(_ url: String,
+                            param: [String: String],
+                            method: ApiMethod,
+                            loading: Bool,
+                            completion: @escaping ApiCompletion)
+    {
+        var request:URLRequest!
+        // set method & param
+         if method == .POST {
+            
+
+            var body = Data()
+            if let token_login: String = KeychainWrapper.standard.string(forKey: "token_login"){
+                
+                let headers: Dictionary = ["Authorization":"Bearer " + token_login]
+
+                request = URLRequest(url: (URL(string:url )!))
+               
+                request.allHTTPHeaderFields = headers
+            }
+            
+            
+            request.timeoutInterval = 30
+            request.httpMethod = method.rawValue
+            
+             request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            for (key, value) in param {
+                body.append("--\(boundary)\r\n")
+                body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.append("\(value)\r\n")
+            }
+             body.append("--\(boundary)\r\n")
+             request.httpBody = body
+
+             print(body)
+             let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                 
+                 DispatchQueue.main.async {
+                     
+                     // check for fundamental networking error
+                     guard let data = data, error == nil else {
+                         completion(nil, error)
+                         return
+                     }
+                     
+                     // check for http errors
+                     if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200, let res = response {
+                     }
+                     
+                     if let resJson = self.convertToJson(data) {
+                         completion(resJson, nil)
+                     }
+                     else if let resString = String(data: data, encoding: .utf8) {
+                         completion(resString, error)
+                     }
+                     else {
+                         completion(nil, error)
+                     }
+                 }
+             }
+             task.resume()
+        }
+    }
+    func requestFreeHostSON3(_ url: String,
+                            param: [String: String],
+                            method: ApiMethod,
+                            loading: Bool,
+                            completion: @escaping ApiCompletion)
+    {
+        var request:URLRequest!
+        // set method & param
+         if method == .POST {
+            
+
+            var body = Data()
+            if let token_login: String = KeychainWrapper.standard.string(forKey: "token_login"){
+                
+                let headers: Dictionary = ["Authorization":"Bearer " + token_login]
+
+                request = URLRequest(url: (URL(string:url )!))
+               
+                request.allHTTPHeaderFields = headers
+            }
+            
+            
+            request.timeoutInterval = 30
+            request.httpMethod = method.rawValue
+             //let boundary = "Boundary2-\(UUID().uuidString)"
+             request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            for (key, value) in param {
+                body.append("--\(boundary)\r\n")
+                body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.append("\(value)\r\n")
+            }
+             body.append("--\(boundary)\r\n")
+             request.httpBody = body
+
+             print(body)
+             let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                 
+                 DispatchQueue.main.async {
+                     
+                     // check for fundamental networking error
+                     guard let data = data, error == nil else {
+                         completion(nil, error)
+                         return
+                     }
+                     
+                     // check for http errors
+                     if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200, let res = response {
+                     }
+                     
+                     if let resJson = self.convertToJson(data) {
+                         completion(resJson, nil)
+                     }
+                     else if let resString = String(data: data, encoding: .utf8) {
+                         completion(resString, error)
+                     }
+                     else {
+                         completion(nil, error)
+                     }
+                 }
+             }
+             task.resume()
+        }
+    }
     func requestSON(_ url: String,
                     _ link1: String,
                     _ link2: String,
@@ -688,7 +814,30 @@ class APIService:NSObject {
         }
         closure(nil, nil)
     }
-    
+    func ChangePassAPI(param:[String: String],userId:Int, closure: @escaping (_ response: LoginModel?, _ error: Error?) -> Void) {
+        requestFreeHostSON2("https://databaseswap.mangasocial.online/changepassword/\(userId)" , param: param, method: .POST, loading: true) { (data, error) in
+            if let data = data as? [String:Any]{
+                var  returnData:LoginModel = LoginModel()
+                returnData = returnData.initLoad(data)
+                closure(returnData,nil)
+            }else{
+                closure(nil,nil)
+            }
+        }
+        closure(nil, nil)
+    }
+    func ChangeAvater(param:[String: String],userId:Int, closure: @escaping (_ response: avatarModal?, _ error: Error?) -> Void) {
+        requestFreeHostSON3("https://databaseswap.mangasocial.online/changeavatar/\(userId)" , param: param, method: .POST, loading: true) { (data, error) in
+            if let data = data as? [String:Any]{
+                var  returnData:avatarModal = avatarModal()
+                returnData = returnData.initLoad(data)
+                closure(returnData,nil)
+            }else{
+                closure(nil,nil)
+            }
+        }
+        closure(nil, nil)
+    }
     func RegisterAccount(param:[String: String], closure: @escaping (_ response: RegisterModel?, _ error: Error?) -> Void) {
         requestFreeHostSON("https://databaseswap.mangasocial.online/register/user", param: param, method: .POST, loading: true) { (data, error) in
             if let data = data as? [String:Any]{

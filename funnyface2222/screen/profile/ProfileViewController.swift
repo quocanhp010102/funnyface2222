@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController ,SETabItemProvider{
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: UIImage(named: "tab_home"), tag: 0)
     }
-    
+    var IsStopBoyAnimation = true
     var isVideoSeleced = false
     @IBOutlet weak var buttonSearch: UIButton!
     @IBOutlet weak var buttonCancel: UIButton!
@@ -214,6 +214,15 @@ class ProfileViewController: UIViewController ,SETabItemProvider{
         //vc.data = self.dataUserEvent
         vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
         self.present(vc, animated: true, completion: nil)
+        
+    }
+    @IBAction func changeAVATR(_ sender: Any) {
+        
+        let vc = ChangerAvatarViewController(nibName: "ChangerAvatarViewController", bundle: nil)
+        //vc.data = self.dataUserEvent
+        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+        self.present(vc, animated: true, completion: nil)
+            
     }
     @IBAction func clickSearch(_ sender: Any) {
         APIService.shared.APISearchUser(nameSearch: userNameTextField.text ?? "" ) { result, error in
