@@ -77,10 +77,12 @@ extension StoryboardPageTabMenuViewController: PageMenuControllerDataSource {
                 //ImageMainViewController
                 return controller
             }else if i == 2 {
-                let vc = EventView(nibName: "EventView", bundle: nil)
+                let vc = EventView()
               
-                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                self.present(vc, animated: true, completion: nil)
+                //vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                mainTabbar.navigationController?.pushViewController(vc, animated: true)
+
+                //mainTabbar.present(vc, animated: true, completion: nil)
 //                let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
 //                let controller = storyboard.instantiateViewController(withIdentifier: "ImageMainViewController") as! ImageMainViewController
 //
@@ -93,19 +95,21 @@ extension StoryboardPageTabMenuViewController: PageMenuControllerDataSource {
                 let vc = LoveViewController(nibName: "LoveViewController", bundle: nil)
               
                 vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                self.present(vc, animated: true, completion: nil)
-//                let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
-//                let controller = storyboard.instantiateViewController(withIdentifier: "ImageMainViewController") as! ImageMainViewController
-//
-//                controller.title = "Storyboard #\(i) (\(title))"
-//                //ImageMainViewController
+                mainTabbar.navigationController?.pushViewController(vc, animated: true)
+//                mainTabbar.present(vc, animated: true, completion: nil)
+////                let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
+////                let controller = storyboard.instantiateViewController(withIdentifier: "ImageMainViewController") as! ImageMainViewController
+////
+////                controller.title = "Storyboard #\(i) (\(title))"
+////                //ImageMainViewController
                 return vc
             }
             else if i == 4 {
                 let vc = babycenter(nibName: "babycenter", bundle: nil)
               
                 vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                self.present(vc, animated: true, completion: nil)
+                mainTabbar.navigationController?.pushViewController(vc, animated: true)
+               // mainTabbar.present(vc, animated: true, completion: nil)
 //                let storyboard = UIStoryboard(name: "mhchinh", bundle: nil)
 //                let controller = storyboard.instantiateViewController(withIdentifier: "ImageMainViewController") as! ImageMainViewController
 //

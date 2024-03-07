@@ -10,7 +10,7 @@ import Kingfisher
 import SETabView
 class ProfileViewController: UIViewController ,SETabItemProvider{
     var seTabBarItem: UITabBarItem? {
-        return UITabBarItem(title: "", image: UIImage(named: "tab_home"), tag: 0)
+        return UITabBarItem(title: "", image: UIImage(named: "user"), tag: 0)
     }
     var IsStopBoyAnimation = true
     var isVideoSeleced = false

@@ -43,43 +43,10 @@ class ChangerAvatarViewController: UIViewController {
                 }
             
     }
-    @IBAction func chonanh(_ sender: Any) {
-        
-        let refreshAlert = UIAlertController(title: "Use Old Images Uploaded", message: "Do You Want Select Old Images For AI Generate Images", preferredStyle: UIAlertController.Style.alert)
-        refreshAlert.addAction(UIAlertAction(title: "Load Old Images", style: .default, handler: { (action: UIAlertAction!) in
-            let vc = ListImageOldVC(nibName: "ListImageOldVC", bundle: nil)
-            vc.type = "video"
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true)
-        }))
-        refreshAlert.addAction(UIAlertAction(title: "Upload Image New", style: .cancel, handler: { (action: UIAlertAction!) in
-            var alertStyle = UIAlertController.Style.actionSheet
-            if (UIDevice.current.userInterfaceIdiom == .pad) {
-                alertStyle = UIAlertController.Style.alert
-            }
-            let ac = UIAlertController(title: "Select Image", message: "Select image from", preferredStyle: alertStyle)
-            let cameraBtn = UIAlertAction(title: "Camera", style: .default) {_ in
-                self.IsStopBoyAnimation = true
-                self.showImagePicker(selectedSource: .camera)
-            }
-            let libaryBtn = UIAlertAction(title: "Libary", style: .default) { _ in
-                self.IsStopBoyAnimation = true
-                self.showImagePicker(selectedSource: .photoLibrary)
-            }
-           
-            let cancel = UIAlertAction(title: "Cancel", style: .cancel){ _ in
-                self.dismiss(animated: true)
-            }
-            ac.addAction(cameraBtn)
-            ac.addAction(libaryBtn)
-          
-            ac.addAction(cancel)
-            
-            self.present(ac, animated: true)
-        }))
-        present(refreshAlert, animated: true, completion: nil)
-            
+    @IBAction func BackApp(){
+        self.dismiss(animated: true)
     }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageBoyTapped(_:)))

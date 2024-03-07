@@ -61,9 +61,12 @@ struct RoundRectPagerOption: PageMenuOptions {
     }
 }
 
+
 class mhtestViewController: UIViewController,SETabItemProvider {
+    @IBOutlet weak var viewMain: UIView!
+
     var seTabBarItem: UITabBarItem? {
-        return UITabBarItem(title: "haha", image: UIImage(named: "tab_home"), tag: 0)
+        return UITabBarItem(title: "", image: R.image.tab_video(), tag: 0)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,29 +84,18 @@ class mhtestViewController: UIViewController,SETabItemProvider {
 
                 // Thêm StoryboardPageTabMenuViewController làm con của parent view controller
                 addChild(pageMenuViewController)
-                view.addSubview(pageMenuViewController.view)
+                viewMain.addSubview(pageMenuViewController.view)
                 pageMenuViewController.didMove(toParent: self)
 
                 // Cấu hình constraints cho StoryboardPageTabMenuViewController
                 pageMenuViewController.view.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
-                    pageMenuViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
-                    pageMenuViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                    pageMenuViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                    pageMenuViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+                    pageMenuViewController.view.topAnchor.constraint(equalTo: viewMain.topAnchor),
+                    pageMenuViewController.view.leadingAnchor.constraint(equalTo: viewMain.leadingAnchor),
+                    pageMenuViewController.view.trailingAnchor.constraint(equalTo: viewMain.trailingAnchor),
+                    pageMenuViewController.view.bottomAnchor.constraint(equalTo: viewMain.bottomAnchor)
                 ])
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

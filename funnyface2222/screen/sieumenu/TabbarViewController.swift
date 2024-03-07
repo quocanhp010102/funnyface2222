@@ -8,6 +8,9 @@
 import UIKit
 import SETabView
 
+var mainTabbar:testViewController!
+
+
 class TabbarViewController: SETabViewController {
 
     override func viewDidLoad() {
@@ -31,15 +34,16 @@ class TabbarViewController: SETabViewController {
         let controller = storyboard.instantiateViewController(withIdentifier: "HomeMainView") as! HomeMainView
         
         let storyboardd = UIStoryboard(name: "mhchinh", bundle: nil)
+        let controller3 = storyboardd.instantiateViewController(withIdentifier: "testViewController") as! testViewController
+        mainTabbar = controller3
         let controller2 = storyboardd.instantiateViewController(withIdentifier: "mhtestViewController") as! mhtestViewController
-        let controller3 = storyboardd.instantiateViewController(withIdentifier: "mhchinhController") as! mhchinhController
     let controller4 = ProfileViewController()
         controller4.userId = Int(AppConstant.userId.asStringOrEmpty()) ?? 0
         ProfileViewController().userId = Int(AppConstant.userId.asStringOrEmpty()) ?? 0
            return [
             controller,
-            controller2,
             controller3,
+            controller2,
             CommentsViewController(),
             controller4
            ]

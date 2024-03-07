@@ -6,9 +6,11 @@
 //
 
 import UIKit
-
-class testViewController: UIViewController {
-
+import SETabView
+class testViewController: UIViewController,SETabItemProvider {
+    var seTabBarItem: UITabBarItem? {
+        return UITabBarItem(title: "haha", image: UIImage(named: "notification"), tag: 0)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

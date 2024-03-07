@@ -382,9 +382,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCk-aC-VVf">
-                                <rect key="frame" x="203" y="416" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chua co thong bao nao!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCk-aC-VVf">
+                                <rect key="frame" x="104.66666666666669" y="415.66666666666669" width="184" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -392,6 +391,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M4D-cQ-quZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zCk-aC-VVf" firstAttribute="centerX" secondItem="9UI-d9-ylK" secondAttribute="centerX" id="Dof-7m-ReE"/>
+                            <constraint firstItem="zCk-aC-VVf" firstAttribute="centerY" secondItem="9UI-d9-ylK" secondAttribute="centerY" id="uCg-Ln-Mdy"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y34-KT-LNo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -405,13 +408,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ync-lV-jJ3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5L-TP-8qM">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cjm-XJ-LNI"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F5L-TP-8qM" firstAttribute="top" secondItem="Ync-lV-jJ3" secondAttribute="top" id="2bG-YK-S3j"/>
+                            <constraint firstItem="F5L-TP-8qM" firstAttribute="trailing" secondItem="cjm-XJ-LNI" secondAttribute="trailing" id="Df0-nF-Pio"/>
+                            <constraint firstItem="cjm-XJ-LNI" firstAttribute="bottom" secondItem="F5L-TP-8qM" secondAttribute="bottom" id="NU1-bY-cl3"/>
+                            <constraint firstItem="F5L-TP-8qM" firstAttribute="leading" secondItem="cjm-XJ-LNI" secondAttribute="leading" id="yys-xE-9av"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="viewMain" destination="F5L-TP-8qM" id="aWg-Vr-8H3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JnJ-U3-taM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="26"/>
+            <point key="canvasLocation" x="1527.4809160305342" y="25.35211267605634"/>
         </scene>
     </scenes>
     <resources>
@@ -425,7 +443,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
